@@ -8,9 +8,9 @@
 
 @media (prefers-color-scheme: light) {
 	:root {
-		--primary: #f00;
-		--secondary: #0f0;
-		--tertiary: #00f;
+		--primary: #4ea0d1;
+		--secondary: #c6b457;
+		--tertiary: #9ba691;
 		--txt-color: black;
 		--bg-color: white;=
 	}
@@ -18,9 +18,9 @@
 
 @media (prefers-color-scheme: dark) {
 	:root {
-		--primary: #f00;
-		--secondary: #0f0;
-		--tertiary: #00f;
+		--primary: #4ea0d1;
+		--secondary: #c6b457;
+		--tertiary: #9ba691;
 		--txt-color: white;
 		--bg-color: black;
 	}
