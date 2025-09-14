@@ -8,19 +8,22 @@
 
 @media (prefers-color-scheme: light) {
 	:root {
-		--primary: #4ea0d1;
-		--secondary: #c6b457;
-		--tertiary: #9ba691;
+		--urgent: #065ed4; /* telephone booth blue */
+		--primary: #4e97e1; /* bell system van striping */
+		--secondary: #e1b348; /* bell system van striping */
+		--tertiary: #9ca38a; /* bell system van undercoating */
 		--txt-color: black;
-		--bg-color: white;=
+		--bg-color: #fafcfe; /* no.5 xbar covers */
 	}
 }
 
 @media (prefers-color-scheme: dark) {
 	:root {
-		--primary: #4ea0d1;
-		--secondary: #c6b457;
-		--tertiary: #9ba691;
+		/*--urgent: #ff8206; */ /* fuse alarm */
+		--urgent: #e75f1f; /* panel switch vermillion */
+		--primary: #b8022a; /* major carrier alarm */
+		--secondary: #e6ffa9; /* minor carrier alarm */
+		--tertiary: #e75f1f; /* panel switch vermillion */
 		--txt-color: white;
 		--bg-color: black;
 	}
@@ -77,7 +80,7 @@ a:hover {
 /* CONTENT */
 
 #header {
-	color: var(--txt-color);
+	color: var(--urgent);
 	display: flex !important;
 	flex-direction: row;
 	align-items: baseline;
