@@ -55,21 +55,23 @@ body {
 /* STYLE */
 
 a {
+	color: var(--tertiary) !important;
 	white-space: normal;
 	text-decoration: underline !important;
 	text-decoration-style: dotted;
 	text-decoration-color: var(--tertiary) !important;
 }
 
-a:hover {
-    text-decoration: underline;
-	text-decoration-style: solid;
-	text-decoration-color: var(--secondary) !important;
-    text-decoration-skip-ink: auto;
-}
-
 a:visited {
     color: var(--tertiary) !important;
+}
+
+a:hover {
+	color: var(--primary) !important;
+	text-decoration: underline;
+	text-decoration-style: solid;
+	text-decoration-color: var(--secondary) !important;
+	text-decoration-skip-ink: auto;
 }
 
 /* CONTENT */
