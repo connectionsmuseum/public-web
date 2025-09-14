@@ -90,12 +90,21 @@ a:visited {
 	padding-right: 15px !important;
 	display: inline !important;
 	max-height: 10rem;
-	filter: invert(100%);
 }
 
 #name {
 	line-height: 1em !important;
 }
+
+/* MEDIA */
+
+@media (prefers-color-scheme: dark) {
+	#logo {
+		filter: invert(100%);
+	}
+}
+
+/* LAYOUT */
 
 @media only screen and (max-width: 1450px) {
 	#logo {
