@@ -90,6 +90,7 @@ a:visited {
 	padding-right: 15px !important;
 	display: inline !important;
 	max-height: 10rem;
+	filter: invert(100%);
 }
 
 #name {
