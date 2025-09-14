@@ -630,7 +630,7 @@ r-grid>r-cell[span=row] {
 	grid-column: 1/-1
 }
 
-@media only screen and (max-width:600px) {
+@media only screen and (max-width:799px) {
 	r-grid[columns-s="1"] {
 		--grid-tc: repeat(1, 1fr)
 	}
@@ -1074,7 +1074,7 @@ r-grid>r-cell[span=row] {
 	}
 }
 
-@media only screen and (min-width:1599px) {
+@media only screen and (min-width:1699px) {
 	r-grid[columns-l="1"] {
 		--grid-tc: repeat(1, 1fr)
 	}
@@ -1571,7 +1571,7 @@ body {
 	padding-bottom: calc(var(--lineHeight)*3)
 }
 
-@media only screen and (max-width:600px) {
+@media only screen and (max-width:799px) {
 	body {
 		padding: var(--lineHeight);
 		padding-bottom: calc(var(--lineHeight)*2)
@@ -1637,7 +1637,7 @@ body {
 	column-count: 8
 }
 
-@media only screen and (max-width:600px) {
+@media only screen and (max-width:799px) {
 	[flow-cols-s="1"] {
 		-webkit-column-count: 1;
 		-moz-column-count: 1;
@@ -1687,7 +1687,7 @@ body {
 	}
 }
 
-@media only screen and (min-width:1599px) {
+@media only screen and (min-width:1699px) {
 	[flow-cols-l="1"] {
 		-webkit-column-count: 1;
 		-moz-column-count: 1;
@@ -2322,13 +2322,14 @@ p+table {
 	margin-top: calc(var(--lineHeight)*1.5 + var(--border-width)*-1)
 }
 
-@media only screen and (max-width:600px) {
+@media only screen and (max-width:799px) {
 	.only-large-window {
 		display: none
 	}
 }
 
-@media only screen and (min-width:601px) {
+@media only screen and (min-width:800px) { 
+	/* putting 799px here so that future searching highlights this */
 	.only-small-window {
 		display: none
 	}
