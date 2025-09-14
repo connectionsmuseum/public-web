@@ -97,7 +97,11 @@ a:visited {
 #logo {
 	padding-right: 15px !important;
 	display: inline !important;
-	max-height: 10.5rem;
+	max-height: 10rem;
+}
+
+#name {
+	line-height: 1em !important;
 }
 
 @media only screen and (max-width: 1450px) {
@@ -112,7 +116,7 @@ a:visited {
 
 @media only screen and (max-width: 1250px) {
 	#logo {
-		max-height: 7.5rem;
+		max-height: 7rem;
 	}
 	#name {
 		font-size: 7.5rem;
@@ -124,17 +128,16 @@ a:visited {
 		float: right;
 	}
 	#logo {
-		max-height: 6rem;
+		max-height: 5.5rem;
 	}
 	#name {
 		font-size: 6rem;
-		line-height: 1em !important;
   	}
 }
 
 @media only screen and (max-width: 950px) {
 	#logo {
-		max-height: 4rem;
+		max-height: 3.5rem;
 	}
 	#name {
 		font-size: 4rem;
@@ -143,7 +146,7 @@ a:visited {
 
 @media only screen and (max-width: 650px) {
 	#logo {
-		max-height: 3rem;
+		max-height: 2.5rem;
 	}
 	#name {
 		font-size: 3rem;
