@@ -1,0 +1,77 @@
+/* IMPORTS */
+@import url('https://rsms.me/raster/raster2.css');
+
+/* DEFINITIONS */
+:root {
+  color-scheme: light dark;
+  /*font-size: 15px !important;*/
+}
+
+/* THEME */
+@media (prefers-color-scheme: light) {
+	:root {
+		--primary: #f00;
+		--secondary: #0f0;
+		--tertiary: #00f;
+		--txt-color: black;
+		--bg-color: white;=
+	}
+}
+
+@media (prefers-color-scheme: dark) {
+	:root {
+		--primary: #f00;
+		--secondary: #0f0;
+		--tertiary: #00f;
+		--txt-color: white;
+		--bg-color: black;
+	}
+}
+
+body {
+	background: var(--bg-color);
+}
+
+/* STRUCTURE */
+* {
+	margin: 0;
+	padding: 0;
+	text-wrap: pretty;
+}
+
+/* TYPOGRAPHY */
+:root {
+	font-family: 'Inter', 'Helvetica Neue', 'Helvetica', Arial, sans-serif;
+	font-display: swap;
+	color: var(--txt-color);
+}
+
+@supports (font-variation-settings: normal) {
+	:root {
+		font-family: 'InterVariable', 'Helvetica Neue', 'Helvetica', Arial, sans-serif;
+	}
+}
+
+/* STYLE */
+
+a {
+	white-space: normal;
+	text-decoration: underline !important;
+	text-decoration-style: dotted;
+	text-decoration-color: var(--tertiary) !important;
+}
+
+a:hover {
+    text-decoration: underline;
+	text-decoration-style: solid;
+	text-decoration-color: var(--secondary) !important;
+    text-decoration-skip-ink: auto;
+}
+
+a:visited {
+    color: var(--a-txt-color);
+}
+
+/* PROPERTIES*/
+
+/* CONTENT */
