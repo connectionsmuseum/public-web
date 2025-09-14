@@ -70,7 +70,7 @@ a:hover {
 }
 
 a:visited {
-    color: var(--a-txt-color);
+    color: var(--tertiary) !important;
 }
 
 /* CONTENT */
