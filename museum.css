@@ -104,6 +104,10 @@ a:hover {
 	#logo {
 		filter: invert(100%);
 	}
+	
+	hr {
+		background-color: var(--txt-color);
+	}
 }
 
 /* LAYOUT */
