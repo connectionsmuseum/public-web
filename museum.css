@@ -91,24 +91,24 @@ a:hover {
 
 #header {
 	color: var(--urgent);
-	display: flex !important;
+	display: flex;
 	flex-direction: row;
 	align-items: baseline;
 }
 
 #header * {
-	padding: 0 !important;
-	margin: 0 !important;
+	padding: 0;
+	margin: 0;
 }
 
 #logo {
-	padding-right: 15px !important;
-	display: inline !important;
+	padding-right: 15px;
+	display: inline;
 	max-height: 10rem;
 }
 
 #name {
-	line-height: 1em !important;
+	line-height: 1em;
 }
 
 /* MEDIA */
