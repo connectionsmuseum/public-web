@@ -79,7 +79,8 @@ a:hover {
 	text-decoration-skip-ink: auto;
 }
 
-#title {
+#title,
+#title a {
 	color: var(--urgent);
 	text-decoration: none;
 }
