@@ -79,7 +79,7 @@ a:hover {
 	text-decoration-skip-ink: auto;
 }
 
-#homepage{
+#title{
 	color: var(--urgent);
 	text-decoration: none;
 }
@@ -101,24 +101,25 @@ a.callout {
 
 /* CONTENT */
 
-#header {
+.header {
 	display: flex;
 	flex-direction: row;
 	align-items: center;
+	padding-bottom: 1rem;
 }
 
-#header * {
+.header * {
 	padding: 0;
 	margin: 0;
 }
 
 #logo {
-	padding-right: 15px;
+	padding-right: .5rem;
 	display: inline;
 	max-height: 10rem;
 }
 
-#name {
+#title {
 	line-height: 1em;
 }
 
@@ -128,7 +129,6 @@ a.callout {
 	#logo {
 		filter: invert(100%);
 	}
-	
 	hr {
 		background-color: var(--txt-color);
 	}
@@ -140,7 +140,7 @@ a.callout {
 	#logo {
 		max-height: 9rem;
 	}
-	#name {
+	#title {
 		font-size: 9rem;
 	}
 }
@@ -150,19 +150,19 @@ a.callout {
 	#logo {
 		max-height: 7rem;
 	}
-	#name {
+	#title {
 		font-size: 7.5rem;
 	}
 }
 
 @media only screen and (max-width: 1050px) {
-	#header {
+	.header {
 		float: right;
 	}
 	#logo {
 		max-height: 5.5rem;
 	}
-	#name {
+	#title {
 		font-size: 6rem;
   	}
 }
@@ -171,7 +171,7 @@ a.callout {
 	#logo {
 		max-height: 3.5rem;
 	}
-	#name {
+	#title {
 		font-size: 4rem;
 	}
 }
@@ -180,7 +180,7 @@ a.callout {
 	#logo {
 		max-height: 2.5rem;
 	}
-	#name {
+	#title {
 		font-size: 3rem;
     }
 }
