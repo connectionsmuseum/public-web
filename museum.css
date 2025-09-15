@@ -104,7 +104,7 @@ a.callout {
 #header {
 	display: flex;
 	flex-direction: row;
-	align-items: baseline;
+	align-items: center;
 }
 
 #header * {
