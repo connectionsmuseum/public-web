@@ -83,7 +83,7 @@ a:hover {
 	color: var(--urgent);
 }
 
-.callout a {
+a.callout {
 	color: var(--secondary);
 }
 
