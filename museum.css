@@ -58,22 +58,18 @@ body {
 /* STYLE */
 
 a {
-	color: var(--tertiary) !important;
+	color: var(--tertiary);
 	white-space: normal;
-	text-decoration: underline !important;
+	text-decoration: underline;
 	text-decoration-style: dotted;
-	text-decoration-color: var(--tertiary) !important;
-}
-
-a:visited {
-    color: var(--tertiary) !important;
+	text-decoration-color: var(--tertiary);
 }
 
 a:hover {
-	color: var(--primary) !important;
+	color: var(--primary);
 	text-decoration: underline;
 	text-decoration-style: solid;
-	text-decoration-color: var(--secondary) !important;
+	text-decoration-color: var(--secondary);
 	text-decoration-skip-ink: auto;
 }
 
