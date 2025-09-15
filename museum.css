@@ -91,7 +91,7 @@ a:hover {
 .callout h5,
 .callout h6
 {
-	color: var(--urgent);
+	color: var(--primary);
 }
 
 .callout a,
