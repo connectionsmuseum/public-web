@@ -29,7 +29,7 @@
 	}
 }
 
-body {
+:root {
 	background: var(--bg-color);
 }
 
