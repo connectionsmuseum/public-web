@@ -77,6 +77,10 @@ a:hover {
 	text-decoration-skip-ink: auto;
 }
 
+.callout {
+	color: var(--urgent);
+}
+
 /* CONTENT */
 
 #header {
