@@ -39,6 +39,14 @@
 	text-wrap: pretty;
 }
 
+body {
+	max-width: 1600px;
+}
+
+.banner {
+	max-height: 600px;
+}
+
 /* TYPOGRAPHY */
 
 :root {
