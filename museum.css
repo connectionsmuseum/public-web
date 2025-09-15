@@ -72,6 +72,7 @@ a:hover {
 }
 
 #homepage{
+	color: var(--urgent);
 	text-decoration: none;
 }
 
@@ -93,7 +94,6 @@ a.callout {
 /* CONTENT */
 
 #header {
-	color: var(--urgent);
 	display: flex;
 	flex-direction: row;
 	align-items: baseline;
