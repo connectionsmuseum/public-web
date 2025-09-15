@@ -73,6 +73,10 @@ a:hover {
 	text-decoration-skip-ink: auto;
 }
 
+#homepage{
+	text-decoration: none;
+}
+
 .callout h1,
 .callout h2,
 .callout h3,
