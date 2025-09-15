@@ -167,12 +167,6 @@ q:before {
 	content: none
 }
 
-a,
-a:active,
-a:visited {
-	color: inherit
-}
-
 r-grid {
 	display: grid;
 	--grid-tc: repeat(4, 1fr);
@@ -2049,13 +2043,6 @@ h1.xxxlarge {
 
 a {
 	text-decoration: underline;
-	-webkit-text-decoration: underline rgba(0, 0, 0, .3);
-	text-decoration: underline rgba(0, 0, 0, .3);
-	white-space: nowrap
-}
-
-a:hover {
-	color: var(--blue)
 }
 
 .h1>a,
@@ -2086,9 +2073,6 @@ h4>a:hover,
 h5>a:hover,
 h6>a:hover {
 	text-decoration: underline;
-	-webkit-text-decoration: underline rgba(0, 0, 0, .3);
-	text-decoration: underline rgba(0, 0, 0, .3);
-	color: inherit
 }
 
 img,
