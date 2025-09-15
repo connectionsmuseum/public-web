@@ -73,8 +73,18 @@ a:hover {
 	text-decoration-skip-ink: auto;
 }
 
-.callout {
+.callout h1,
+.callout h2,
+.callout h3,
+.callout h4,
+.callout h5,
+.callout h6
+{
 	color: var(--urgent);
+}
+
+.callout a {
+	color: var(--secondary);
 }
 
 /* CONTENT */
