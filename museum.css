@@ -50,14 +50,14 @@ body {
 /* TYPOGRAPHY */
 
 :root {
-	font-family: 'Inter', 'Helvetica Neue', 'Helvetica', Arial, sans-serif;
+	font-family: 'Jost', 'Futura', 'Inter', 'Helvetica Neue', 'Helvetica', Arial, sans-serif;
 	font-display: swap;
 	color: var(--txt-color);
 }
 
 @supports (font-variation-settings: normal) {
 	:root {
-		font-family: 'InterVariable', 'Helvetica Neue', 'Helvetica', Arial, sans-serif;
+		font-family: 'Jost', 'Futura', 'InterVariable', 'Helvetica Neue', 'Helvetica', Arial, sans-serif;
 	}
 }
 
@@ -81,6 +81,7 @@ a:hover {
 
 #title,
 #title a {
+	font-weight: 600;
 	color: var(--urgent);
 	text-decoration: none;
 }
