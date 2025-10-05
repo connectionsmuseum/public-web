@@ -88,7 +88,8 @@ a:hover {
 #title,
 .xxxlarge,
 .xxlarge,
-.xlarge {
+.xlarge,
+.large {
 	font-weight: 600;
 }
 
