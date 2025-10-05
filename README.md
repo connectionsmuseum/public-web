@@ -1,3 +1,7 @@
+# Standards.
+
+- All code should be formatted with [Prettier](https://prettier.io).
+
 # Acknowledgements.
 
 This project uses the grid-system and lightweight framework [Raster](https://rsms.me/raster/), which is open-source and [on Github here](https://github.com/rsms/raster).
