@@ -27,5 +27,8 @@
   "funding": {
     "type": "nonprofit, 501(c)(3)",
     "url": "https://connections.museum/support.html#donate"
+  },
+  "dependencies": {
+    "prettier": "^3.6.2"
   }
 }
