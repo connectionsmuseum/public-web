@@ -81,9 +81,15 @@ a:hover {
 
 #title,
 #title a {
-	font-weight: 600;
 	color: var(--urgent);
 	text-decoration: none;
+}
+
+#title,
+.xxxlarge,
+.xxlarge,
+.xlarge {
+	font-weight: 600;
 }
 
 .callout h1,
