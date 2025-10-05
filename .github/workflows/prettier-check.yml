@@ -9,6 +9,7 @@ on:
       - "**.js"
       - "**.md"
       - "**.tsx"
+      - "**.json"
   pull_request:
     branches:
       - trunk
