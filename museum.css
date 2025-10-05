@@ -94,10 +94,7 @@ a:hover {
 
 .callout h1,
 .callout h2,
-.callout h3,
-.callout h4,
-.callout h5,
-.callout h6
+.callout h3
 {
 	color: var(--primary);
 }
