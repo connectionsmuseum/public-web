@@ -28,4 +28,4 @@ jobs:
           yarn prettier . --check
       - uses: autofix-ci/action@v1
         with:
-          commit-message: "check code formatting"
+          commit-message: "prettier"
