@@ -1,7 +1,13 @@
-name: autofix.ci
+name: autofix
 on:
-  pull_request:
   push:
+    branches:
+      - trunk
+    paths:
+      - "**.html"
+      - "**.css"
+      - "**.js"
+  page_build:
 permissions: {}
 jobs:
   prettier:
@@ -14,4 +20,4 @@ jobs:
           yarn prettier . --write
       - uses: autofix-ci/action@v1
         with:
-          commit-message: "Apply Prettier format"
+          commit-message: "automatically apply formatting"
