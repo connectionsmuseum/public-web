@@ -1,0 +1,31 @@
+{
+  "name": "connections-museum-public-web",
+  "version": "0.1.0",
+  "keywords": [
+    "nonprofit",
+    "telecommunications",
+    "telephony",
+    "history",
+    "education",
+    "museum",
+    "web"
+  ],
+  "description": "Public-facing website for the Connections Museum and Telecommunications History Group.",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/connectionsmuseum/public-web.git"
+  },
+  "author": "Claire Violet <https://claire.jetzt/>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/connectionsmuseum/public-web/issues"
+  },
+  "homepage": "https://github.com/connectionsmuseum/public-web#readme",
+  "funding": {
+    "type": "nonprofit, 501(c)(3)",
+    "url": "https://connections.museum/support.html#donate"
+  }
+}
