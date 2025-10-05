@@ -50,16 +50,17 @@ body {
 /* TYPOGRAPHY */
 
 :root {
-  font-family: "Jost", "Futura", "Inter", "Helvetica Neue", "Helvetica", Arial,
-    sans-serif;
+  font-family:
+    "Jost", "Futura", "Inter", "Helvetica Neue", "Helvetica", Arial, sans-serif;
   font-display: swap;
   color: var(--txt-color);
 }
 
 @supports (font-variation-settings: normal) {
   :root {
-    font-family: "Jost", "Futura", "InterVariable", "Helvetica Neue",
-      "Helvetica", Arial, sans-serif;
+    font-family:
+      "Jost", "Futura", "InterVariable", "Helvetica Neue", "Helvetica", Arial,
+      sans-serif;
   }
 }
 

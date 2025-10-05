@@ -1552,7 +1552,11 @@ r-grid.debug > :nth-child(6n + 7) {
 }
 
 html {
-  font-family: var(--sansFont), -system-ui, system-ui, sans-serif;
+  font-family:
+    var(--sansFont),
+    -system-ui,
+    system-ui,
+    sans-serif;
   font-size: var(--fontSize);
   line-height: var(--lineHeight);
   background: var(--background-color);
@@ -1563,7 +1567,11 @@ html {
   -ms-text-size-adjust: 100%;
   text-size-adjust: 100%;
   font-variant-ligatures: contextual common-ligatures;
-  font-feature-settings: "kern" 1, "liga" 1, "calt" 1, "cv10" 1;
+  font-feature-settings:
+    "kern" 1,
+    "liga" 1,
+    "calt" 1,
+    "cv10" 1;
 }
 
 body {
