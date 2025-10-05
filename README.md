@@ -1,8 +1,12 @@
-# Demo screenshots.
+# Acknowledgements.
 
-Uses the grid-system and lightweight framework [Raster,](https://rsms.me/raster/), which is open-source and [on Github here](https://github.com/rsms/raster).
+This project uses the grid-system and lightweight framework [Raster,](https://rsms.me/raster/), which is open-source and [on Github here](https://github.com/rsms/raster).
 
-<img width="3038" height="3084" alt="index_dark" src="https://github.com/user-attachments/assets/b0b673c8-7bc2-4262-9e16-225cc597c145" />
-<img width="3038" height="3084" alt="index_light" src="https://github.com/user-attachments/assets/60dfb1e6-0bbc-4d74-bffc-5a343c6ec17c" />
-<img width="1350" height="2950" alt="index_mobile" src="https://github.com/user-attachments/assets/3bc19c6a-a36c-4d3c-8742-9b9257fd08d5" />
-<img width="2165" height="4747" alt="seattle" src="https://github.com/user-attachments/assets/f6cf1ead-2217-4788-8782-7490f9c57e21" />
+It also uses the typeface [Jost*](https://indestructibletype.com/Jost.html) by the wonderful foundry Indestructible Type. It is available for our use under the SIL Open Font license.
+
+
+# Demonstration.
+
+<img width="3038" src="https://private-user-images.githubusercontent.com/6974923/497519805-09f05906-14d8-4b15-8e5f-e350e858f1c6.png?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NTk2NDY2NjksIm5iZiI6MTc1OTY0NjM2OSwicGF0aCI6Ii82OTc0OTIzLzQ5NzUxOTgwNS0wOWYwNTkwNi0xNGQ4LTRiMTUtOGU1Zi1lMzUwZTg1OGYxYzYucG5nP1gtQW16LUFsZ29yaXRobT1BV1M0LUhNQUMtU0hBMjU2JlgtQW16LUNyZWRlbnRpYWw9QUtJQVZDT0RZTFNBNTNQUUs0WkElMkYyMDI1MTAwNSUyRnVzLWVhc3QtMSUyRnMzJTJGYXdzNF9yZXF1ZXN0JlgtQW16LURhdGU9MjAyNTEwMDVUMDYzOTI5WiZYLUFtei1FeHBpcmVzPTMwMCZYLUFtei1TaWduYXR1cmU9YTI1ZGQyOWUwZjJhZWZhNWMwZmYwMmJmZjgzOWYxNjlhYzQxMTU0N2MxMjczZThhYzg4MmM1NGYzMzMwOTJiNiZYLUFtei1TaWduZWRIZWFkZXJzPWhvc3QifQ.8BgZpzjzFp1rSQfEpGcscdTwPMQ5wsoi3t8PIzyAuvA">
+<img width="3038" src="https://private-user-images.githubusercontent.com/6974923/497519807-f1b975d1-e998-4180-b21e-081a705004fa.png?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NTk2NDY2NjksIm5iZiI6MTc1OTY0NjM2OSwicGF0aCI6Ii82OTc0OTIzLzQ5NzUxOTgwNy1mMWI5NzVkMS1lOTk4LTQxODAtYjIxZS0wODFhNzA1MDA0ZmEucG5nP1gtQW16LUFsZ29yaXRobT1BV1M0LUhNQUMtU0hBMjU2JlgtQW16LUNyZWRlbnRpYWw9QUtJQVZDT0RZTFNBNTNQUUs0WkElMkYyMDI1MTAwNSUyRnVzLWVhc3QtMSUyRnMzJTJGYXdzNF9yZXF1ZXN0JlgtQW16LURhdGU9MjAyNTEwMDVUMDYzOTI5WiZYLUFtei1FeHBpcmVzPTMwMCZYLUFtei1TaWduYXR1cmU9YTJkYTRjNGE3ZDEzOGVhZmY2ZTY1NzJkZGE3MWUzZWZiNjZjNDlhNTQ3ODQ3N2NhMjQ3ZTQ3YTMzOTViZGM5MCZYLUFtei1TaWduZWRIZWFkZXJzPWhvc3QifQ.9Y4A1Wh1F3kpAqhsAZ6jbbJECJp3wcczaivjOk3B48E">
+<img width="3038" src="https://private-user-images.githubusercontent.com/6974923/497519817-4f6d30c6-7807-47f6-8ff8-f5872305ddf7.png?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NTk2NDY2NjksIm5iZiI6MTc1OTY0NjM2OSwicGF0aCI6Ii82OTc0OTIzLzQ5NzUxOTgxNy00ZjZkMzBjNi03ODA3LTQ3ZjYtOGZmOC1mNTg3MjMwNWRkZjcucG5nP1gtQW16LUFsZ29yaXRobT1BV1M0LUhNQUMtU0hBMjU2JlgtQW16LUNyZWRlbnRpYWw9QUtJQVZDT0RZTFNBNTNQUUs0WkElMkYyMDI1MTAwNSUyRnVzLWVhc3QtMSUyRnMzJTJGYXdzNF9yZXF1ZXN0JlgtQW16LURhdGU9MjAyNTEwMDVUMDYzOTI5WiZYLUFtei1FeHBpcmVzPTMwMCZYLUFtei1TaWduYXR1cmU9OGMwYzg3NGJkZWFkZjNjMDYwYzY2MzFhNWNmMTYyMDhlYTczNWYyZDdiMTg4OWExYTBmNjJhNTA0ZDhkNmJkNSZYLUFtei1TaWduZWRIZWFkZXJzPWhvc3QifQ.L1tDHe3uA9hA9jjgWytGwwXVoofPZMS8ZU-OJSU-mdg">

@@ -81,17 +81,21 @@ a:hover {
 
 #title,
 #title a {
-	font-weight: 600;
 	color: var(--urgent);
 	text-decoration: none;
 }
 
+#title,
+.xxxlarge,
+.xxlarge,
+.xlarge,
+.large {
+	font-weight: 600;
+}
+
 .callout h1,
 .callout h2,
-.callout h3,
-.callout h4,
-.callout h5,
-.callout h6
+.callout h3
 {
 	color: var(--primary);
 }
