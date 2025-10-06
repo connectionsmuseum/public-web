@@ -1,15 +1,5 @@
 name: autofix.ci
 on:
-  push:
-    branches:
-      - trunk
-    paths:
-      - "**.html"
-      - "**.css"
-      - "**.js"
-      - "**.md"
-      - "**.tsx"
-      - "**.json"
   pull_request:
     branches:
       - trunk
