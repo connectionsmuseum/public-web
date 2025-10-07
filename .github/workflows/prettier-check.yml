@@ -12,7 +12,7 @@ on:
       - "**.json"
   merge_group:
     types: [checks_requested]
-  page_build:
+  # page_build:
 permissions: {}
 jobs:
   prettier:
