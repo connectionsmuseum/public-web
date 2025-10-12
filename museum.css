@@ -145,7 +145,7 @@ a.callout {
 
 /* LAYOUT */
 
-@media only screen and (max-width: 1450px) {
+@media only screen and (max-width: 1550px) {
   #logo {
     max-height: 9rem;
   }
@@ -154,7 +154,7 @@ a.callout {
   }
 }
 
-@media only screen and (max-width: 1250px) {
+@media only screen and (max-width: 1350px) {
   #logo {
     max-height: 7rem;
   }
@@ -163,7 +163,7 @@ a.callout {
   }
 }
 
-@media only screen and (max-width: 1050px) {
+@media only screen and (max-width: 1150px) {
   .header {
     float: right;
   }
