@@ -191,7 +191,8 @@ a.callout {
   #title {
     font-size: 3rem;
   }
-  
+}
+
 @media only screen and (max-width: 450px) {
   #logo {
     max-height: 2.5rem;
