@@ -17,9 +17,11 @@ import museumImage from "../../images/exhibits/museum-image.jpeg";
 </MediaFigure>
 ```
 
-Use imported Astro image metadata in image components, and keep only the
-source originals under `images/`. Components own image delivery; contributors
-should not hand-maintain size variants.
+Use the image components with imported Astro image metadata, not raw string
+paths. This lets Astro emit the standard responsive `srcset`. The build also
+scans the entire `images/` directory and writes filename-based variants such as
+`example-100w.jpeg` to `dist/generated/images/`; contributors maintain only the
+original image.
 
 Image rules:
 

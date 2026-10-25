@@ -1,6 +1,7 @@
 ---
 import type { ImageMetadata } from "astro";
 import { Image } from "astro:assets";
+import { responsiveImageWidths } from "../../lib/responsive-image.mjs";
 
 interface Props {
   /** Imported image from the images/ directory so Astro can optimize it. */
@@ -22,7 +23,7 @@ const bannerSizes =
     class="banner"
     src={image}
     alt={alt}
-    widths={[640, 960, 1280, 1600]}
+    widths={responsiveImageWidths}
     sizes={bannerSizes}
     format="webp"
     quality={95}
@@ -46,6 +47,7 @@ const bannerSizes =
     max-height: 600px;
     height: auto;
     object-fit: cover;
+    aspect-ratio: var(--banner-aspect-ratio);
   }
 
   .banner-figure figcaption {

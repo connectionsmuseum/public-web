@@ -16,6 +16,15 @@ migrated pages are available at `http://localhost:4001/`,
 `http://localhost:4001/support.html`, and `http://localhost:4001/thg.html`.
 Rebuild after making changes before previewing the generated output.
 
+## Responsive images
+
+Contributors add one source image under `images/`. Every production build runs
+`generate:image-srcsets`, which creates width-suffixed files such as
+`example-100w.jpeg` and `example-800w.jpeg` under `dist/generated/images/`.
+Astro components use the same standard width list to emit the corresponding
+`srcset` in the built pages. Generated files are ignored by Git, so the source
+image remains the only file contributors need to maintain.
+
 Add page templates under `src/pages/`, shared layouts under `src/layouts/`, and
 reusable HTML components under `src/components/`. Put files referenced by
 absolute URL in `public/`.

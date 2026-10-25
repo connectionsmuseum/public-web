@@ -13,7 +13,8 @@
   "description": "Public-facing website for the Connections Museum and Telecommunications History Group.",
   "scripts": {
     "dev": "astro dev",
-    "build": "astro build",
+    "build": "astro build && npm run generate:image-srcsets",
+    "generate:image-srcsets": "node scripts/generate-image-srcsets.mjs",
     "preview": "astro preview",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
