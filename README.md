@@ -5,11 +5,16 @@ use the shared metadata and document shell in `src/layouts/` and page pieces in
 `src/components/`. The component demo is available at `/demo` while running
 `npm run dev`; it is excluded from `npm run build` output.
 
-Run `npm run dev` to visit the local component demo at `/demo`. Run
-`npm run build` to validate the Astro setup, or `npm run preview` to preview
-its `dist/` output. Production pages are introduced in the migration PR.
-In Nova, use the Run action of `Build Astro` for the live demo on port 4000.
-`Preview Built Astro` builds and serves production output on port 4001.
+Run `npm run dev` to work on Astro pages, `npm run build` to generate the
+Astro output in `dist/`, or `npm run preview` to preview that build. The build
+generates the homepage, Seattle, Denver, support, THG, and 404 pages. In Nova,
+the `Build Astro` task serves the live component demo at
+`http://localhost:4000/demo`. Select the `Preview Built Astro` task and run its
+Build action followed by Run to serve the generated site on port 4001. The
+migrated pages are available at `http://localhost:4001/`,
+`http://localhost:4001/seattle.html`, `http://localhost:4001/denver.html`,
+`http://localhost:4001/support.html`, and `http://localhost:4001/thg.html`.
+Rebuild after making changes before previewing the generated output.
 
 Add page templates under `src/pages/`, shared layouts under `src/layouts/`, and
 reusable HTML components under `src/components/`. Put files referenced by

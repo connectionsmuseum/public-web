@@ -1,0 +1,18 @@
+---
+interface Props {
+  /** Current closure or service-status message. Omit the component when there is no notice. */
+  message?: string;
+}
+
+// Archived wording from trunk, retained as a starting point, NOT an active
+// notice: "The Seattle museum will be closed on Sunday, September 21st, due
+// to other staffing needs that day. More info at the link below."
+// Publish only after replacing the date and confirming the current notice:
+// <ClosureAnnouncement message="The Seattle museum will be closed on ..." />
+
+const { message } = Astro.props;
+---
+
+<!-- Reserved for time-sensitive closure notices; pages can opt in without
+     coupling the announcement copy to their main content. -->
+{message && <aside class="closure-announcement" role="status">{message}</aside>}
