@@ -36,6 +36,7 @@
     "yarn": "^1.22.22"
   },
   "devDependencies": {
-    "astro": "^4.16.19"
+    "astro": "^4.16.19",
+    "sharp": "^0.33.5"
   }
 }

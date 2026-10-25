@@ -1,5 +1,6 @@
 ---
 import type { ImageMetadata } from "astro";
+import { Image } from "astro:assets";
 
 interface Props {
   /** Imported image from images/ so Astro can emit an optimized srcset. */
@@ -25,12 +26,13 @@ const hasCaption = Astro.slots.has("default");
 ---
 
 <figure class="media-figure">
-  <img
-    src={image.src}
-    width={image.width}
-    height={image.height}
+  <Image
+    src={image}
     alt={alt}
+    widths={[480, 800, 1200]}
     sizes={sizes}
+    format="webp"
+    quality={95}
     loading={loading}
     fetchpriority={fetchPriority}
   />

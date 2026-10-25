@@ -1,5 +1,6 @@
 ---
 import type { ImageMetadata } from "astro";
+import { Image } from "astro:assets";
 
 interface Props {
   /** Imported image from the images/ directory so Astro can optimize it. */
@@ -17,13 +18,14 @@ const bannerSizes =
      context or attribution; it is not a substitute for non-empty alt text. -->
 
 <figure class="banner-figure">
-  <img
+  <Image
     class="banner"
-    src={image.src}
-    width={image.width}
-    height={image.height}
+    src={image}
     alt={alt}
+    widths={[640, 960, 1280, 1600]}
     sizes={bannerSizes}
+    format="webp"
+    quality={95}
     loading="eager"
     fetchpriority="high"
   />

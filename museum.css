@@ -81,6 +81,16 @@ a:hover {
   text-decoration-skip-ink: auto;
 }
 
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+summary:focus-visible {
+  outline: 3px solid var(--urgent);
+  outline-offset: 3px;
+}
+
 #title,
 #title a {
   color: var(--urgent);
