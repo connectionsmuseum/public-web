@@ -1,0 +1,49 @@
+---
+import "../../customized-raster-2.css";
+import "../../museum.css";
+
+// Document shell: metadata and site-wide assets belong here. The content slot
+// contains a SiteHeader, exactly one PageBody (the main landmark), and an
+// optional SiteFooter as siblings. Keeping the main wrapper explicit lets
+// pages place their shared header/footer outside it:
+// <BaseLayout title="Seattle"><SiteHeader /><PageBody>...</PageBody></BaseLayout>
+
+interface Props {
+  /** Page-specific title; the site suffix is added automatically. */
+  title: string;
+  /** Search/social description for the page. */
+  description?: string;
+  /** Optional absolute or site-relative social preview image. */
+  image?: string;
+}
+
+const {
+  title,
+  description = "",
+  image,
+} = Astro.props;
+const pageTitle = title.includes("Connections Museum")
+  ? title.replace(/\s+\|\s+/g, " • ")
+  : `${title} • Connections Museum`;
+const pageUrl = new URL(Astro.url.pathname, Astro.site ?? "https://connections.museum");
+---
+
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <title>{pageTitle}</title>
+    <link rel="icon" type="image/svg+xml" href="/cascades.svg" />
+    <meta property="og:url" content={pageUrl} />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={description} />
+    {image && <meta property="og:image" content={new URL(image, pageUrl)} />}
+    <meta name="twitter:card" content="summary" />
+    <link rel="stylesheet" href="https://indestructibletype.com/fonts/Jost.css" />
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>

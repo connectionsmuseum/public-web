@@ -1,0 +1,161 @@
+---
+import BaseLayout from "./layouts/BaseLayout.astro";
+import SiteHeader from "./components/structure/SiteHeader.astro";
+import BannerCaption from "./components/content/BannerCaption.astro";
+import PageHeading from "./components/structure/PageHeading.astro";
+import PageBody from "./components/structure/PageBody.astro";
+import Callout from "./components/content/Callout.astro";
+import ContactDetails from "./components/content/ContactDetails.astro";
+import ActionLink from "./components/content/ActionLink.astro";
+import ContentGrid from "./components/structure/ContentGrid.astro";
+import ContentSection from "./components/structure/ContentSection.astro";
+import VisitInfo from "./components/content/VisitInfo.astro";
+import SiteFooter from "./components/structure/SiteFooter.astro";
+import ActionPanel from "./components/structure/ActionPanel.astro";
+import ExhibitGroup from "./components/content/ExhibitGroup.astro";
+import ExhibitItem from "./components/content/ExhibitItem.astro";
+import PeopleGroup from "./components/content/PeopleGroup.astro";
+import VideoLink from "./components/content/VideoLink.astro";
+import bannerImage from "../images/banners/cv_sarah_jkl.jpg";
+import panelImage from "../images/banners/cv_sarah_panel_ogt.jpg";
+---
+
+<BaseLayout
+  title="Connections Museum"
+  description="Explore the Connections Museum component starter, built with Astro and Raster."
+>
+  <SiteHeader />
+  <PageBody>
+  <BannerCaption image={bannerImage} alt="Sarah Autumn working on step-by-step telephone switching equipment">
+      Volunteer Sarah Autumn works on step-by-step telephone switching
+      equipment at the Connections Museum.
+    </BannerCaption>
+    <PageHeading level="h1">Plan your visit</PageHeading>
+    <ContentSection id="visit" title="Visitor information" headingLevel="h2">
+      <p>Find current visitor information for our Seattle and Denver locations.</p>
+      <ContentGrid columns={2}>
+        <r-cell>
+          <VisitInfo
+            id="seattle-visit"
+            title="Connections Museum Seattle"
+            headingLevel="h3"
+            hours="Most Sundays, 10 am–3 pm; last tour starts at about 2:30 pm."
+            address="7000 E Marginal Way S, Seattle, WA 98108"
+            addressHref="https://maps.google.com/?q=7000+E+Marginal+Way+S+Seattle+WA+98108"
+            phone="+12067673012"
+            phoneLabel="(206) 767–3012"
+            email="seattle@connections.museum"
+            directionsHref="https://maps.google.com/?q=7000+E+Marginal+Way+S+Seattle+WA+98108"
+          />
+        </r-cell>
+        <r-cell>
+          <VisitInfo
+            id="denver-visit"
+            title="Connections Museum Denver"
+            headingLevel="h3"
+            visitNote="Tours are available by appointment. Adult visitors need photo ID for this secure facility."
+            address="931 14th Street, Denver, CO"
+            addressHref="https://maps.google.com/?q=931+14th+Street+Denver+CO"
+            phone="+13032961221"
+            phoneLabel="(303) 296–1221"
+            email="denver@connections.museum"
+            directionsHref="https://maps.google.com/?q=931+14th+Street+Denver+CO"
+          />
+        </r-cell>
+      </ContentGrid>
+    </ContentSection>
+
+    <ContentSection id="collections" title="Explore the collections" headingLevel="h2">
+      <ExhibitGroup id="featured-exhibits" title="Featured exhibits" headingLevel="h3" columns={3}>
+        <r-cell>
+          <ExhibitItem
+            title="Central office switches"
+            headingLevel="h4"
+            image={panelImage}
+            alt="Volunteer Sarah Autumn standing in front of a telephone panel switch"
+            imageCaption="A volunteer in front of a panel switch at the Seattle museum."
+          >
+            <p>
+              Explore Panel, Crossbar, Step-by-Step, and electronic switching
+              systems in the Seattle collection.
+            </p>
+            <ActionLink href="https://connections.museum/seattle.html#exhibits">
+              Seattle exhibits
+            </ActionLink>
+          </ExhibitItem>
+        </r-cell>
+        <r-cell>
+          <ExhibitItem title="Telephones and station equipment" headingLevel="h4">
+            <p>
+              The collection includes Picturephones, payphones, Design Line
+              telephones, and other station equipment.
+            </p>
+          </ExhibitItem>
+        </r-cell>
+        <r-cell>
+          <ExhibitItem title="THG archives" headingLevel="h4">
+            <p>
+              The Denver archives preserve telephone directories, photographs,
+              business records, and other historical material.
+            </p>
+            <ActionLink href="https://connections.museum/denver.html#archives">
+              About the archives
+            </ActionLink>
+          </ExhibitItem>
+        </r-cell>
+      </ExhibitGroup>
+    </ContentSection>
+
+    <ContentSection id="about-thg" title="About the people behind the museum" headingLevel="h2">
+      <PeopleGroup
+        id="thg-leadership"
+        title="THG staff and board"
+        headingLevel="h3"
+        people={[
+          { name: "Renee Lang", title: "Managing Director" },
+          { name: "Peter Amstein", title: "THG President" },
+          { name: "Sarah Autumn", title: "THG Secretary" },
+        ]}
+      />
+    </ContentSection>
+
+    <ContentSection id="support" title="Support our work" headingLevel="h2">
+      <ActionPanel id="get-involved" title="Get involved" headingLevel="h3">
+        <p>
+          Donations and volunteer time help preserve telecommunications history
+          and care for the museum collections.
+        </p>
+        <ActionLink href="https://connections.museum/support.html#donate">
+          Donate
+        </ActionLink>
+        <ActionLink href="https://connections.museum/support.html#volunteer" variant="callout">
+          Volunteer
+        </ActionLink>
+        <p>
+          <VideoLink href="https://www.youtube.com/watch?v=RBXu7qJ7dNQ">
+            Connections Museum Denver announcement
+          </VideoLink>
+        </p>
+      </ActionPanel>
+    </ContentSection>
+
+    <ContentSection id="note-example" title="A short note" headingLevel="h2">
+      <Callout title="Before you visit">
+        Check each location's page for current hours and tour arrangements.
+      </Callout>
+    </ContentSection>
+  </PageBody>
+  <SiteFooter
+    links={[
+      { label: "Seattle", href: "https://connections.museum/seattle.html" },
+      { label: "Denver", href: "https://connections.museum/denver.html" },
+      { label: "Support", href: "https://connections.museum/support.html" },
+      { label: "THG", href: "https://connections.museum/thg.html" },
+    ]}
+  >
+    <ContactDetails
+      name="Telecommunications History Group"
+      email="seattle@connections.museum"
+    />
+  </SiteFooter>
+</BaseLayout>

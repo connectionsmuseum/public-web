@@ -52,7 +52,6 @@ body {
 :root {
   font-family:
     "Jost", "Futura", "Inter", "Helvetica Neue", "Helvetica", Arial, sans-serif;
-  font-display: swap;
   color: var(--txt-color);
 }
 
@@ -97,7 +96,6 @@ a:hover {
 }
 
 .callout h1,
-h1.callout,
 .callout h2,
 .callout h3 {
   color: var(--primary);
@@ -108,96 +106,10 @@ a.callout {
   color: var(--secondary);
 }
 
-/* CONTENT */
-
-.header {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  padding-bottom: 1rem;
-}
-
-.header * {
-  padding: 0;
-  margin: 0;
-}
-
-#logo {
-  padding-right: 0.5rem;
-  display: inline;
-  max-height: 10rem;
-}
-
-#title {
-  line-height: 1em;
-}
-
 /* MEDIA */
 
 @media (prefers-color-scheme: dark) {
-  #logo {
-    filter: invert(100%);
-  }
   hr {
     background-color: var(--txt-color);
-  }
-}
-
-/* LAYOUT */
-
-@media only screen and (max-width: 1550px) {
-  #logo {
-    max-height: 9rem;
-  }
-  #title {
-    font-size: 9rem;
-  }
-}
-
-@media only screen and (max-width: 1350px) {
-  #logo {
-    max-height: 7rem;
-  }
-  #title {
-    font-size: 7.5rem;
-  }
-}
-
-@media only screen and (max-width: 1150px) {
-  .header {
-    float: right;
-  }
-  #logo {
-    max-height: 5.5rem;
-  }
-  #title {
-    font-size: 6rem;
-  }
-}
-
-@media only screen and (max-width: 950px) {
-  #logo {
-    max-height: 3.5rem;
-  }
-  #title {
-    font-size: 4rem;
-  }
-}
-
-@media only screen and (max-width: 650px) {
-  #logo {
-    max-height: 2.5rem;
-  }
-  #title {
-    font-size: 3rem;
-  }
-}
-
-@media only screen and (max-width: 450px) {
-  #logo {
-    max-height: 2.5rem;
-  }
-  #title {
-    font-size: 2.5rem;
   }
 }

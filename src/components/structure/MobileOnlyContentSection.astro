@@ -1,0 +1,20 @@
+---
+import ContentSection from "./ContentSection.astro";
+
+interface Props {
+  /** Stable fragment identifier for the mobile-only section. */
+  id: string;
+  /** Visible section heading. */
+  title: string;
+  /** Heading level within the page outline. */
+  headingLevel?: "h2" | "h3";
+}
+
+const { id, title, headingLevel = "h2" } = Astro.props;
+---
+
+<r-cell class="only-small-window" span="row">
+  <ContentSection id={id} title={title} headingLevel={headingLevel}>
+    <slot />
+  </ContentSection>
+</r-cell>

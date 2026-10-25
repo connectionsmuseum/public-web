@@ -1,0 +1,49 @@
+---
+import ContentSection from "../structure/ContentSection.astro";
+
+interface Person {
+  /** Person's name. */
+  name: string;
+  /** Optional role or title. */
+  title?: string;
+  /** Optional short biography or affiliation. */
+  description?: string;
+}
+
+interface Props {
+  /** Stable fragment identifier for the group. */
+  id: string;
+  /** Visible group heading. */
+  title: string;
+  /** Heading level within the page outline. */
+  headingLevel: "h2" | "h3";
+  /** People rendered as a semantic list. */
+  people: Person[];
+}
+
+const { id, title, headingLevel, people } = Astro.props;
+---
+
+<!-- Use for a named group of people; the component supplies a semantic list and
+     keeps the group heading connected to its section. -->
+<ContentSection id={id} title={title} headingLevel={headingLevel}>
+  <ul class="people-list">
+    {people.map(({ name, title: role, description }) => (
+      <li>
+        <strong>{name}</strong>
+        {role && <span class="person-title"> — {role}</span>}
+        {description && <p>{description}</p>}
+      </li>
+    ))}
+  </ul>
+</ContentSection>
+
+<style>
+  .people-list li {
+    margin-bottom: 0.75rem;
+  }
+
+  .person-title {
+    font-style: italic;
+  }
+</style>

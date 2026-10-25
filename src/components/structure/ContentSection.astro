@@ -1,0 +1,33 @@
+---
+import PageHeading from "./PageHeading.astro";
+
+interface Props {
+  /** Stable fragment identifier for the section. */
+  id: string;
+  /** Visible section heading. */
+  title: string;
+  /** Use h2 for page sections and h3 for subsections; pages own the h1. */
+  headingLevel: "h2" | "h3";
+  /** Optional visual scale; a nested column can use section scale with h3. */
+  headingScale?: "section" | "subsection" | "label";
+}
+
+// Sections begin at h2/h3 because each page owns its single h1. This keeps the
+// document outline hierarchical while letting the component remain reusable.
+// Use the generated heading id for in-page links rather than adding a second
+// heading or an aria-label to the section.
+
+const { id, title, headingLevel, headingScale } = Astro.props;
+const headingId = `${id}-heading`;
+---
+
+<section id={id} aria-labelledby={headingId}>
+  <PageHeading level={headingLevel} scale={headingScale} id={headingId}>{title}</PageHeading>
+  <slot />
+</section>
+
+<style>
+  section + section {
+    margin-top: calc(var(--lineHeight) * 2);
+  }
+</style>

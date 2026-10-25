@@ -1,27 +1,20 @@
-name: prettier check
+name: check
 on:
   pull_request:
     branches:
       - trunk
-    paths:
-      - "**.html"
-      - "**.css"
-      - "**.js"
-      - "**.md"
-      - "**.tsx"
-      - "**.json"
   merge_group:
     types: [checks_requested]
-  # page_build:
 permissions: {}
 jobs:
   prettier:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-        with:
-          persist-credentials: false
       - uses: actions/setup-node@v4
       - run: |
           yarn
           yarn prettier . --check
+      - uses: autofix-ci/action@v1
+        with:
+          commit-message: "check code formatting"

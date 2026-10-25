@@ -12,6 +12,9 @@
   ],
   "description": "Public-facing website for the Connections Museum and Telecommunications History Group.",
   "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -29,6 +32,10 @@
     "url": "https://connections.museum/support.html#donate"
   },
   "dependencies": {
-    "prettier": "^3.6.2"
+    "prettier": "^3.6.2",
+    "yarn": "^1.22.22"
+  },
+  "devDependencies": {
+    "astro": "^4.16.19"
   }
 }
