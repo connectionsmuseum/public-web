@@ -1,12 +1,14 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import ActionLink from "../../components/content/ActionLink.astro";
+import ClosureAnnouncement from "../../components/content/ClosureAnnouncement.astro";
 import ContactDetails from "../../components/content/ContactDetails.astro";
 import ContentGrid from "../../components/structure/ContentGrid.astro";
 import ContentSection from "../../components/structure/ContentSection.astro";
 import PageHeading from "../../components/structure/PageHeading.astro";
 import PageBody from "../../components/structure/PageBody.astro";
 import SiteHeader from "../../components/structure/SiteHeader.astro";
+import { seattleVisit } from "../../data/seattleVisit";
 ---
 
 <BaseLayout
@@ -16,6 +18,7 @@ import SiteHeader from "../../components/structure/SiteHeader.astro";
   <SiteHeader />
   <PageBody>
     <PageHeading level="h1">Plan your Seattle visit</PageHeading>
+    <ClosureAnnouncement message={seattleVisit.closureNotice ?? undefined} />
     <p><ActionLink href="/seattle.html">Back to the Seattle museum</ActionLink></p>
 
     <ContentSection
@@ -27,15 +30,14 @@ import SiteHeader from "../../components/structure/SiteHeader.astro";
         <r-cell>
           <ContentSection id="hours" title="Hours" headingLevel="h3" headingScale="section">
             <p>
-              The museum is open to the public every Sunday from 10 am to 3 pm,
+              The museum is open to the public every {seattleVisit.hours.day} from {seattleVisit.hours.opens} to {seattleVisit.hours.closes},
               unless otherwise noted on this page.
             </p>
             <!-- TODO(issue): Confirm the youth donation amount and fix the awkward “$5 youths aged” wording. -->
-            <p>The suggested donation is $10 for adults and $5 youths aged 12 to 18.</p>
+            <p>The suggested donation is {seattleVisit.suggestedDonation.adult} for adults and {seattleVisit.suggestedDonation.youth} youths aged {seattleVisit.suggestedDonation.youthAges}.</p>
             <p>
               While we are closed to the public for our volunteer work day, we're
-              typically around to take item donations on Tuesdays from about 11am to
-              3pm. Please email us in advance.
+              typically around to take item donations on {seattleVisit.hours.donationDropoff.day} from about {seattleVisit.hours.donationDropoff.opens} to {seattleVisit.hours.donationDropoff.closes}. Please email us in advance.
             </p>
           </ContentSection>
         </r-cell>
@@ -44,7 +46,7 @@ import SiteHeader from "../../components/structure/SiteHeader.astro";
             <p>
               Tours with volunteer docents start on demand, usually with little
               or no wait.
-              Please note that our doors close at 2:30 pm to permit visitors
+              Please note that our doors close at {seattleVisit.hours.doorsClose} to permit visitors
               enough time to conclude their tour. A quick tour can take one hour,
               but typical tours take up to two hours. For those with a keen
               technical interest, three hours or more in the museum is common.
@@ -58,12 +60,12 @@ import SiteHeader from "../../components/structure/SiteHeader.astro";
         <r-cell>
           <ContentSection id="directions" title="Directions" headingLevel="h3" headingScale="section">
             <p>
-              We are located in the Georgetown neighborhood of Seattle,
+              We are located in the {seattleVisit.location.neighborhood} neighborhood of Seattle,
               Washington, at
-              <a href="maps:?q=$Connections Museum, 7000 E Marginal Way S, Seattle, WA 98108">
-                7000 E Marginal Way S, Seattle, WA 98108
+              <a href={seattleVisit.location.mapsHref}>
+                {seattleVisit.location.address}
               </a>. It is an active central office in a large concrete building.
-              Our entrance is around the side, a blue door under a yellow awning.
+              Our entrance is around the side, a {seattleVisit.location.doorColor} door under a {seattleVisit.location.awningColor} awning.
             </p>
             <p>
               Sadly, bike parking is limited at this time, but we are located
@@ -103,9 +105,9 @@ import SiteHeader from "../../components/structure/SiteHeader.astro";
           For same-day inquiries, give us a call during our open hours.
         </p>
         <ContactDetails
-          email="seattle@connections.museum"
-          phone="+12067673012"
-          phoneLabel="(206) 767–3012"
+          email={seattleVisit.contact.email}
+          phone={seattleVisit.contact.phone}
+          phoneLabel={seattleVisit.contact.phoneLabel}
         />
       </ContentSection>
 

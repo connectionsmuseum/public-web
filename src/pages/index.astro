@@ -3,6 +3,7 @@ import ActionLink from "../components/content/ActionLink.astro";
 import BannerCaption from "../components/content/BannerCaption.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Callout from "../components/content/Callout.astro";
+import ClosureAnnouncement from "../components/content/ClosureAnnouncement.astro";
 import ContactDetails from "../components/content/ContactDetails.astro";
 import ContentGrid from "../components/structure/ContentGrid.astro";
 import ContentSection from "../components/structure/ContentSection.astro";
@@ -12,6 +13,7 @@ import PageHeading from "../components/structure/PageHeading.astro";
 import SiteHeader from "../components/structure/SiteHeader.astro";
 import VideoLink from "../components/content/VideoLink.astro";
 import bannerImage from "../../images/banners/cv_sarah_jkl.jpg";
+import { seattleVisit } from "../data/seattleVisit";
 ---
 
 <BaseLayout
@@ -28,20 +30,21 @@ import bannerImage from "../../images/banners/cv_sarah_jkl.jpg";
     </BannerCaption>
 
     <PageHeading level="h1">Come visit us!</PageHeading>
+    <ClosureAnnouncement message={seattleVisit.closureNotice ?? undefined} />
     <ContentGrid columns={4}>
       <MobileOnlyContentSection id="mobile-visit-notice" title="Visiting our Seattle museum?">
         <p><strong>Here's a few things you should know...</strong></p>
         <Callout>
           <p>
-            We're open almost every Sunday from 10am to 3pm. The last tour starts
-            at about 2:30. If you are really technical, or a big fan, you'll
-            probably want to arrive before 1pm to see everything.
+            We're open almost every {seattleVisit.hours.day} from {seattleVisit.hours.opensCompact} to {seattleVisit.hours.closesCompact}. The last tour starts
+            at about {seattleVisit.hours.doorsCloseClock}. If you are really technical, or a big fan, you'll
+            probably want to arrive before {seattleVisit.hours.arriveEarlyBy} to see everything.
           </p>
           <p>
             We're located at
-            <ActionLink href="maps:?q=$Connections Museum, 7000 E Marginal Way S, Seattle, WA 98108">7000 E Marginal Way S, Seattle, WA 98108</ActionLink>.
+            <ActionLink href={seattleVisit.location.mapsHref}>{seattleVisit.location.address}</ActionLink>.
           </p>
-          <p>The suggested donation is $10 for adults.</p>
+          <p>The suggested donation is {seattleVisit.suggestedDonation.adult} for adults.</p>
           <p>
             <ActionLink href="/seattle/visiting-info.html" marker="⌘">
               We have more detailed information for visitors with disabilities,
@@ -49,7 +52,7 @@ import bannerImage from "../../images/banners/cv_sarah_jkl.jpg";
               Seattle visiting information page.
             </ActionLink>
           </p>
-          <p>Still have questions? Call us at <ActionLink href="tel:+12067673012">(206) 767–3012</ActionLink>.</p>
+          <p>Still have questions? Call us at <ActionLink href={`tel:${seattleVisit.contact.phone}`}>{seattleVisit.contact.phoneLabel}</ActionLink>.</p>
         </Callout>
       </MobileOnlyContentSection>
 
@@ -63,7 +66,7 @@ import bannerImage from "../../images/banners/cv_sarah_jkl.jpg";
             <i>Herbert H. Warrick Jr. Museum of Communications</i>, boasts an
             extensive collection of switching equipment, telephones, central
             office and outside plant equipment.<br />
-            <i>Open most Sundays, 10am–3pm.</i>
+            <i>Open most {seattleVisit.hours.days}, {seattleVisit.hours.opensCompact}–{seattleVisit.hours.closesCompact}.</i>
           </p>
           <p>
             Established in 1986 by former Bell System employees, this museum is
@@ -162,9 +165,9 @@ import bannerImage from "../../images/banners/cv_sarah_jkl.jpg";
           </p>
           <ContactDetails
             name="Connections Museum Seattle"
-            phone="+12067673012"
-            phoneLabel="(206) 767–3012"
-            email="seattle@connections.museum"
+            phone={seattleVisit.contact.phone}
+            phoneLabel={seattleVisit.contact.phoneLabel}
+            email={seattleVisit.contact.email}
           />
           <ContactDetails
             name="Connections Museum Denver & THG Archives"

@@ -18,6 +18,7 @@ import PeopleGroup from "./components/content/PeopleGroup.astro";
 import VideoLink from "./components/content/VideoLink.astro";
 import bannerImage from "../images/banners/cv_sarah_jkl.jpg";
 import panelImage from "../images/banners/cv_sarah_panel_ogt.jpg";
+import { seattleVisit } from "./data/seattleVisit";
 ---
 
 <BaseLayout
@@ -39,13 +40,13 @@ import panelImage from "../images/banners/cv_sarah_panel_ogt.jpg";
             id="seattle-visit"
             title="Connections Museum Seattle"
             headingLevel="h3"
-            hours="Most Sundays, 10 am–3 pm; last tour starts at about 2:30 pm."
-            address="7000 E Marginal Way S, Seattle, WA 98108"
-            addressHref="https://maps.google.com/?q=7000+E+Marginal+Way+S+Seattle+WA+98108"
-            phone="+12067673012"
-            phoneLabel="(206) 767–3012"
-            email="seattle@connections.museum"
-            directionsHref="https://maps.google.com/?q=7000+E+Marginal+Way+S+Seattle+WA+98108"
+            hours={`Most ${seattleVisit.hours.days}, ${seattleVisit.hours.opens}–${seattleVisit.hours.closes}; last tour starts at about ${seattleVisit.hours.doorsClose}.`}
+            address={seattleVisit.location.address}
+            addressHref={seattleVisit.location.googleMapsHref}
+            phone={seattleVisit.contact.phone}
+            phoneLabel={seattleVisit.contact.phoneLabel}
+            email={seattleVisit.contact.email}
+            directionsHref={seattleVisit.location.googleMapsHref}
           />
         </r-cell>
         <r-cell>
@@ -156,7 +157,7 @@ import panelImage from "../images/banners/cv_sarah_panel_ogt.jpg";
   >
     <ContactDetails
       name="Telecommunications History Group"
-      email="seattle@connections.museum"
+      email={seattleVisit.contact.email}
     />
   </SiteFooter>
 </BaseLayout>

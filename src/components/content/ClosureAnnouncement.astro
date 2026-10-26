@@ -9,6 +9,7 @@ interface Props {
 // to other staffing needs that day. More info at the link below."
 // Publish only after replacing the date and confirming the current notice:
 // <ClosureAnnouncement message="The Seattle museum will be closed on ..." />
+// Seattle's active message is set in src/data/seattleVisit.ts.
 
 const { message } = Astro.props;
 ---
@@ -16,3 +17,12 @@ const { message } = Astro.props;
 <!-- Reserved for time-sensitive closure notices; pages can opt in without
      coupling the announcement copy to their main content. -->
 {message && <aside class="closure-announcement" role="status">{message}</aside>}
+
+<style>
+  .closure-announcement {
+    border: 2px solid var(--urgent);
+    font-weight: 600;
+    margin-block: var(--lineHeight);
+    padding: var(--lineHeight);
+  }
+</style>

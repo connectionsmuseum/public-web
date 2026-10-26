@@ -2,6 +2,7 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import ActionLink from "../components/content/ActionLink.astro";
 import BannerCaption from "../components/content/BannerCaption.astro";
+import ClosureAnnouncement from "../components/content/ClosureAnnouncement.astro";
 import ContentGrid from "../components/structure/ContentGrid.astro";
 import ContentSection from "../components/structure/ContentSection.astro";
 import PageHeading from "../components/structure/PageHeading.astro";
@@ -10,6 +11,7 @@ import SiteHeader from "../components/structure/SiteHeader.astro";
 import SisterMuseumsCallout from "../components/content/SisterMuseumsCallout.astro";
 import VideoLink from "../components/content/VideoLink.astro";
 import bannerImage from "../../images/banners/cv_sarah_mtf.jpg";
+import { seattleVisit } from "../data/seattleVisit";
 ---
 
 <BaseLayout
@@ -25,12 +27,12 @@ import bannerImage from "../../images/banners/cv_sarah_mtf.jpg";
     </BannerCaption>
 
     <PageHeading level="h1">Seattle, Washington</PageHeading>
+    <ClosureAnnouncement message={seattleVisit.closureNotice ?? undefined} />
     <ContentSection id="visit-info" title="Visiting the museum" headingLevel="h2">
       <p>
-        Come by on Sunday, usually from 10 am to 3 pm. Volunteer docents start
-        tours on demand, and the doors close at 2:30 pm so visitors have time
-        to finish. Find us at 7000 E Marginal Way S in Georgetown, through the
-        blue door under the yellow awning.
+        Come by on {seattleVisit.hours.day}, usually from {seattleVisit.hours.opens} to {seattleVisit.hours.closes}. Volunteer docents start
+        tours on demand, and the doors close at {seattleVisit.hours.doorsClose} so visitors have time
+        to finish. Find us at {seattleVisit.location.streetAddress} in {seattleVisit.location.neighborhood}, through the {seattleVisit.location.doorColor} door under the {seattleVisit.location.awningColor} awning.
       </p>
       <p>
         Need directions, access details, or a visit for a group? We've put the
