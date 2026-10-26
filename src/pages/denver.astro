@@ -1,14 +1,12 @@
 ---
 import ActionLink from "../components/content/ActionLink.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
-import MediaFigure from "../components/content/MediaFigure.astro";
 import ContentGrid from "../components/structure/ContentGrid.astro";
 import ContentSection from "../components/structure/ContentSection.astro";
 import ContactDetails from "../components/content/ContactDetails.astro";
 import PageHeading from "../components/structure/PageHeading.astro";
 import PageBody from "../components/structure/PageBody.astro";
 import SiteHeader from "../components/structure/SiteHeader.astro";
-import galleryImage from "../../images/placeholder-43-landscape.png";
 ---
 
 <BaseLayout
@@ -71,14 +69,13 @@ import galleryImage from "../../images/placeholder-43-landscape.png";
             <ActionLink href="mailto:denver@connections.museum">denver@connections.museum</ActionLink>
             to arrange a tour.
           </p>
-          <h3>Museum Gallery</h3>
-          <!-- TODO(issue): Replace the placeholder graphic with a Denver museum photo and write accurate alternative text. -->
+          <h3>See the museum</h3>
           <p>
-            For a taste of what you can see at Connections Museum Denver,
-            browse the image below. For a full virtual tour of the old phone
-            company building at 931 14th Street, see our full online exhibit.
+            Browse <ActionLink href="https://www.telcomhistory.org/ConnectionsDenver.html">THG's Denver photo gallery</ActionLink>
+            for a look at the equipment and former executive offices. The
+            <ActionLink href="https://www.telcomhistory.org/exhibits931Building.html">online building tour</ActionLink>
+            goes deeper into the architecture and Allen Tupper True murals.
           </p>
-          <MediaFigure image={galleryImage} alt="" />
         </ContentSection>
       </r-cell>
       <r-cell>
@@ -91,9 +88,11 @@ import galleryImage from "../../images/placeholder-43-landscape.png";
             time. It is especially strong in its documentation of companies from
             the midwest and western states.
           </p>
-          <!-- TODO(issue): Add the correct online archives URL; the legacy link had no destination. -->
           <p>
-            A portion of our collection is available for viewing online.
+            A small sample of the collection is available in
+            <ActionLink href="https://www.telcomhistory.org/archivesOnline.html">THG's online archives</ActionLink>,
+            including photographs, postcards, advertising, stock certificates,
+            and the Santee Collection.
           </p>
           <h3>What you will find</h3>
           <ul>
