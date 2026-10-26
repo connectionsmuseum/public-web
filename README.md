@@ -2,17 +2,24 @@
 
 The site pages are built with Astro templates and reusable components. Pages
 use the shared metadata and document shell in `src/layouts/` and page pieces in
-`src/components/`. The component demo is available at `/demo` while running
+`src/components/`. Seattle's detailed exhibit and library copy lives in
+`src/pages/seattle/exhibits/index.astro` and `src/pages/seattle/library/index.astro`,
+using the same generic layout and content components as the rest of the site.
+The Seattle visit page keeps short introductions and links to those routes.
+The component demo is available at `/demo` while running
 `npm run dev`; it is excluded from `npm run build` output.
 
 Run `npm run dev` to work on Astro pages, `npm run build` to generate the
 Astro output in `dist/`, or `npm run preview` to preview that build. The build
-generates the homepage, Seattle, Denver, support, THG, and 404 pages. In Nova,
+generates the homepage, Seattle visit page, Seattle exhibits and library pages,
+Denver, support, THG, and 404 pages. In Nova,
 the `Build Astro` task serves the live component demo at
 `http://localhost:4000/demo`. Select the `Preview Built Astro` task and run its
 Build action followed by Run to serve the generated site on port 4001. The
 migrated pages are available at `http://localhost:4001/`,
-`http://localhost:4001/seattle.html`, `http://localhost:4001/denver.html`,
+`http://localhost:4001/seattle.html`,
+`http://localhost:4001/seattle/exhibits.html`,
+`http://localhost:4001/seattle/library.html`, `http://localhost:4001/denver.html`,
 `http://localhost:4001/support.html`, and `http://localhost:4001/thg.html`.
 Rebuild after making changes before previewing the generated output.
 

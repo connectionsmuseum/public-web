@@ -1,0 +1,234 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import ActionLink from "../../../components/content/ActionLink.astro";
+import ContentGrid from "../../../components/structure/ContentGrid.astro";
+import ContentSection from "../../../components/structure/ContentSection.astro";
+import ExhibitGroup from "../../../components/content/ExhibitGroup.astro";
+import ExhibitItem from "../../../components/content/ExhibitItem.astro";
+import PageBody from "../../../components/structure/PageBody.astro";
+import PageHeading from "../../../components/structure/PageHeading.astro";
+import SiteHeader from "../../../components/structure/SiteHeader.astro";
+import panelImage from "../../../../images/banners/cv_sarah_panel_ogt.jpg";
+---
+
+<BaseLayout
+  title="Seattle Exhibits | Connections Museum"
+  description="Explore the working switches, telephone equipment, and outside plant at Connections Museum Seattle."
+>
+  <SiteHeader />
+  <PageBody>
+    <PageHeading level="h1">Seattle exhibits</PageHeading>
+    <p><ActionLink href="/seattle.html">Plan your visit to the Seattle museum</ActionLink></p>
+
+    <ContentSection id="exhibits" title="A working museum" headingLevel="h2">
+      <ContentGrid columns={2}>
+        <r-cell>
+          <p>
+            The museum sits inside a working telephone company central office in
+            Georgetown. Once, rooms like this connected whole neighborhoods. Here,
+            volunteers keep a century of switching equipment running so you can
+            hear a call move through the machinery, not just look at a cabinet.
+          </p>
+        </r-cell>
+        <r-cell>
+          <p>
+            Formerly the Herbert H. Warrick Jr. Museum of Communications, we're
+            part of the Telecommunications History Group. Telephone Pioneer
+            volunteers began building the museum in 1986, moving and reconnecting
+            huge switch frames by hand. Their work continues as new volunteers
+            learn to care for the machines. Take a tour or explore the public areas
+            at your own pace; our guides are glad to talk through what you're seeing.
+          </p>
+        </r-cell>
+      </ContentGrid>
+
+      <p>
+        Things don't stay frozen here. The big switches anchor the rooms, while
+        smaller displays move as volunteers make space, restore equipment, and add
+        new functions. Ask a guide what's changed since your last visit.
+      </p>
+
+      <ExhibitGroup
+        id="central-office-switches"
+        title="Working switches"
+        headingLevel="h3"
+        columns={3}
+      >
+        <r-cell>
+          <ExhibitItem
+            title="Panel switch"
+            headingLevel="h4"
+            image={panelImage}
+            alt="Volunteer Sarah Autumn beside the museum's panel switching equipment"
+            imageCaption="Sarah Autumn at the panel switch."
+            imageSizes="(max-width: 600px) 100vw, 33vw"
+            href="https://wiki.connections.museum/w/CMS:Panel_Switch"
+            linkLabel="Explore the panel switch's history and workings"
+          >
+            <p>
+              Seattle's 1923 panel switch still connects calls. A part called a
+              sender takes in the number you dial; metal brushes then move across
+              banks of contacts to find a path to the other phone. Watch the rods
+              travel and listen to the work they do.
+            </p>
+          </ExhibitItem>
+        </r-cell>
+        <r-cell>
+          <ExhibitItem title="Crossbar" headingLevel="h4">
+            <p>
+              The working No. 1 Crossbar belongs to the next chapter of automatic
+              switching. Relays and moving contacts do the job of setting up a
+              call. Volunteers maintain this machine alongside the panel switch,
+              keeping both systems ready to demonstrate.
+            </p>
+          </ExhibitItem>
+        </r-cell>
+        <r-cell>
+          <ExhibitItem title="Step-by-step and PBXs" headingLevel="h4">
+            <p>
+              You can also see working step-by-step and crossbar PBX equipment. A
+              PBX is a switch for a building or organization: it connects phones
+              inside the place and links them to the wider network. Ask a guide to
+              show you how these smaller systems differ from the central-office
+              machines.
+            </p>
+          </ExhibitItem>
+        </r-cell>
+      </ExhibitGroup>
+
+      <ExhibitGroup
+        id="power-and-ringing"
+        title="Keeping the switches running"
+        headingLevel="h3"
+        columns={2}
+      >
+        <r-cell>
+          <ExhibitItem
+            title="Power board"
+            headingLevel="h4"
+            href="https://wiki.connections.museum/w/CMS:Power_Board"
+            linkLabel="Read the power board's equipment notes"
+          >
+            <p>
+              The switches need a steady supply of electricity. The power board
+              distributes 48-volt office battery power to the museum's equipment,
+              with meters and fuses that let volunteers watch what the machinery
+              is drawing. This board came from Seattle's Parkway central office;
+              volunteers have adapted it for the museum.
+            </p>
+          </ExhibitItem>
+        </r-cell>
+        <r-cell>
+          <ExhibitItem
+            title="Ringing and tone plant"
+            headingLevel="h4"
+            href="https://wiki.connections.museum/w/CMS:803C_Ringing_and_Tone_Plant"
+            linkLabel="See how the ringing and tone plant was rebuilt"
+          >
+            <p>
+              This equipment makes the ringing current and tones used by the panel
+              and No. 1 Crossbar. Volunteers brought together a motor generator
+              from Seattle's West office and a control board from Hartford,
+              Connecticut, then wired them into a working exhibit. A speaker lets
+              visitors hear the tones for themselves.
+            </p>
+          </ExhibitItem>
+        </r-cell>
+      </ExhibitGroup>
+
+      <ExhibitGroup
+        id="electronic-switching"
+        title="Electronic switching"
+        headingLevel="h3"
+        columns={2}
+      >
+        <r-cell>
+          <ExhibitItem title="Western Electric 3ESS" headingLevel="h4">
+            <p>
+              Electronic switches took over much of the work once done by rooms
+              full of moving machinery. The 3ESS was built for smaller communities
+              and could serve up to 4,500 lines. It's one of the working switches
+              our volunteers care for here.
+            </p>
+          </ExhibitItem>
+        </r-cell>
+        <r-cell>
+          <ExhibitItem title="What changed in a central office?" headingLevel="h4">
+            <p>
+              An electronic switch needed far less floor space than the mechanical
+              systems it replaced. The change took planning and hands-on work: in
+              some offices, a new building was added while the old switch kept
+              serving callers. The museum's
+              <a href="https://www.telcomhistory.org/seattleElectronic.html">older online exhibit</a>
+              also traces the 5ESS and electronic key telephone systems.
+            </p>
+          </ExhibitItem>
+        </r-cell>
+      </ExhibitGroup>
+
+      <ExhibitGroup
+        id="outside-plant"
+        title="Outside plant: the lines beyond the building"
+        headingLevel="h3"
+        columns={3}
+      >
+        <r-cell>
+          <ExhibitItem title="Building terminals" headingLevel="h4">
+            <p>
+              A call needs a way into the network. Building terminals join the
+              wiring from a home or business to the telephone company's circuits.
+              The display follows these connections from roughly 1910 onward.
+            </p>
+          </ExhibitItem>
+        </r-cell>
+        <r-cell>
+          <ExhibitItem title="Open wire" headingLevel="h4">
+            <p>
+              Poles, crossarms and insulators once held the two wires of a telephone
+              circuit apart in the open air. That spacing helped prevent shorts
+              before better insulation was available. Seattle had open-wire lines
+              as early as 1883; later came cable, then fiber.
+            </p>
+          </ExhibitItem>
+        </r-cell>
+        <r-cell>
+          <ExhibitItem title="Splices and linemen's tools" headingLevel="h4">
+            <p>
+              Splicing joins sections of wire or fiber so a line can keep going.
+              Look for examples from paper-insulated copper cable through fiber,
+              including a copper splice carrying 4,200 pairs. The poles, cable and
+              tools here tell the story of the people who built and repaired the
+              network outside the switchroom.
+            </p>
+          </ExhibitItem>
+        </r-cell>
+      </ExhibitGroup>
+
+      <ContentSection
+        id="telephones-and-station-equipment"
+        title="Telephones & station equipment"
+        headingLevel="h3"
+      >
+        <p>
+          Switching is only part of the story. The collection also includes
+          payphones, picturephones, Design Line sets, a Space Needle radio-telephone
+          from the Century 21 World's Fair, and switchboards. Ask a guide about the
+          phones you remember, or one you've never seen before.
+        </p>
+      </ContentSection>
+
+      <ContentSection
+        id="other-exhibit-categories"
+        title="Telegraphs, teletypes & more"
+        headingLevel="h3"
+      >
+        <p>
+          Follow the story beyond the telephone: there are telegraphs, teletypes,
+          and tools used by the people who built and repaired the network. Our
+          guides can show you around. Please ask before handling an exhibit; some
+          equipment is fragile or live.
+        </p>
+      </ContentSection>
+    </ContentSection>
+  </PageBody>
+</BaseLayout>

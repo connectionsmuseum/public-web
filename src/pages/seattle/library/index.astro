@@ -1,0 +1,58 @@
+---
+import ActionLink from "../../../components/content/ActionLink.astro";
+import ContentGrid from "../../../components/structure/ContentGrid.astro";
+import ContentSection from "../../../components/structure/ContentSection.astro";
+import PageBody from "../../../components/structure/PageBody.astro";
+import PageHeading from "../../../components/structure/PageHeading.astro";
+import SiteHeader from "../../../components/structure/SiteHeader.astro";
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+---
+
+<BaseLayout
+  title="Seattle Reference Library | Connections Museum"
+  description="Explore the technical books and documentation that help Connections Museum Seattle care for its equipment."
+>
+  <SiteHeader />
+  <PageBody>
+    <PageHeading level="h1" id="library">Seattle reference library</PageHeading>
+    <p><ActionLink href="/seattle.html">Plan your visit to the Seattle museum</ActionLink></p>
+
+    <p>
+      Keeping old equipment working takes more than spare parts. We rely on
+      diagrams, manuals, and the knowledge people wrote down while these
+      systems were in service. Our cataloged reference library focuses on
+      Seattle, the Pacific Northwest, and the machines we maintain.
+    </p>
+
+    <ContentGrid columns={2}>
+      <r-cell>
+        <ContentSection id="using-the-library" title="Using the library" headingLevel="h2">
+          <p>
+            We try to make our printed telecommunications history and technical
+            documentation available to researchers and the wider telephone
+            collector community. Digitization of technical material is
+            available on request. Tell us what you're looking for at
+            <a href="mailto:library@connections.museum">library@connections.museum</a>.
+          </p>
+        </ContentSection>
+      </r-cell>
+      <r-cell>
+        <ContentSection id="contributing-material" title="Contributing material" headingLevel="h2">
+          <p>
+            Have documents about Pacific Northwest telephone history or the
+            panel switch, especially anything marked “Full Mechanical”? Please
+            email <a href="mailto:library@connections.museum">library@connections.museum</a>
+            with a description before sending them. We don't yet have a
+            dedicated archival environment in Seattle, so knowing what you
+            have helps us find the right way to care for it.
+          </p>
+          <p>
+            <ActionLink href="/support.html#equipment-donations">
+              More about donating equipment and historical documents
+            </ActionLink>
+          </p>
+        </ContentSection>
+      </r-cell>
+    </ContentGrid>
+  </PageBody>
+</BaseLayout>

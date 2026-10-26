@@ -1,14 +1,13 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import ActionLink from "../components/content/ActionLink.astro";
 import BannerCaption from "../components/content/BannerCaption.astro";
 import ContactDetails from "../components/content/ContactDetails.astro";
 import ContentGrid from "../components/structure/ContentGrid.astro";
 import ContentSection from "../components/structure/ContentSection.astro";
-import SeattleExhibits from "../components/content/SeattleExhibits.astro";
 import PageHeading from "../components/structure/PageHeading.astro";
 import PageBody from "../components/structure/PageBody.astro";
 import SiteHeader from "../components/structure/SiteHeader.astro";
-import SeattleLibrary from "../components/content/SeattleLibrary.astro";
 import SisterMuseumsCallout from "../components/content/SisterMuseumsCallout.astro";
 import bannerImage from "../../images/banners/cv_sarah_mtf.jpg";
 ---
@@ -190,8 +189,34 @@ import bannerImage from "../../images/banners/cv_sarah_mtf.jpg";
       </ContentSection>
     </ContentSection>
 
-    <SeattleExhibits />
-    <SeattleLibrary />
+    <ContentGrid columns={2}>
+      <r-cell>
+        <ContentSection id="exhibits" title="Exhibits & museum history" headingLevel="h2">
+          <p>
+            Come hear the switches work and meet the tools that carried calls
+            beyond the central office. The big switches stay put; smaller
+            displays change as volunteers repair, rearrange, and add to them.
+            Our exhibit guide follows the machinery and the people who keep it
+            running.
+          </p>
+          <ActionLink href="/seattle/exhibits.html" prominence="feature">
+            Explore the Seattle exhibits
+          </ActionLink>
+        </ContentSection>
+      </r-cell>
+      <r-cell>
+        <ContentSection id="library" title="Seattle reference library" headingLevel="h2">
+          <p>
+            Old machines come with manuals, diagrams, and questions. Our
+            reference library helps volunteers and researchers trace how the
+            equipment works and where it came from.
+          </p>
+          <ActionLink href="/seattle/library.html" prominence="feature">
+            Learn about the Seattle library
+          </ActionLink>
+        </ContentSection>
+      </r-cell>
+    </ContentGrid>
 
     <SisterMuseumsCallout>
       <p>
