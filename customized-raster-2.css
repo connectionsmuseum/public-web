@@ -1,7 +1,4 @@
 /* Raster v20 (release package) (rsms.me/raster) */
-@import url("https://rsms.me/inter/inter.css");
-@import url("https://rsms.me/res/fonts/iaw.css");
-
 :root {
   --fontSize: 12px;
   --sansFont: "Inter";
