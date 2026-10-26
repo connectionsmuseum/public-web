@@ -44,6 +44,24 @@ const pageUrl = new URL(Astro.url.pathname, Astro.site ?? "https://connections.m
     <link rel="stylesheet" href="https://indestructibletype.com/fonts/Jost.css" />
   </head>
   <body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
     <slot />
   </body>
 </html>
+
+<style>
+  .skip-link {
+    position: absolute;
+    z-index: 10;
+    top: 0;
+    left: 0;
+    padding: 0.75rem 1rem;
+    color: var(--txt-color);
+    background: var(--bg-color);
+    transform: translateY(-150%);
+  }
+
+  .skip-link:focus {
+    transform: translateY(0);
+  }
+</style>
