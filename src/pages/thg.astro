@@ -1,0 +1,186 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import ContentGrid from "../components/structure/ContentGrid.astro";
+import ContentSection from "../components/structure/ContentSection.astro";
+import PeopleGroup from "../components/content/PeopleGroup.astro";
+import PageHeading from "../components/structure/PageHeading.astro";
+import PageBody from "../components/structure/PageBody.astro";
+import SiteHeader from "../components/structure/SiteHeader.astro";
+---
+
+<BaseLayout
+  title="About the Telecommunications History Group | Connections Museum"
+  description="Learn about the Telecommunications History Group, its mission, staff, board, partners, and sponsors."
+>
+  <SiteHeader />
+  <PageBody>
+    <PageHeading level="h1">About Us</PageHeading>
+    <ContentGrid columns={2}>
+      <r-cell span="row">
+        <span id="thg" aria-hidden="true"></span>
+        <ContentSection id="what-is-thg" title="What is the Telecommunications History Group (THG)?" headingLevel="h2">
+          <p>
+            The Connections Museum is part of the Telecommunications History Group
+            Inc., a 501(c)(3) non-profit organization which proudly preserves and
+            shares the rich heritage of an industry that has had and continues
+            to have a huge impact on our society, our culture, and most of all,
+            our ability to communicate.
+          </p>
+          <p>
+            <strong>Why is this important?</strong> The telecommunications
+            industry created the roots of modern communication technologies,
+            making possible the development and evolution of radio, TV, and
+            computers, in addition to telephones in all their shapes and
+            functions. This history creates a bridge between the past and
+            present.
+          </p>
+          <p>
+            We are passionate about sharing well-known and little-known facts,
+            stories, equipment, and documentation related to the
+            telecommunications industry with industry insiders, history buffs,
+            sociological researchers, students, and the general public. We
+            believe our history reflects not only key milestones in
+            communication but also a living and continually changing record of
+            our lives, the way we conduct business, and our culture as a whole.
+          </p>
+          <p><i>Whether you realize it or not, the telecommunications industry has touched and influenced your life!</i></p>
+        </ContentSection>
+      </r-cell>
+      <r-cell>
+        <ContentSection id="what-we-do" title="What We Do" headingLevel="h2">
+          <p>
+            Whatever your motivation, we’re here to share what we know, what we
+            have, and where we’ve been in relation to telecommunications
+            history. Whether visiting one of our locations, browsing our
+            website to learn about telecom history, looking for a specific
+            piece of information, or looking for others to connect with who
+            share similar interests, we are here for you.
+          </p>
+          <p>
+            If you are a former employee of a telecommunications company who
+            likes to relive the glory days or share history with your friends
+            and family, you will be pleasantly surprised at how much information
+            we have gathered and organized. Historical photographs and news
+            articles tell many stories of innovation, technology, culture, and
+            of course, people. Seeing the actual telephones and related
+            equipment will take you back in time and allow you to place yourself
+            in this rich history.
+          </p>
+          <p>
+            If you are not a phone company “insider,” you may still be
+            fascinated by the history of telecommunications, both the more
+            public side and the behind-the-scenes stories. Whether you want to
+            reminisce about the telephones and telephone directories you used
+            to have, or simply gain a broader understanding of what led up to
+            the current technology of the cell phone in your pocket, we have a
+            lot to share.
+          </p>
+        </ContentSection>
+      </r-cell>
+      <r-cell>
+        <ContentSection id="mission" title="Our Mission" headingLevel="h2">
+          <p>
+            The mission of the Connections Museum and the Telecommunications History Group is to acquire,
+            preserve, and promote the rich heritage of the telecommunications
+            industry and to connect that past to evolving technologies and
+            cultures.
+          </p>
+          <h3>In furtherance of this mission, THG will:</h3>
+          <ul>
+            <li>Collect and preserve writings, recordings, videos, movies, records, and pictures that provide insight into telecommunications history.</li>
+            <li>Collect and preserve artifacts and objects important to the evolution of telephony and telecommunications.</li>
+            <li>Research and record information, facts, and folklore important to the history of telecommunication.</li>
+            <li>Organize and make accessible to the public the resources and objects acquired by THG.</li>
+            <li>Promulgate and disseminate telecommunications history and be a resource for those interested in it.</li>
+            <li>Demonstrate how the telecommunications industry and its people have contributed to the social, cultural, economic, and technological development of this country.</li>
+          </ul>
+        </ContentSection>
+      </r-cell>
+    </ContentGrid>
+
+    <ContentSection
+      id="staff-and-board"
+      title="THG Staff and Board"
+      headingLevel="h2"
+    >
+      <p>
+        The Telecommunications History Group, Inc., is lucky to have an amazing
+        and dedicated group of staff and board members. Board members serve as
+        volunteers, working with staff and other volunteers to set strategy and
+        goals and ensure those goals are implemented.
+      </p>
+      <p>
+        While several THG Board members are directly related to the
+        telecommunications industry as retired or current phone company
+        employees, additional members bring expertise in areas such as
+        marketing, fundraising, and law. The Board has representatives chiefly
+        from Denver and Seattle, as well as other locations across the United
+        States.
+      </p>
+      <ContentGrid columns={3}>
+        <r-cell>
+          <PeopleGroup
+            id="staff"
+            title="Staff"
+            headingLevel="h3"
+            people={[
+              { name: "Renee Lang", title: "Managing Director" },
+            ]}
+          />
+        </r-cell>
+        <r-cell>
+          <PeopleGroup
+            id="board-officers"
+            title="Board Officers"
+            headingLevel="h3"
+            people={[
+              { name: "Peter Amstein", title: "THG President", description: "Software Industry Executive (Ret.)" },
+              { name: "Michael W. Nearing", title: "THG Vice President", description: "Network Engineer (Ret.)" },
+              { name: "R. William (Bill) Johnston", title: "THG Treasurer", description: "SVP & Controller, Qwest Communications (Ret.)" },
+              { name: "Sarah Autumn", title: "THG Secretary", description: "Instructor, F5 Networks" },
+            ]}
+          />
+        </r-cell>
+        <r-cell>
+          <PeopleGroup
+            id="board-members"
+            title="Board Members"
+            headingLevel="h3"
+            people={[
+              { name: "David Burgess", description: "ZaiNar, Inc." },
+              { name: "Jody L. Georgeson", description: "US West (Ret.)" },
+              { name: "Ed Mattson", description: "Medical Director (Ret.)" },
+              { name: "Roger Christensen", description: "Executive VP & Chief Administrative Officer (Ret.) – Media One" },
+              { name: "Philip A. Linse", description: "Lumen" },
+              { name: "Mary Retka", description: "Vice President, Industry Relations & Public Policy – SOMOS" },
+            ]}
+          />
+        </r-cell>
+      </ContentGrid>
+    </ContentSection>
+
+    <ContentSection id="contact-thg" title="Contact THG" headingLevel="h2">
+      <p>
+        If you have a question or some matter that you'd like to address
+        directly to our board, you can email them at
+        <a href="mailto:board@telecomhistory.group">board@telecomhistory.group</a>
+        and someone will respond as they're able.
+      </p>
+    </ContentSection>
+
+    <ContentSection id="partners-and-sponsors" title="Partners & Sponsors" headingLevel="h2">
+      <p>
+        Thank you to our corporate sponsors Lumen, CenturyLink, CBM Network
+        Services, and the Pioneers Volunteer Network.
+      </p>
+      <p>
+        Operations of the Telecommunications History Group are made possible
+        through donations of money, physical space, and time from both
+        individuals and companies. THG is not owned by or a division of any
+        corporation, although we are housed in CenturyLink buildings, which are
+        generously provided by CenturyLink. We appreciate our sponsors and
+        could not share this important history without them.
+      </p>
+    </ContentSection>
+  </PageBody>
+</BaseLayout>
