@@ -1,5 +1,7 @@
 import { defineConfig } from "astro/config";
 
+const githubPagesPreview = process.env.GITHUB_PAGES_PREVIEW === "true";
+
 const localDemoRoute = {
   name: "local-demo-route",
   hooks: {
@@ -19,7 +21,10 @@ export default defineConfig({
   outDir: "./dist",
   build: { format: "file" },
   devToolbar: { enabled: false },
-  site: "https://connections.museum",
+  site: githubPagesPreview
+    ? "https://connectionsmuseum.github.io"
+    : "https://connections.museum",
+  base: githubPagesPreview ? "/public-web" : "/",
   trailingSlash: "never",
   integrations: [localDemoRoute],
 });

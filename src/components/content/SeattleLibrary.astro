@@ -1,6 +1,7 @@
 ---
 import ContentGrid from "../structure/ContentGrid.astro";
 import ContentSection from "../structure/ContentSection.astro";
+const basePath = import.meta.env.BASE_URL.replace(/\/$/, "");
 ---
 
 <!-- The library's visitor-facing copy comes from trunk's homepage and support
@@ -29,7 +30,7 @@ import ContentSection from "../structure/ContentSection.astro";
         (<i>anything marked "Full Mechanical"</i>) then please contact
         <a href="mailto:library@connections.museum">library@connections.museum</a>.
       </p>
-      <p><a href="/support.html#equipment-donations">More about donating equipment or historical documents.</a></p>
+      <p><a href={`${basePath}/support.html#equipment-donations`}>More about donating equipment or historical documents.</a></p>
     </r-cell>
   </ContentGrid>
 </ContentSection>

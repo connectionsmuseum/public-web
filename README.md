@@ -16,6 +16,19 @@ migrated pages are available at `http://localhost:4001/`,
 `http://localhost:4001/support.html`, and `http://localhost:4001/thg.html`.
 Rebuild after making changes before previewing the generated output.
 
+## GitHub Pages preview
+
+The Pages workflow builds the Astro site for
+`https://connectionsmuseum.github.io/public-web/`, checks that `/demo` is absent,
+and uploads only `dist/`. Pull requests run the build check without publishing.
+Run `GITHUB_PAGES_PREVIEW=true npm run build` to reproduce that output locally.
+When the production-page migration reaches `trunk`, change Settings → Pages →
+Build and deployment → Source to **GitHub Actions**. Pushes to `trunk` then
+deploy the compiled site. Until that one-time switch, Pages still publishes the
+repository root without compiling Astro. Moving to `connections.museum` later
+also requires configuring the Pages custom domain and removing preview mode
+from the workflow.
+
 Add page templates under `src/pages/`, shared layouts under `src/layouts/`, and
 reusable HTML components under `src/components/`. Put files referenced by
 absolute URL in `public/`.
