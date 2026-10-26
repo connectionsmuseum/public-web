@@ -9,6 +9,7 @@ The Seattle visit page keeps short introductions and links to those routes.
 The component demo is available at `/demo` while running
 `npm run dev`; it is excluded from `npm run build` output.
 
+Use Node.js 22.23.4 or newer and run `npm ci` to install the locked dependencies.
 Run `npm run dev` to work on Astro pages, `npm run build` to generate the
 Astro output in `dist/`, or `npm run preview` to preview that build. The build
 generates the homepage, Seattle visit page, Seattle exhibits and library pages,
@@ -25,12 +26,11 @@ Rebuild after making changes before previewing the generated output.
 
 ## Responsive images
 
-Contributors add one source image under `images/`. Every production build runs
-`generate:image-srcsets`, which creates width-suffixed files such as
-`example-100w.jpeg` and `example-800w.jpeg` under `dist/generated/images/`.
-Astro components use the same standard width list to emit the corresponding
-`srcset` in the built pages. Generated files are ignored by Git, so the source
-image remains the only file contributors need to maintain.
+Contributors add one source image under `images/` and import it into a page or
+component. Astro's image components generate optimized widths under
+`dist/_astro/` and reference them in the built pages' `srcset` attributes.
+Generated files are ignored by Git, so contributors maintain only the source
+image.
 
 Add page templates under `src/pages/`, shared layouts under `src/layouts/`, and
 reusable HTML components under `src/components/`. Put files referenced by
