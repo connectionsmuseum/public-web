@@ -1,7 +1,10 @@
-name: Build Astro site
+name: Build and deploy Astro site
 
 on:
   pull_request:
+  push:
+    branches:
+      - trunk
 
 permissions:
   contents: read
@@ -15,6 +18,7 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: read
+      pages: read
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -25,3 +29,30 @@ jobs:
       - run: npm run build
         env:
           PAGES_BUILD: "true"
+      - name: Verify published routes
+        run: |
+          test -f dist/index.html
+          test -f dist/404.html
+          test ! -e dist/demo.html
+          test ! -e dist/demo
+          node scripts/verify-pages-output.mjs
+      - uses: actions/configure-pages@v5
+        if: github.event_name == 'push'
+      - uses: actions/upload-pages-artifact@v4
+        if: github.event_name == 'push'
+        with:
+          path: dist
+
+  deploy:
+    if: github.event_name == 'push'
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/deploy-pages@v4
+        id: deployment

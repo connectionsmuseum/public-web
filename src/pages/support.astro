@@ -8,6 +8,7 @@ import PageHeading from "../components/structure/PageHeading.astro";
 import PageBody from "../components/structure/PageBody.astro";
 import SiteHeader from "../components/structure/SiteHeader.astro";
 import bannerImage from "../../images/banners/cv_sarah_jkl.jpg";
+const basePath = import.meta.env.BASE_URL.replace(/\/$/, "");
 ---
 
 <BaseLayout title="Support the Connections Museum and THG" description="Help preserve the history of telecommunications through donations, volunteering, and sharing your connections.">
@@ -50,7 +51,7 @@ import bannerImage from "../../images/banners/cv_sarah_jkl.jpg";
         <PageHeading level="h2" id="monetary-donation">Make a Monetary Donation</PageHeading>
         <p>
           The Connections Museum is
-          <a href="/thg.html#what-is-thg">a 501(c)(3) non-profit organization</a>
+          <a href={`${basePath}/thg.html#what-is-thg`}>a 501(c)(3) non-profit organization</a>
           that depends on the support of generous individuals and organizations
           just like you. We are lucky to have a group of amazing volunteers,
           some retired telecommunications workers and some from related
@@ -71,7 +72,7 @@ import bannerImage from "../../images/banners/cv_sarah_jkl.jpg";
             >A donation of $35</a
           >
           entitles you to be a member of THG (<i
-            ><a href="/thg.html#what-is-thg">What is THG?</a></i
+            ><a href={`${basePath}/thg.html#what-is-thg`}>What is THG?</a></i
           >), which includes the quarterly newsletter, Connections News, for one
           year. You can also
           <a href="https://www.paypal.com/ncp/payment/V4M53RRLQBLXW"
@@ -142,7 +143,7 @@ import bannerImage from "../../images/banners/cv_sarah_jkl.jpg";
           to the history of telephony, and especially technical material
           required for maintaining our equipment, which we try our best to make
           available to the broader telephone collector community.
-          <a href="/seattle.html#library"
+          <a href={`${basePath}/seattle.html#library`}
             >More information about our efforts therein are provided here</a
           >.
         </p>

@@ -22,6 +22,20 @@ component. Astro's image components generate optimized widths under
 Generated files are ignored by Git, so contributors maintain only the source
 image.
 
+## GitHub Pages preview
+
+The Pages destination is set in one place: `PAGES_SITE_URL` in
+`site.config.mjs`. The workflow builds for that URL, checks that `/demo` is
+absent, and uploads only `dist/`. Pull requests run the build check without
+publishing. Run `PAGES_BUILD=true npm run build` and then
+`node scripts/verify-pages-output.mjs` to reproduce that output locally.
+When the production-page migration reaches `trunk`, change Settings → Pages →
+Build and deployment → Source to **GitHub Actions**. Pushes to `trunk` then
+deploy the compiled site. Until that one-time switch, Pages still publishes the
+repository root without compiling Astro. To move to `connections.museum` later,
+change `PAGES_SITE_URL` to `https://connections.museum/` and configure that
+custom domain in Pages; the workflow and link code will use the new base path.
+
 Add page templates under `src/pages/`, shared layouts under `src/layouts/`, and
 reusable HTML components under `src/components/`. Put files referenced by
 absolute URL in `public/`.
