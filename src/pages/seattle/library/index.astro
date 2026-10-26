@@ -1,0 +1,49 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import BannerCaption from "../../../components/content/BannerCaption.astro";
+import ContactDetails from "../../../components/content/ContactDetails.astro";
+import ContentGrid from "../../../components/structure/ContentGrid.astro";
+import ContentSection from "../../../components/structure/ContentSection.astro";
+import PageHeading from "../../../components/structure/PageHeading.astro";
+import PageBody from "../../../components/structure/PageBody.astro";
+import SiteHeader from "../../../components/structure/SiteHeader.astro";
+import SisterMuseumsCallout from "../../../components/content/SisterMuseumsCallout.astro";
+import bannerImage from "../../../../images/banners/cv_sarah_mtf.jpg";
+import ExhibitGroup from "../../../components/content/ExhibitGroup.astro";
+import ExhibitItem from "../../../components/content/ExhibitItem.astro";
+import panelImage from "../../../../images/banners/cv_sarah_panel_ogt.jpg";
+import { seattleVisit } from "../../../data/seattleVisit";
+import ClosureAnnouncement from "../../../components/content/ClosureAnnouncement.astro";
+---
+<BaseLayout title="Seattle reference library | Connections Museum">
+<SiteHeader /><PageBody>
+<PageHeading level="h1">Seattle reference library</PageHeading>
+<ContentSection id="library" title="Seattle Library" headingLevel="h2">
+  <ContentGrid columns={2}>
+    <r-cell span="1">
+      <p>
+        The Connections Museum Seattle operates a reference library of
+        information related to our region and the equipment we maintain.
+        Contributions of materials greatly appreciated. Digitization of our
+        technical documentation is available upon request.
+      </p>
+      <p>
+        While we don't yet have a proper archival environment in Seattle,
+        we still maintain an extensive collection of printed material related
+        to the history of telephony, and especially technical material
+        required for maintaining our equipment, which we try our best to make
+        available to the broader telephone collector community.
+      </p>
+    </r-cell>
+    <r-cell span="1">
+      <p>
+        If the documents are of a technical nature, relate to the history of
+        the Pacific Northwest, Seattle, or most especially the Panel Switch
+        (<i>anything marked "Full Mechanical"</i>) then please contact
+        <a href="mailto:library@connections.museum">library@connections.museum</a>.
+      </p>
+      <p><a href="/support.html#equipment-donations">More about donating equipment or historical documents.</a></p>
+    </r-cell>
+  </ContentGrid>
+</ContentSection>
+</PageBody></BaseLayout>

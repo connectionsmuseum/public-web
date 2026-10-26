@@ -1,13 +1,23 @@
 # Astro components
 
-The site uses reusable Astro layouts and content components. The development-only gallery is available at `/demo` with `npm run dev` and is excluded from production output.
+The site pages are built with Astro templates and reusable components. Pages
+use the shared metadata and document shell in `src/layouts/` and page pieces in
+`src/components/`. Seattle's detailed exhibit and library copy lives in
+`src/pages/seattle/exhibits/index.astro` and `src/pages/seattle/library/index.astro`,
+using the same generic layout and content components as the rest of the site.
+The Seattle visit page keeps short introductions and links to those routes.
+The component demo is available at `/demo` while running
+`npm run dev`; it is excluded from `npm run build` output.
 
 Use Node.js 22.23.4 or newer and run `npm ci` to install the locked dependencies.
 Run `npm run dev` to work on Astro pages and `npm run build` to generate
 the output in `dist/`. Run `npm run preview -- --port 4001` to preview that build.
-The build generates the homepage, Seattle, Denver, support, THG, the about alias, and 404 pages.
+The build generates the original pages plus the Seattle visit, exhibits, and library pages.
 The migrated pages are available at `http://localhost:4001/`,
 `http://localhost:4001/seattle.html`,
+`http://localhost:4001/seattle/visiting-info.html`,
+`http://localhost:4001/seattle/exhibits.html`,
+`http://localhost:4001/seattle/library.html`,
 `http://localhost:4001/denver.html`,
 `http://localhost:4001/support.html`,
 `http://localhost:4001/thg.html`,
