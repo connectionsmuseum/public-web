@@ -28,7 +28,10 @@
     "type": "nonprofit, 501(c)(3)",
     "url": "https://connections.museum/support.html#donate"
   },
-  "dependencies": {
+  "engines": {
+    "node": ">=22.23.4"
+  },
+  "devDependencies": {
     "prettier": "^3.6.2"
   }
 }

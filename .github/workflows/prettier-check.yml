@@ -22,6 +22,9 @@ jobs:
         with:
           persist-credentials: false
       - uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+          cache: npm
       - run: |
-          yarn
-          yarn prettier . --check
+          npm ci
+          npm exec -- prettier . --check
