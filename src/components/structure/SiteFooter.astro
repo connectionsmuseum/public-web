@@ -1,0 +1,51 @@
+---
+interface FooterLink {
+  /** Visible link label. */
+  label: string;
+  /** Destination URL. */
+  href: string;
+}
+
+interface Props {
+  /** Optional footer navigation links. */
+  links?: FooterLink[];
+  /** Organization name used in the copyright line. */
+  organization?: string;
+  /** Copyright year; defaults to the build year. */
+  year?: number;
+}
+
+const {
+  links = [],
+  organization = "Connections Museum and Telecommunications History Group",
+  year = new Date().getFullYear(),
+} = Astro.props;
+---
+
+<footer class="site-footer">
+  {Astro.slots.has("default") && <div class="footer-content"><slot /></div>}
+  {links.length > 0 && (
+    <nav aria-label="Footer">
+      <ul>
+        {links.map(({ label, href }) => <li><a href={href}>{label}</a></li>)}
+      </ul>
+    </nav>
+  )}
+  <small>© {year} {organization}</small>
+</footer>
+
+<style>
+  .site-footer {
+    margin-top: 2rem;
+    padding-top: 1rem;
+    border-top: 1px solid currentColor;
+  }
+
+  .site-footer ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem 1rem;
+    padding: 0;
+    list-style: none;
+  }
+</style>

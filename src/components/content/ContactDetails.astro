@@ -1,0 +1,57 @@
+---
+interface Props {
+  /** Optional person or organization name. */
+  name?: string;
+  /** Human-readable postal address. */
+  address?: string;
+  /** Optional URL for the address, such as a map link. */
+  addressHref?: string;
+  /** Telephone number in a tel:-compatible form. */
+  phone?: string;
+  /** Visible phone label; defaults to phone. */
+  phoneLabel?: string;
+  /** Email address. */
+  email?: string;
+  /** Additional contact addresses, e.g. a shared museum and archive office. */
+  additionalEmails?: string[];
+}
+
+const {
+  name,
+  address,
+  addressHref,
+  phone,
+  phoneLabel = phone,
+  email,
+  additionalEmails = [],
+} = Astro.props;
+---
+
+<!-- Prefer machine-readable phone/email props and use labels only when the
+     visible wording should differ from the link value. -->
+<address class="contact-details">
+  {name && <strong>{name}</strong>}
+  {address && (
+    <div>
+      {addressHref ? <a href={addressHref}>{address}</a> : address}
+    </div>
+  )}
+  {phone && <div><a href={`tel:${phone}`}>{phoneLabel}</a></div>}
+  {email && <div><a href={`mailto:${email}`}>{email}</a></div>}
+  {additionalEmails.map((address) => <div><a href={`mailto:${address}`}>{address}</a></div>)}
+</address>
+
+<style>
+  .contact-details {
+    font-style: normal;
+    overflow-wrap: anywhere;
+  }
+
+  .contact-details strong {
+    display: block;
+  }
+
+  .contact-details a {
+    font-weight: 600;
+  }
+</style>

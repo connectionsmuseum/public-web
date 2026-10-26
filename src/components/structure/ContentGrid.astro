@@ -1,0 +1,35 @@
+---
+interface Props {
+  /** This repository's Raster stylesheet supports one through thirty columns. */
+  columns?: number;
+  /** Small-screen column count (1–30). With a custom count, set span-s on
+   *  every child r-cell; mixing explicit and missing spans breaks Raster. */
+  smallColumns?: number;
+  /** Optional stable identifier for the grid. */
+  id?: string;
+}
+
+const {
+  columns = 4,
+  smallColumns = 1,
+  id,
+} = Astro.props;
+
+if (!Number.isInteger(columns) || columns < 1 || columns > 30) {
+  throw new Error("ContentGrid columns must be an integer from 1 through 30.");
+}
+if (!Number.isInteger(smallColumns) || smallColumns < 1 || smallColumns > 30) {
+  throw new Error("ContentGrid smallColumns must be an integer from 1 through 30.");
+}
+---
+
+<!-- Raster's small-screen grid is global to the grid. Every direct child must
+     be an r-cell. With custom smallColumns, give EVERY cell a span-s, even
+     when it spans just one column; do not mix specified and missing spans.
+     For example: <ContentGrid columns={4} smallColumns={2}>
+       <r-cell span="2" span-s="1">...</r-cell>
+       <r-cell span="2" span-s="1">...</r-cell>
+     </ContentGrid>. Do not put arbitrary block elements directly in r-grid. -->
+<r-grid columns={columns} columns-s={smallColumns} id={id}>
+  <slot />
+</r-grid>

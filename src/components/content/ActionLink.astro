@@ -1,0 +1,55 @@
+---
+interface Props {
+  /** Destination URL. Use a descriptive label in the child content. */
+  href: string;
+  /** Applies the callout link treatment when the link is inside a callout. */
+  variant?: "default" | "callout";
+  /** Use feature for a key action, section for a navigation destination,
+   *  and display for the page's primary invitation (e.g. donating).
+   *  These change visual weight only; they do not create semantic headings. */
+  prominence?: "body" | "feature" | "section" | "display";
+  /** Optional decorative marker, such as → or ⌘. Hidden from screen readers. */
+  marker?: string;
+}
+
+const { href, variant = "default", prominence = "body", marker } = Astro.props;
+---
+
+<!-- Astro's slot is the component's children/content API. Always provide
+     descriptive visible link text; do not use a generic "click here" label. -->
+<a href={href} class:list={["action-link", `action-link--${prominence}`, variant === "callout" && "callout"]}>
+  {marker && <span class="action-marker" aria-hidden="true">{marker} </span>}
+  <slot />
+</a>
+
+<style>
+  .action-link--feature,
+  .action-link--section,
+  .action-link--display {
+    display: block;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    text-decoration: none;
+    margin-block: var(--lineHeight);
+    padding-block: calc(var(--baseline) * 0.5);
+  }
+
+  .action-link--feature {
+    font-size: var(--h3-size);
+    line-height: var(--lineHeight);
+  }
+
+  .action-link--section {
+    font-size: var(--h2-size);
+    line-height: calc(var(--lineHeight) * 2);
+  }
+
+  .action-link--display {
+    font-size: clamp(2.2rem, 5vw, 4rem);
+    line-height: 1.15;
+  }
+
+  .action-marker {
+    color: var(--txt-color);
+  }
+</style>

@@ -1,0 +1,20 @@
+---
+import PageHeading from "./PageHeading.astro";
+
+interface Props {
+  /** Stable fragment identifier for the panel. */
+  id: string;
+  /** Visible heading text. */
+  title: string;
+  /** Heading level within the current page outline. */
+  headingLevel?: "h2" | "h3";
+}
+
+const { id, title, headingLevel = "h2" } = Astro.props;
+const headingId = `${id}-heading`;
+---
+
+<section class="action-panel" id={id} aria-labelledby={headingId}>
+  <PageHeading level={headingLevel} id={headingId}>{title}</PageHeading>
+  <slot />
+</section>

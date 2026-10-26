@@ -1,0 +1,55 @@
+---
+import type { ImageMetadata } from "astro";
+import ActionLink from "./ActionLink.astro";
+import MediaFigure from "./MediaFigure.astro";
+import PageHeading from "../structure/PageHeading.astro";
+
+interface Props {
+  /** Visible exhibit name. */
+  title: string;
+  /** Heading level within the surrounding ExhibitGroup. */
+  headingLevel?: "h3" | "h4";
+  /** Imported exhibit image. */
+  image?: ImageMetadata;
+  /** Alternative text; required when image is provided. */
+  alt?: string;
+  /** Visible caption or attribution for the image. */
+  imageCaption?: string;
+  /** CSS sizes expression for the responsive image. */
+  imageSizes?: string;
+  /** Optional destination for an exhibit action. */
+  href?: string;
+  /** Visible descriptive label required when href is provided. */
+  linkLabel?: string;
+}
+
+const {
+  title,
+  headingLevel = "h3",
+  image,
+  alt,
+  imageCaption,
+  imageSizes,
+  href,
+  linkLabel,
+} = Astro.props;
+
+if (image && alt === undefined) {
+  throw new Error(`ExhibitItem "${title}" must provide alt text (use an empty string for decorative images).`);
+}
+if (href && !linkLabel) {
+  throw new Error(`ExhibitItem "${title}" must provide a descriptive linkLabel when href is set.`);
+}
+---
+
+<!-- Keep the heading level below the surrounding ExhibitGroup. Pass an empty
+     alt only for decorative art; meaningful exhibit images need a description. -->
+<article class="exhibit-item">
+  <PageHeading level={headingLevel}>{title}</PageHeading>
+  {image && imageCaption && (
+    <MediaFigure image={image} alt={alt ?? ""} sizes={imageSizes}>{imageCaption}</MediaFigure>
+  )}
+  {image && !imageCaption && <MediaFigure image={image} alt={alt ?? ""} sizes={imageSizes} />}
+  <slot />
+  {href && <ActionLink href={href}>{linkLabel}</ActionLink>}
+</article>

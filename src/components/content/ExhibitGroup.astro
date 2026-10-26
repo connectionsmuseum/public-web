@@ -1,0 +1,27 @@
+---
+import ContentGrid from "../structure/ContentGrid.astro";
+import PageHeading from "../structure/PageHeading.astro";
+
+interface Props {
+  /** Stable fragment identifier for the exhibit group. */
+  id: string;
+  /** Visible group heading. */
+  title: string;
+  /** Heading level within the current page outline. */
+  headingLevel?: "h2" | "h3";
+  /** Number of exhibit columns on large screens. */
+  columns?: number;
+}
+
+const { id, title, headingLevel = "h2", columns = 3 } = Astro.props;
+const headingId = `${id}-heading`;
+---
+
+<!-- Direct children should be r-cell elements. Use ExhibitItem for each item so
+     image alt text, captions, and action-link requirements stay consistent. -->
+<section id={id} aria-labelledby={headingId}>
+  <PageHeading level={headingLevel} id={headingId}>{title}</PageHeading>
+  <ContentGrid columns={columns} smallColumns={1}>
+    <slot />
+  </ContentGrid>
+</section>

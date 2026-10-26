@@ -1,0 +1,101 @@
+---
+import ActionLink from "./ActionLink.astro";
+import PageHeading from "../structure/PageHeading.astro";
+
+interface Props {
+  /** Stable fragment identifier for the visit information article. */
+  id: string;
+  /** Location name. */
+  title: string;
+  /** Heading level within the page outline. */
+  headingLevel: "h2" | "h3";
+  /** Short introductory description. */
+  summary?: string;
+  /** Public hours. */
+  hours?: string;
+  /** Additional visitor guidance. */
+  visitNote?: string;
+  /** Human-readable postal address. */
+  address?: string;
+  /** Optional URL for the address. */
+  addressHref?: string;
+  /** Telephone number. */
+  phone?: string;
+  /** Visible phone label; defaults to phone. */
+  phoneLabel?: string;
+  /** Email address. */
+  email?: string;
+  /** Optional directions URL. */
+  directionsHref?: string;
+  /** Visible directions link label. */
+  directionsLabel?: string;
+}
+
+const {
+  id,
+  title,
+  headingLevel,
+  summary,
+  hours,
+  visitNote,
+  address,
+  addressHref,
+  phone,
+  phoneLabel = phone,
+  email,
+  directionsHref,
+  directionsLabel = `Get directions to ${title}`,
+} = Astro.props;
+const headingId = `${id}-heading`;
+---
+
+<!-- Omit unknown fields rather than inventing placeholder facts. The dl is
+     generated only for supplied values, so partial location data is valid. -->
+<article id={id} class="visit-info" aria-labelledby={headingId}>
+  <PageHeading level={headingLevel} id={headingId}>{title}</PageHeading>
+  {summary && <p>{summary}</p>}
+  <dl>
+    {hours && <div><dt>Hours</dt><dd>{hours}</dd></div>}
+    {visitNote && <div><dt>Visiting</dt><dd>{visitNote}</dd></div>}
+    {address && (
+      <div>
+        <dt>Address</dt>
+        <dd>
+          <address>
+            {addressHref ? <a href={addressHref}>{address}</a> : address}
+          </address>
+        </dd>
+      </div>
+    )}
+    {phone && (
+      <div>
+        <dt>Phone</dt>
+        <dd><a href={`tel:${phone}`}>{phoneLabel}</a></dd>
+      </div>
+    )}
+    {email && (
+      <div>
+        <dt>Email</dt>
+        <dd><a href={`mailto:${email}`}>{email}</a></dd>
+      </div>
+    )}
+  </dl>
+  {directionsHref && <ActionLink href={directionsHref}>{directionsLabel}</ActionLink>}
+  <slot />
+</article>
+
+<style>
+  .visit-info dl > div {
+    margin-bottom: 0.75rem;
+  }
+
+  .visit-info dt {
+    font-weight: 600;
+  }
+
+  .visit-info dd,
+  .visit-info address {
+    margin: 0;
+    font-style: normal;
+  }
+</style>
