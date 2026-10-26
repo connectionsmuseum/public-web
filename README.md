@@ -3,7 +3,16 @@
 The site uses reusable Astro layouts and content components. The development-only gallery is available at `/demo` with `npm run dev` and is excluded from production output.
 
 Use Node.js 22.23.4 or newer and run `npm ci` to install the locked dependencies.
-Run `npm run dev` for development, `npm run build` for production output, and `npm run preview` to inspect a build. No production routes have been migrated yet.
+Run `npm run dev` to work on Astro pages, `npm run build` to generate the
+Astro output in `dist/`, or `npm run preview` to preview that build. The build
+generates the homepage, Seattle visit page, Seattle exhibits and library pages,
+Denver, support, THG, and 404 pages. The
+migrated pages are available at `http://localhost:4001/`,
+`http://localhost:4001/seattle.html`,
+`http://localhost:4001/seattle/exhibits.html`,
+`http://localhost:4001/seattle/library.html`, `http://localhost:4001/denver.html`,
+`http://localhost:4001/support.html`, and `http://localhost:4001/thg.html`.
+Rebuild after making changes before previewing the generated output.
 
 ## Responsive images
 
