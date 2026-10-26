@@ -20,6 +20,8 @@ import museumImage from "../../images/exhibits/museum-image.jpeg";
 Use the image components with imported Astro image metadata, not raw string
 paths. This lets Astro emit the standard responsive `srcset` and process only
 images used by the built pages. Contributors maintain only the source image.
+The optional `npm run generate:image-srcsets` command creates separate
+width-suffixed copies under `dist/generated/images/` after a build.
 
 Image rules:
 
