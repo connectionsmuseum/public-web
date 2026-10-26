@@ -13,6 +13,11 @@ component. Astro's image components generate optimized widths under
 Generated files are ignored by Git, so contributors maintain only the source
 image.
 
+For standalone width-suffixed copies of the images under `images/`, run
+`npm run generate:image-srcsets` after `npm run build`. This optional command
+writes them to `dist/generated/images/`; the current pages use Astro's images
+instead.
+
 Add page templates under `src/pages/`, shared layouts under `src/layouts/`, and
 reusable HTML components under `src/components/`. Put files referenced by
 absolute URL in `public/`.
