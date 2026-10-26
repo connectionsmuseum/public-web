@@ -18,6 +18,3 @@ jobs:
       - run: |
           npm ci
           npm exec -- prettier . --check
-      - uses: autofix-ci/action@v1
-        with:
-          commit-message: "check code formatting"
