@@ -28,7 +28,7 @@ jobs:
       - run: npm ci
       - run: npm run build
         env:
-          GITHUB_PAGES_PREVIEW: "true"
+          PAGES_BUILD: "true"
       - name: Verify published routes
         run: |
           test -f dist/index.html

@@ -1,8 +1,10 @@
 import { access, readdir, readFile } from "node:fs/promises";
 import path from "node:path";
+import { PAGES_SITE_URL } from "../site.config.mjs";
 
 const outputRoot = path.resolve("dist");
-const base = "/public-web/";
+const basePath = new URL(PAGES_SITE_URL).pathname.replace(/\/$/, "");
+const base = `${basePath}/`;
 
 async function filesUnder(directory) {
   const entries = await readdir(directory, { withFileTypes: true });

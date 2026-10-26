@@ -1,6 +1,12 @@
 import { defineConfig } from "astro/config";
+import { PAGES_SITE_URL } from "./site.config.mjs";
 
-const githubPagesPreview = process.env.GITHUB_PAGES_PREVIEW === "true";
+const siteUrl = new URL(
+  process.env.PAGES_BUILD === "true"
+    ? PAGES_SITE_URL
+    : "https://connections.museum/",
+);
+const basePath = siteUrl.pathname.replace(/\/$/, "") || "/";
 
 const localDemoRoute = {
   name: "local-demo-route",
@@ -21,10 +27,8 @@ export default defineConfig({
   outDir: "./dist",
   build: { format: "file" },
   devToolbar: { enabled: false },
-  site: githubPagesPreview
-    ? "https://connectionsmuseum.github.io"
-    : "https://connections.museum",
-  base: githubPagesPreview ? "/public-web" : "/",
+  site: siteUrl.origin,
+  base: basePath,
   trailingSlash: "never",
   integrations: [localDemoRoute],
 });
