@@ -51,7 +51,7 @@ const headingId = `${id}-heading`;
 
 <!-- Omit unknown fields rather than inventing placeholder facts. The dl is
      generated only for supplied values, so partial location data is valid. -->
-<article class="visit-info" aria-labelledby={headingId}>
+<article id={id} class="visit-info" aria-labelledby={headingId}>
   <PageHeading level={headingLevel} id={headingId}>{title}</PageHeading>
   {summary && <p>{summary}</p>}
   <dl>
