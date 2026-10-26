@@ -10,19 +10,15 @@ The component demo is available at `/demo` while running
 `npm run dev`; it is excluded from `npm run build` output.
 
 Use Node.js 22.23.4 or newer and run `npm ci` to install the locked dependencies.
-Run `npm run dev` to work on Astro pages and `npm run build` to generate
-the output in `dist/`. Run `npm run preview -- --port 4001` to preview that build.
-The build generates the original pages plus the Seattle visit, exhibits, and library pages.
-The migrated pages are available at `http://localhost:4001/`,
+Run `npm run dev` to work on Astro pages, `npm run build` to generate the
+Astro output in `dist/`, or `npm run preview -- --port 4001` to preview that build. The build
+generates the homepage, Seattle visit page, Seattle exhibits and library pages,
+Denver, support, THG, and 404 pages. The
+migrated pages are available at `http://localhost:4001/`,
 `http://localhost:4001/seattle.html`,
-`http://localhost:4001/seattle/visiting-info.html`,
 `http://localhost:4001/seattle/exhibits.html`,
-`http://localhost:4001/seattle/library.html`,
-`http://localhost:4001/denver.html`,
-`http://localhost:4001/support.html`,
-`http://localhost:4001/thg.html`,
-`http://localhost:4001/about.html`,
-`http://localhost:4001/404.html`.
+`http://localhost:4001/seattle/library.html`, `http://localhost:4001/denver.html`,
+`http://localhost:4001/support.html`, and `http://localhost:4001/thg.html`.
 Rebuild after making changes before previewing the generated output.
 
 ## Responsive images
