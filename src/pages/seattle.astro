@@ -1,0 +1,447 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import BannerCaption from "../components/content/BannerCaption.astro";
+import ContactDetails from "../components/content/ContactDetails.astro";
+import ContentGrid from "../components/structure/ContentGrid.astro";
+import ContentSection from "../components/structure/ContentSection.astro";
+import PageHeading from "../components/structure/PageHeading.astro";
+import PageBody from "../components/structure/PageBody.astro";
+import SiteHeader from "../components/structure/SiteHeader.astro";
+import SisterMuseumsCallout from "../components/content/SisterMuseumsCallout.astro";
+import bannerImage from "../../images/banners/cv_sarah_mtf.jpg";
+import ExhibitGroup from "../components/content/ExhibitGroup.astro";
+import ExhibitItem from "../components/content/ExhibitItem.astro";
+import panelImage from "../../images/banners/cv_sarah_panel_ogt.jpg";
+import { seattleVisit } from "../data/seattleVisit";
+import ClosureAnnouncement from "../components/content/ClosureAnnouncement.astro";
+---
+
+<BaseLayout
+  title="Seattle Museum | Connections Museum"
+  description="Plan a visit to the Connections Museum in Seattle, Washington."
+>
+  <SiteHeader />
+  <PageBody>
+    <BannerCaption image={bannerImage} alt="Sarah Autumn standing beside the No. 1 Crossbar master test frame">
+      Seattle volunteer and board member Sarah Autumn at the No. 1 Crossbar
+      master test frame aisle of Connections Museum Seattle. Photograph by
+      <a href="https://www.ultraviolet.gay">Claire Violet.</a>
+    </BannerCaption>
+
+    <PageHeading level="h1">Seattle, Washington</PageHeading>
+    <ClosureAnnouncement message={seattleVisit.closureNotice ?? undefined} />
+    <ContentSection
+      id="visit-info"
+      title="Visiting the museum"
+      headingLevel="h2"
+    >
+      <ContentGrid columns={4}>
+        <r-cell>
+          <ContentSection id="hours" title="Hours" headingLevel="h3" headingScale="section">
+            <p>
+              The museum is open to the public every {seattleVisit.hours.day} from {seattleVisit.hours.opens} to {seattleVisit.hours.closes},
+              unless otherwise noted on this page.
+            </p>
+            <p>The suggested donation is {seattleVisit.suggestedDonation.adult} for adults and {seattleVisit.suggestedDonation.youth} youths aged {seattleVisit.suggestedDonation.youthAges}.</p>
+            <p>
+              While we are closed to the public for our volunteer work day, we're
+              typically around to take item donations on Tuesdays from about 11am to
+              3pm. Please email us in advance.
+            </p>
+          </ContentSection>
+        </r-cell>
+        <r-cell>
+          <ContentSection id="tours" title="Tours" headingLevel="h3" headingScale="section">
+            <p>
+              Docent guided tours start on demand, usually with little or no wait.
+              Please note that our doors close at {seattleVisit.hours.doorsClose} to permit visitors
+              enough time to conclude their tour. A quick tour can take one hour,
+              but typical tours take up to two hours. For those with a keen
+              technical interest, three hours in the museum is common.
+            </p>
+            <p>
+              Returning visitors are welcome to explore the public areas of the
+              museum at their own pace.
+            </p>
+          </ContentSection>
+        </r-cell>
+        <r-cell>
+          <ContentSection id="directions" title="Directions" headingLevel="h3" headingScale="section">
+            <p>
+              We are located in the Georgetown neighborhood of Seattle,
+              Washington, at
+              <a href={seattleVisit.location.mapsHref}>
+                7000 E Marginal Way S, Seattle, WA 98108
+              </a>. It is an active central office in a large concrete building.
+              Our entrance is around the side, a blue door under a yellow awning.
+            </p>
+            <p>
+              Sadly, bike parking is limited at this time, but we are located
+              conveniently on King County Metro Route 60 and 124, just a short
+              walk from Stop ID #40871 and #46025.
+            </p>
+            <p>
+              Our parking lot entrance is on Corson Avenue. Space is often
+              limited, but can usually be found nearby at South Seattle Community
+              College.
+            </p>
+          </ContentSection>
+        </r-cell>
+        <r-cell>
+          <ContentSection id="other-information" title="Other Information" headingLevel="h3" headingScale="section">
+            <PageHeading level="h4">Children</PageHeading>
+            <p>
+              We ask that parents with children under twelve visit the museum
+              first, before bringing their children, to determine the suitability
+              of museum exhibits for younger visitors.
+            </p>
+            <PageHeading level="h4">Pets</PageHeading>
+            <p>We only allow trained service animals inside the museum.</p>
+            <PageHeading level="h4">COVID</PageHeading>
+            <p>Masks are welcomed, but not required.</p>
+          </ContentSection>
+        </r-cell>
+      </ContentGrid>
+
+      <ContentSection
+        id="contact-before-visiting"
+        title="Questions before your visit"
+        headingLevel="h3"
+      >
+        <p>
+          If you have any other questions before you stop by, please email us.
+          For same-day inquiries, give us a call during our open hours.
+        </p>
+        <ContactDetails
+          email={seattleVisit.contact.email}
+          phone={seattleVisit.contact.phone}
+          phoneLabel={seattleVisit.contact.phoneLabel}
+        />
+      </ContentSection>
+
+      <ContentGrid columns={2}>
+        <r-cell>
+          <ContentSection id="accessibility" title="Accessibility" headingLevel="h3" headingScale="section">
+            <p>
+              The museum is wheelchair accessible. There is an accessible parking
+              space in our parking lot, and the entrance to the museum is at ground
+              level. Restrooms are reachable by wheelchair but do not have grab
+              bars.
+            </p>
+            <p>
+              Audio tours are standard. Please notify your docent if you would like
+              audible descriptions of what is being shown. Please ask before
+              touching the exhibits as many are either fragile or dangerous.
+            </p>
+            <p>
+              We are unable to provide sign language interpreters, but many exhibits
+              have text signs describing them. We also have a
+              <a href="https://wiki.connections.museum">wiki</a> with more
+              information on many subjects including our most notable exhibits.
+            </p>
+            <p>
+              Please notify your docent if you need a quiet space during your stay.
+              The second floor is usually quieter than the third floor.
+            </p>
+          </ContentSection>
+        </r-cell>
+        <r-cell>
+          <ContentSection id="safety" title="Safety" headingLevel="h3" headingScale="section">
+            <p>
+              Live electricity is exposed in many non-obvious places, and rotating
+              machinery can catch on clothing. Such is the nature of running
+              equipment as old as ours-some is over 100 years old! We do our best to
+              ensure a safe environment despite this, and all tours should begin
+              with a quick safety briefing.
+            </p>
+            <p>
+              Many of our artifacts are old and irreplaceable, but with just a few
+              exceptions, we prefer to not put them away "under glass." So our
+              simple rule is this:
+              <b
+                >Please ask one of our volunteer guides before you pick up items on
+                display or interact with our machines.</b
+              >
+            </p>
+          </ContentSection>
+        </r-cell>
+      </ContentGrid>
+
+      <ContentSection
+        id="groups-and-private-tours"
+        title="Large Groups, Private Tours, & Other Special Arrangements"
+        headingLevel="h3"
+      >
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+          aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit
+          in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+          Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
+          officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit
+          amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+          labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+          exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+          Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
+          dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+          proident, sunt in culpa qui officia deserunt mollit anim id est
+          laborum.
+        </p>
+      </ContentSection>
+    </ContentSection>
+
+    <ContentSection
+      id="exhibits"
+      title="Exhibits & Museum History"
+      headingLevel="h2"
+    >
+      <ContentGrid columns={2}>
+        <r-cell>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            Pellentesque vestibulum nec quam eu tincidunt. Etiam rutrum magna
+            justo, ut viverra ipsum porta et. In leo velit, efficitur id arcu
+            sed, tincidunt pretium justo. Praesent vel tortor in mi scelerisque
+            egestas. Integer quis magna est. Integer aliquam sit amet eros eget
+            eleifend. Morbi in ullamcorper diam. Suspendisse aliquam facilisis
+            egestas.
+          </p>
+          <p>
+            Cras nec mauris felis. Quisque tincidunt mi eget felis euismod, sit
+            amet varius massa imperdiet. Phasellus a ex rhoncus, iaculis nulla
+            sit amet, commodo est. Nulla vitae aliquet lorem. Vestibulum vitae
+            consectetur dui, quis fringilla metus. Donec consectetur mi non
+            rutrum ornare. Ut lectus lectus, blandit ac fringilla quis, sagittis
+            a sem. Sed sed volutpat nibh. Maecenas tempor et mauris ut pulvinar.
+            Duis quis laoreet eros. Quisque tempor est eu enim semper
+            consectetur. Pellentesque habitant morbi tristique senectus et netus
+            et malesuada fames ac turpis egestas. Nullam iaculis ultricies dui
+            ut hendrerit. Fusce in mauris at leo tempor facilisis eu eu quam.
+          </p>
+        </r-cell>
+        <r-cell>
+          <p>
+            Nunc tristique magna nec justo tristique ultrices. Sed bibendum nibh
+            eu enim feugiat porttitor. Ut sed odio at nisl efficitur viverra.
+            Duis placerat, erat eu lacinia facilisis, lectus nibh posuere risus,
+            et vehicula dui libero nec enim. Phasellus velit nulla, suscipit
+            pharetra consectetur id, sodales tincidunt lacus. Curabitur varius
+            elit eros, tristique vehicula augue ultrices a. Aenean nec lorem at
+            tortor dictum eleifend ac vel tellus. Maecenas ultricies ut elit
+            quis ornare. Mauris arcu velit, hendrerit quis placerat ac, tempus a
+            diam. Sed fringilla pellentesque ex, at gravida dui convallis eget.
+            Quisque tempus nibh ac eros consectetur ultricies. Ut gravida est
+            volutpat lacus imperdiet pellentesque sed a erat. Curabitur purus
+            justo, rutrum quis orci at, tempus luctus arcu. Duis in ligula ut
+            nunc vestibulum sollicitudin nec non tellus. Suspendisse potenti.
+            Donec pellentesque quam tortor, et euismod velit mollis eget.
+          </p>
+          <p>
+            Maecenas tristique augue at vehicula molestie. Donec in elit risus.
+            Cras bibendum, diam quis tempus pulvinar, erat purus tristique nibh,
+            non tristique elit ex ut mauris. Proin felis nibh, rutrum bibendum
+            dignissim sed, cursus vel dui. Aliquam erat volutpat. In consequat
+            nunc quis libero gravida ornare. Aliquam vel lorem in libero finibus
+            luctus. Pellentesque vitae augue quam. Integer ac ligula a velit
+            porttitor cursus. Aliquam sed erat fermentum, sagittis tellus id,
+            rutrum lacus. Curabitur faucibus aliquam mi ac pharetra. Donec
+            commodo sem est, eget condimentum nulla eleifend sit amet. Nulla non
+            massa lacus. Pellentesque maximus mauris tellus, scelerisque molestie
+            magna mattis ut. Praesent sodales ante sit amet arcu accumsan, ut
+            interdum orci venenatis. Duis tincidunt scelerisque dolor, ut
+            fringilla ipsum aliquet lobortis.
+          </p>
+          <p>
+            Sed commodo neque mi, et gravida velit fringilla in. Praesent
+            ultrices pellentesque lacus eu porta. Mauris sit amet gravida eros.
+            Mauris accumsan non lacus at suscipit. Sed eget augue finibus,
+            convallis velit id, pulvinar leo. Pellentesque habitant morbi
+            tristique senectus et netus et malesuada fames ac turpis egestas.
+            Morbi vel lacus mi.
+          </p>
+        </r-cell>
+      </ContentGrid>
+
+      <ExhibitGroup
+        id="central-office-switches"
+        title="Central Office (CO) Switches"
+        headingLevel="h3"
+        columns={4}
+      >
+        <r-cell span="row">
+          <ExhibitItem
+            title="Panel Switch"
+            headingLevel="h4"
+            image={panelImage}
+            alt="Volunteer Sarah Autumn standing in front of a telephone panel switch"
+            imageCaption="A panel switch at the Connections Museum Seattle."
+            imageSizes="(max-width: 600px) 100vw, 100vw"
+          >
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+              ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+              aliquip ex ea commodo consequat. Duis aute irure dolor in
+              reprehenderit in voluptate velit esse cillum dolore eu fugiat
+              nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+              sunt in culpa qui officia deserunt mollit anim id est laborum.
+            </p>
+          </ExhibitItem>
+        </r-cell>
+        <r-cell>
+          <ExhibitItem title="Crossbar" headingLevel="h4">
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+              ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+              aliquip ex ea commodo consequat. Duis aute irure dolor in
+              reprehenderit in voluptate velit esse cillum dolore eu fugiat
+              nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+              sunt in culpa qui officia deserunt mollit anim id est laborum.
+            </p>
+          </ExhibitItem>
+        </r-cell>
+        <r-cell>
+          <ExhibitItem title="Step-by-Step (SXS)" headingLevel="h4">
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+              ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+              aliquip ex ea commodo consequat. Duis aute irure dolor in
+              reprehenderit in voluptate velit esse cillum dolore eu fugiat
+              nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+              sunt in culpa qui officia deserunt mollit anim id est laborum.
+            </p>
+          </ExhibitItem>
+        </r-cell>
+        <r-cell>
+          <ExhibitItem title="Electronic Switching Systems (ESS)" headingLevel="h4">
+            <p><strong>No. 3 ESS</strong></p>
+            <p><strong>DMS10</strong></p>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+              ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+              aliquip ex ea commodo consequat. Duis aute irure dolor in
+              reprehenderit in voluptate velit esse cillum dolore eu fugiat
+              nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+              sunt in culpa qui officia deserunt mollit anim id est laborum.
+            </p>
+          </ExhibitItem>
+        </r-cell>
+      </ExhibitGroup>
+
+      <ExhibitGroup
+        id="telephones-and-station-equipment"
+        title="Telephones & Station Equipment"
+        headingLevel="h3"
+        columns={4}
+      >
+        <r-cell>
+          <ExhibitItem title="Picturephones" headingLevel="h4">
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+              ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+              aliquip ex ea commodo consequat. Duis aute irure dolor in
+              reprehenderit in voluptate velit esse cillum dolore eu fugiat
+              nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+              sunt in culpa qui officia deserunt mollit anim id est laborum.
+            </p>
+          </ExhibitItem>
+        </r-cell>
+        <r-cell>
+          <ExhibitItem
+            title="Century21 World's Fair Space Needle Radio-telephone"
+            headingLevel="h4"
+          >
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+              ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+              aliquip ex ea commodo consequat. Duis aute irure dolor in
+              reprehenderit in voluptate velit esse cillum dolore eu fugiat
+              nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+              sunt in culpa qui officia deserunt mollit anim id est laborum.
+            </p>
+          </ExhibitItem>
+        </r-cell>
+        <r-cell>
+          <ExhibitItem title="Payphones" headingLevel="h4">
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+              ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+              aliquip ex ea commodo consequat. Duis aute irure dolor in
+              reprehenderit in voluptate velit esse cillum dolore eu fugiat
+              nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+              sunt in culpa qui officia deserunt mollit anim id est laborum.
+            </p>
+          </ExhibitItem>
+        </r-cell>
+        <r-cell>
+          <ExhibitItem title="Design Line" headingLevel="h4">
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+              ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+              aliquip ex ea commodo consequat. Duis aute irure dolor in
+              reprehenderit in voluptate velit esse cillum dolore eu fugiat
+              nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+              sunt in culpa qui officia deserunt mollit anim id est laborum.
+            </p>
+          </ExhibitItem>
+        </r-cell>
+      </ExhibitGroup>
+
+      <ContentSection
+        id="other-exhibit-categories"
+        title="Other Exhibit Categories"
+        headingLevel="h3"
+      >
+        <ul>
+          <li>Outside Plant</li>
+          <li>PBXs</li>
+          <li>Teletypes</li>
+          <li>And more</li>
+        </ul>
+      </ContentSection>
+    </ContentSection>
+    <ContentSection id="library" title="Seattle Library" headingLevel="h2">
+  <ContentGrid columns={2}>
+    <r-cell span="1">
+      <p>
+        The Connections Museum Seattle operates a reference library of
+        information related to our region and the equipment we maintain.
+        Contributions of materials greatly appreciated. Digitization of our
+        technical documentation is available upon request.
+      </p>
+      <p>
+        While we don't yet have a proper archival environment in Seattle,
+        we still maintain an extensive collection of printed material related
+        to the history of telephony, and especially technical material
+        required for maintaining our equipment, which we try our best to make
+        available to the broader telephone collector community.
+      </p>
+    </r-cell>
+    <r-cell span="1">
+      <p>
+        If the documents are of a technical nature, relate to the history of
+        the Pacific Northwest, Seattle, or most especially the Panel Switch
+        (<i>anything marked "Full Mechanical"</i>) then please contact
+        <a href="mailto:library@connections.museum">library@connections.museum</a>.
+      </p>
+      <p><a href="/support.html#equipment-donations">More about donating equipment or historical documents.</a></p>
+    </r-cell>
+  </ContentGrid>
+</ContentSection>
+
+    <SisterMuseumsCallout>
+      <p>
+        Interested in more regional history? Check the Georgetown Steam Plant
+        and Museum of Flight for current programs and holiday hours.
+      </p>
+    </SisterMuseumsCallout>
+  </PageBody>
+</BaseLayout>
