@@ -26,6 +26,7 @@ const pageTitle = title.includes("Connections Museum")
   ? title.replace(/\s+\|\s+/g, " • ")
   : `${title} • Connections Museum`;
 const pageUrl = new URL(Astro.url.pathname, Astro.site ?? "https://connections.museum");
+const basePath = import.meta.env.BASE_URL.replace(/\/$/, "");
 ---
 
 <!doctype html>
@@ -35,7 +36,7 @@ const pageUrl = new URL(Astro.url.pathname, Astro.site ?? "https://connections.m
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content={description} />
     <title>{pageTitle}</title>
-    <link rel="icon" type="image/svg+xml" href="/cascades.svg" />
+    <link rel="icon" type="image/svg+xml" href={`${basePath}/cascades.svg`} />
     <meta property="og:url" content={pageUrl} />
     <meta property="og:title" content={pageTitle} />
     <meta property="og:description" content={description} />
@@ -43,28 +44,28 @@ const pageUrl = new URL(Astro.url.pathname, Astro.site ?? "https://connections.m
     <meta name="twitter:card" content="summary" />
     <link
       rel="preload"
-      href="/fonts/Jost-400.woff2"
+      href={`${basePath}/fonts/Jost-400.woff2`}
       as="font"
       type="font/woff2"
       crossorigin
     />
     <link
       rel="preload"
-      href="/fonts/Jost-600.woff2"
+      href={`${basePath}/fonts/Jost-600.woff2`}
       as="font"
       type="font/woff2"
       crossorigin
     />
     <link
       rel="preload"
-      href="/fonts/Jost-700.woff2"
+      href={`${basePath}/fonts/Jost-700.woff2`}
       as="font"
       type="font/woff2"
       crossorigin
     />
     <link
       rel="preload"
-      href="/fonts/Jost-400-Italic.woff2"
+      href={`${basePath}/fonts/Jost-400-Italic.woff2`}
       as="font"
       type="font/woff2"
       crossorigin
