@@ -5,13 +5,17 @@ interface Props {
 }
 
 const { homeHref = "/" } = Astro.props;
+const basePath = import.meta.env.BASE_URL.replace(/\/$/, "");
+const localHomeHref = homeHref.startsWith("/") && !homeHref.startsWith("//")
+  ? `${basePath}${homeHref}`
+  : homeHref;
 ---
 
 <header class="header">
-  <a id="title" href={homeHref} aria-label="Connections Museum — return home">
+  <a id="title" href={localHomeHref} aria-label="Connections Museum — return home">
     <picture id="logo">
-      <source media="(prefers-color-scheme: dark)" srcset="/relay-logo-dark.svg" />
-      <img alt="" src="/relay-logo-light.svg" width="1080" height="1440" />
+      <source media="(prefers-color-scheme: dark)" srcset={`${basePath}/relay-logo-dark.svg`} />
+      <img alt="" src={`${basePath}/relay-logo-light.svg`} width="1080" height="1440" />
     </picture>
     <!-- Optical spacing belongs to this wordmark only. Keep the word gap
          explicit and adjustments in em so they scale with the type. The link
