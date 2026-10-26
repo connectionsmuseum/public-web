@@ -5,6 +5,7 @@ use the shared metadata and document shell in `src/layouts/` and page pieces in
 `src/components/`. The component demo is available at `/demo` while running
 `npm run dev`; it is excluded from `npm run build` output.
 
+Use Node.js 22.23.4 or newer and run `npm ci` to install the locked dependencies.
 Run `npm run dev` to visit the local component demo at `/demo`. Run
 `npm run build` to validate the Astro setup, or `npm run preview` to preview
 its `dist/` output. Production pages are introduced in the migration PR.
