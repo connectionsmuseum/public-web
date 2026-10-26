@@ -13,7 +13,7 @@ import panelImage from "../../../../images/banners/cv_sarah_panel_ogt.jpg";
 
 <BaseLayout
   title="Seattle Exhibits | Connections Museum"
-  description="Explore the working switches, telephone equipment, and outside plant at Connections Museum Seattle."
+  description="Follow a call across two floors of working switches, payphones, and teletypes at Connections Museum Seattle."
 >
   <SiteHeader />
   <PageBody>
@@ -25,19 +25,19 @@ import panelImage from "../../../../images/banners/cv_sarah_panel_ogt.jpg";
         <r-cell>
           <p>
             The museum sits inside a working telephone company central office in
-            Georgetown. Once, rooms like this connected whole neighborhoods. Here,
-            volunteers keep a century of switching equipment running so you can
-            hear a call move through the machinery, not just look at a cabinet.
+            Georgetown, a building where calls are connected and routed.
+            Volunteers keep switches that once connected whole
+            neighborhoods ready to carry calls again. Hear the relays, watch the
+            machinery move, and ask the person who works on it what just happened.
           </p>
         </r-cell>
         <r-cell>
           <p>
-            Formerly the Herbert H. Warrick Jr. Museum of Communications, we're
-            part of the Telecommunications History Group. Telephone Pioneer
-            volunteers began building the museum in 1986, moving and reconnecting
-            huge switch frames by hand. Their work continues as new volunteers
-            learn to care for the machines. Take a tour or explore the public areas
-            at your own pace; our guides are glad to talk through what you're seeing.
+            Telephone Pioneer volunteers began building the museum in 1986,
+            moving and reconnecting huge switch frames by hand. Their work
+            continues as new volunteers learn to care for the machines. Take a
+            tour or explore the public areas at your own pace; our guides are
+            glad to talk through what you're seeing.
           </p>
         </r-cell>
       </ContentGrid>
@@ -47,6 +47,40 @@ import panelImage from "../../../../images/banners/cv_sarah_panel_ogt.jpg";
         smaller displays move as volunteers make space, restore equipment, and add
         new functions. Ask a guide what's changed since your last visit.
       </p>
+
+      <ContentSection id="follow-a-call" title="Follow a call across both floors" headingLevel="h3">
+        <p>
+          Lift a receiver and dial. Someone or something has to find your line,
+          understand the number, choose a route, and ring the other phone. A
+          switchboard operator once made connections by hand. Ask a guide to
+          trace that work through a machine on the third floor, then take the
+          same question downstairs: how did engineers fit more of it into less
+          room?
+        </p>
+        <ContentGrid columns={2}>
+          <r-cell>
+            <p>
+              Upstairs, step-by-step switches climb and turn with dial pulses.
+              The 1923 Panel stores dialed digits in a sender, then drives its
+              selectors with motors. Crossbar switches connect at intersections
+              of metal bars. You can hear and see much of the logic at work in
+              the aisles.
+            </p>
+          </r-cell>
+          <r-cell>
+            <p>
+              Downstairs, compare the 3ESS and DMS-10. Transistors and later
+              integrated circuits packed more control into circuit cards and
+              processors. Across the two floors, you can trace the move from
+              room-filling mechanisms to smaller machines with more functions.
+            </p>
+          </r-cell>
+        </ContentGrid>
+        <p>
+          The big switches stay put, but available call paths and demonstrations
+          can change as volunteers repair, wire, and test them.
+        </p>
+      </ContentSection>
 
       <ExhibitGroup
         id="central-office-switches"
@@ -62,35 +96,37 @@ import panelImage from "../../../../images/banners/cv_sarah_panel_ogt.jpg";
             alt="Volunteer Sarah Autumn beside the museum's panel switching equipment"
             imageCaption="Sarah Autumn at the panel switch."
             imageSizes="(max-width: 600px) 100vw, 33vw"
-            href="https://wiki.connections.museum/w/CMS:Panel_Switch"
-            linkLabel="Explore the panel switch's history and workings"
+            href="/seattle/exhibits/panel.html"
+            linkLabel="Read the Panel's story"
           >
             <p>
-              Seattle's 1923 panel switch still connects calls. A part called a
-              sender takes in the number you dial; metal brushes then move across
-              banks of contacts to find a path to the other phone. Watch the rods
-              travel and listen to the work they do.
+              Seattle's 1923 Panel switch still connects calls. A sender takes
+              in the number you dial; motor-driven rods move brushes across
+              banks of contacts to find a path to the other phone. This working
+              piece of the old Parkway office survived a heavy move and years of
+              volunteer rewiring.
             </p>
           </ExhibitItem>
         </r-cell>
         <r-cell>
-          <ExhibitItem title="Crossbar" headingLevel="h4">
+          <ExhibitItem title="No. 1 and No. 5 Crossbar" headingLevel="h4">
             <p>
-              The working No. 1 Crossbar belongs to the next chapter of automatic
-              switching. Relays and moving contacts do the job of setting up a
-              call. Volunteers maintain this machine alongside the panel switch,
-              keeping both systems ready to demonstrate.
+              Crossbar switches make connections where horizontal and vertical
+              bars meet, with relays controlling the contacts.
+              Our No. 5 came from Mercer Island's Adams office, where it entered
+              service in 1958. Volunteers have added equipment and functions,
+              including a way for it to talk with the Panel.
             </p>
           </ExhibitItem>
         </r-cell>
         <r-cell>
           <ExhibitItem title="Step-by-step and PBXs" headingLevel="h4">
             <p>
-              You can also see working step-by-step and crossbar PBX equipment. A
-              PBX is a switch for a building or organization: it connects phones
-              inside the place and links them to the wider network. Ask a guide to
-              show you how these smaller systems differ from the central-office
-              machines.
+              Step-by-step switches respond to each pulse from a rotary dial.
+              The museum's community dial office combines equipment from
+              Crystal Mountain, Sumner, and Belfair. Smaller private branch
+              exchanges, or PBXs, connect phones within a building and out to
+              the wider network.
             </p>
           </ExhibitItem>
         </r-cell>
@@ -143,62 +179,34 @@ import panelImage from "../../../../images/banners/cv_sarah_panel_ogt.jpg";
         columns={2}
       >
         <r-cell>
-          <ExhibitItem title="Western Electric 3ESS" headingLevel="h4">
+          <ExhibitItem
+            title="Western Electric 3ESS"
+            headingLevel="h4"
+            href="https://wiki.connections.museum/w/CMS:3ESS"
+            linkLabel="Read how volunteers brought the 3ESS back up"
+          >
             <p>
-              Electronic switches took over much of the work once done by rooms
-              full of moving machinery. The 3ESS was built for smaller communities
-              and could serve up to 4,500 lines. It's one of the working switches
-              our volunteers care for here.
+              This electronic switch served Crosby, Washington, from 1980 to
+              1994. Its boot tapes failed at the museum; volunteers recovered
+              the data and built an emulator so it could start again. It
+              returned to service in 2021. Keeping an electronic machine alive
+              takes more than a power cord.
             </p>
           </ExhibitItem>
         </r-cell>
         <r-cell>
-          <ExhibitItem title="What changed in a central office?" headingLevel="h4">
+          <ExhibitItem
+            title="DMS-10"
+            headingLevel="h4"
+            href="https://wiki.connections.museum/w/CMS:DMS-10"
+            linkLabel="Follow the DMS-10's trip to Seattle"
+          >
             <p>
-              An electronic switch needed far less floor space than the mechanical
-              systems it replaced. The change took planning and hands-on work: in
-              some offices, a new building was added while the old switch kept
-              serving callers. The museum's
-              <a href="https://www.telcomhistory.org/seattleElectronic.html">older online exhibit</a>
-              also traces the 5ESS and electronic key telephone systems.
-            </p>
-          </ExhibitItem>
-        </r-cell>
-      </ExhibitGroup>
-
-      <ExhibitGroup
-        id="outside-plant"
-        title="Outside plant: the lines beyond the building"
-        headingLevel="h3"
-        columns={3}
-      >
-        <r-cell>
-          <ExhibitItem title="Building terminals" headingLevel="h4">
-            <p>
-              A call needs a way into the network. Building terminals join the
-              wiring from a home or business to the telephone company's circuits.
-              The display follows these connections from roughly 1910 onward.
-            </p>
-          </ExhibitItem>
-        </r-cell>
-        <r-cell>
-          <ExhibitItem title="Open wire" headingLevel="h4">
-            <p>
-              Poles, crossarms and insulators once held the two wires of a telephone
-              circuit apart in the open air. That spacing helped prevent shorts
-              before better insulation was available. Seattle had open-wire lines
-              as early as 1883; later came cable, then fiber.
-            </p>
-          </ExhibitItem>
-        </r-cell>
-        <r-cell>
-          <ExhibitItem title="Splices and linemen's tools" headingLevel="h4">
-            <p>
-              Splicing joins sections of wire or fiber so a line can keep going.
-              Look for examples from paper-insulated copper cable through fiber,
-              including a copper splice carrying 4,200 pairs. The poles, cable and
-              tools here tell the story of the people who built and repaired the
-              network outside the switchroom.
+              Built around 2001, this digital switch uses PowerPC processors,
+              hard drives, and memory. Volunteers brought it from an Alabama
+              lab in 2023, then craned it into the museum and wired it up. Beside
+              the 3ESS, it shows how much switching could fit in a smaller
+              cabinet.
             </p>
           </ExhibitItem>
         </r-cell>
@@ -206,27 +214,76 @@ import panelImage from "../../../../images/banners/cv_sarah_panel_ogt.jpg";
 
       <ContentSection
         id="telephones-and-station-equipment"
-        title="Telephones & station equipment"
+        title="Payphones and other telephones"
         headingLevel="h3"
       >
         <p>
-          Switching is only part of the story. The collection also includes
-          payphones, picturephones, Design Line sets, a Space Needle radio-telephone
-          from the Century 21 World's Fair, and switchboards. Ask a guide about the
-          phones you remember, or one you've never seen before.
+          Before a phone lived in nearly every pocket, a public phone could be
+          how you called home, found a ride, or reported trouble. Our second-floor
+          payphone collection brings together machines from several decades.
+          Look at the coin slots, keypads, and housings, and ask a guide how a
+          payphone call was handled by a central-office switch. You'll also find
+          switchboards and telephones from many eras.
+        </p>
+        <p>
+          Ask about the cast-iron British K-6 call box. A Seattle volunteer and
+          fellow radio amateurs helped bring it from Norwich, England. It rode
+          to Boeing Field on a cargo flight carrying jet engines, then went up
+          to the museum's second floor on a boom truck. It's a good story about
+          the people and practical work behind a collection.
+        </p>
+        <p>
+          <ActionLink href="https://wiki.connections.museum/w/CMS:Payphone_Collection">
+            See the payphone collection notes
+          </ActionLink>
+        </p>
+        <p>
+          <a href="https://www.telcomhistory.org/seattleTelephones.html">Read the K-6 call box story</a>
         </p>
       </ContentSection>
 
       <ContentSection
         id="other-exhibit-categories"
-        title="Telegraphs, teletypes & more"
+        title="Telegraphs and teletypes"
         headingLevel="h3"
       >
         <p>
-          Follow the story beyond the telephone: there are telegraphs, teletypes,
-          and tools used by the people who built and repaired the network. Our
-          guides can show you around. Please ask before handling an exhibit; some
-          equipment is fragile or live.
+          Long before a text appeared on a screen, teletypes sent typed messages
+          over a line and printed them on paper. Our collection spans machines
+          from the 1920s through the 1980s, including a Model 15 that once
+          worked for the Associated Press. News services used machines like
+          these to get stories to newspapers and broadcasters. At the museum,
+          volunteers can patch some of the teletypes together at a testboard
+          or feed them news and weather. One of our machines has also gone out
+          to film productions, including <cite>Argo</cite>. Look for the
+          telegraph keys and sounders nearby, too.
+        </p>
+        <p>
+          <ActionLink href="https://wiki.connections.museum/w/CMS:Teletype_Collection">
+            Explore the teletype collection
+          </ActionLink>
+        </p>
+        <p>
+          <a href="https://www.telcomhistory.org/seattleTelegraphs.html">Read the older telegraph and teletype exhibit</a>
+        </p>
+      </ContentSection>
+
+      <ContentSection id="outside-plant" title="Beyond the switchroom" headingLevel="h3">
+        <p>
+          Cable splicers and line crews built and repaired the network that
+          carried calls in and out. Our outside-plant display has examples of
+          their tools, wires, and splices. Its arrangement may change as
+          volunteers work on the collection.
+        </p>
+      </ContentSection>
+
+      <ContentSection id="learn-more" title="Want to go deeper?" headingLevel="h3">
+        <p>
+          If you'd like the nuts and bolts behind the tour, read more about
+          <a href="https://en.wikipedia.org/wiki/Telephone_exchange">telephone exchanges</a>,
+          <a href="https://en.wikipedia.org/wiki/Crossbar_switch">crossbar switches</a>,
+          and the <a href="https://en.wikipedia.org/wiki/Panel_switch">Panel switch</a>.
+          Museum volunteers have helped write and expand these articles.
         </p>
       </ContentSection>
     </ContentSection>
