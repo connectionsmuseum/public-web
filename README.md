@@ -1,3 +1,7 @@
+# Development toolchain
+
+Use Node.js 22.23.4 or newer and run `npm ci` to install the locked dependencies.
+
 # Acknowledgements.
 
 This project uses the grid-system and lightweight framework [Raster](https://rsms.me/raster/), which is open-source and [on Github here](https://github.com/rsms/raster).
