@@ -11,16 +11,16 @@ The finished source is preserved. The new reviews separate infrastructure, compo
 | [#31](https://github.com/connectionsmuseum/public-web/pull/31) | Standardize Node and npm installation | `trunk` | 1 |
 | [#32](https://github.com/connectionsmuseum/public-web/pull/32) | Introduce Astro and its local build | [#31](https://github.com/connectionsmuseum/public-web/pull/31) | 1 |
 | [#33](https://github.com/connectionsmuseum/public-web/pull/33) | Check Astro builds on pull requests | [#32](https://github.com/connectionsmuseum/public-web/pull/32) | 1 |
-| [#34](https://github.com/connectionsmuseum/public-web/pull/34) | Define formatter automation and workflow triggers | [#31](https://github.com/connectionsmuseum/public-web/pull/31) | 1 |
-| [#35](https://github.com/connectionsmuseum/public-web/pull/35) | Introduce Astro components and shared visitor data | [#32](https://github.com/connectionsmuseum/public-web/pull/32) | 4 |
-| [#36](https://github.com/connectionsmuseum/public-web/pull/36) | Migrate the existing museum pages to Astro | [#35](https://github.com/connectionsmuseum/public-web/pull/35) | 4 |
+| [#34](https://github.com/connectionsmuseum/public-web/pull/34) | Define formatter automation and workflow triggers | [#31](https://github.com/connectionsmuseum/public-web/pull/31) | 2 |
+| [#35](https://github.com/connectionsmuseum/public-web/pull/35) | Introduce Astro components and shared visitor data | [#32](https://github.com/connectionsmuseum/public-web/pull/32) | 5 |
+| [#36](https://github.com/connectionsmuseum/public-web/pull/36) | Migrate the existing museum pages to Astro | [#35](https://github.com/connectionsmuseum/public-web/pull/35) | 5 |
 | [#39](https://github.com/connectionsmuseum/public-web/pull/39) | Improve keyboard focus and skip navigation | [#35](https://github.com/connectionsmuseum/public-web/pull/35) | 1 |
 | [#40](https://github.com/connectionsmuseum/public-web/pull/40) | Self-host Jost and remove unused font requests | [#35](https://github.com/connectionsmuseum/public-web/pull/35) | 1 |
 | [#41](https://github.com/connectionsmuseum/public-web/pull/41) | Restore the shared type and spacing scale | [#35](https://github.com/connectionsmuseum/public-web/pull/35) | 1 |
 | [#42](https://github.com/connectionsmuseum/public-web/pull/42) | Add relay logo modes and optical wordmark spacing | [#35](https://github.com/connectionsmuseum/public-web/pull/35) | 1 |
 | [#43](https://github.com/connectionsmuseum/public-web/pull/43) | Preserve filename-based image variants as an optional tool | [#35](https://github.com/connectionsmuseum/public-web/pull/35) | 1 |
 | [#44](https://github.com/connectionsmuseum/public-web/pull/44) | Add Nova development and generated-preview tasks | [#35](https://github.com/connectionsmuseum/public-web/pull/35) | 1 |
-| [#37](https://github.com/connectionsmuseum/public-web/pull/37) | Organize existing Seattle information into focused routes | [#36](https://github.com/connectionsmuseum/public-web/pull/36) | 1 |
+| [#37](https://github.com/connectionsmuseum/public-web/pull/37) | Organize existing Seattle information into focused routes | [#36](https://github.com/connectionsmuseum/public-web/pull/36) | 2 |
 | [#38](https://github.com/connectionsmuseum/public-web/pull/38) | Expand museum exhibits visitor guidance and collection updates | [#37](https://github.com/connectionsmuseum/public-web/pull/37) | 8 |
 | [#45](https://github.com/connectionsmuseum/public-web/pull/45) | Publish the verified Astro artifact through GitHub Pages | Migration #36 + build CI #33 helper | 1 |
 | [#46](https://github.com/connectionsmuseum/public-web/pull/46) | Retire legacy root pages after Pages activation | [#45](https://github.com/connectionsmuseum/public-web/pull/45) | 1 |
@@ -35,10 +35,23 @@ Prefer landing publication after the desired route/content/UI changes are integr
 
 **#46 stays a draft until GitHub Pages activation and a successful generated-site deployment have been verified.** No PR was merged and no Pages setting was changed during reconstruction.
 
+## Self-review corrections
+
+Four small follow-up commits address the bounded self-review:
+
+- [#34](https://github.com/connectionsmuseum/public-web/pull/34), [`8247a4e`](https://github.com/connectionsmuseum/public-web/commit/8247a4e2b4196c92667595db8907ea27ff27e441): Keep the formatter check read-only and use the required `autofix.ci` write-workflow name. YAML/action wiring and formatting checks pass locally; this draft base does not trigger the trunk-only check.
+- [#35](https://github.com/connectionsmuseum/public-web/pull/35), [`13c5c7e`](https://github.com/connectionsmuseum/public-web/commit/13c5c7eb45fd5bc994c4f9a8fca9650c7bf79fc1): Render the existing `VisitInfo` ID prop on its article. An isolated build verifies both the article fragment and its heading target.
+- [#36](https://github.com/connectionsmuseum/public-web/pull/36), [`a42c815`](https://github.com/connectionsmuseum/public-web/commit/a42c8150d4d0318748d79afed72abc4c45a78623): Document only the seven routes available at this stage and give an explicit preview-port command. The build generates all documented URLs.
+- [#37](https://github.com/connectionsmuseum/public-web/pull/37), [`d12b03d`](https://github.com/connectionsmuseum/public-web/commit/d12b03dd64e5820ca375cf63ff8f0ee8d25df6e6): Show the shared closure notice when introducing the visit route and document the three added routes here. Ten-route builds verify the notice appears once on all three entry pages and clears after reset.
+
+Affected descendants are restacked on those fixes; the later content PR retains the closure component once. The corrected assembly passes root and Pages builds (13 pages, 207 local URLs) and the repository formatter check. Its tree matches the corrected reference exactly. Compared with the original reference, the final changes are limited to two formatter workflows, the `VisitInfo` article ID, and the explicit README preview command. The closure correction belongs earlier in the history and does not alter the already-correct final visit page.
+
+The original `review-reference-20261026`, `review-assembly-20261026`, and `review-map-20261026` tags remain immutable. Before-fix heads and a verified corrected-history bundle are preserved locally. Existing browser screenshots predate these narrow corrections. All reviews remain drafts and #46 retains its successful-deployment condition.
+
 ## Preserved endpoints and verification
 
-- Reference commit: `c35d6f401c8ab4932d2f2a4720e187947c488b11` ([source](https://github.com/connectionsmuseum/public-web/tree/review-reference-20261026)).
-- Verified assembled tree: `dccb1d58c2a53a8b1d9c898e1178f94d3216385b`; tracked files match the reference exactly.
+- Reference commit: `10c414c9a49690fb9125831c30f29e76594831bc` ([source](https://github.com/connectionsmuseum/public-web/tree/review-reference-self-review-fixes-20261026)).
+- Verified assembled tree: `2c089e749ff3fed6485f0fa3ae31644bef6f66a8`; tracked files match the reference exactly.
 - All 16 review bases, scope/whitespace checks, and package/lock metadata checks pass. No generated `dist/` or `.astro/` files appear in the published implementation history.
 - Production builds pass: the final site contains 13 routes and 207 verified Pages URLs. `/demo` remains development-only.
 - Repository Prettier check passes; clean offline installs/checks pass for the toolchain-only and formatter branches.
@@ -100,21 +113,21 @@ Each original contribution is assigned below. Superseded drafts, temporary gener
 
 Use these exclusion points when the corresponding prerequisite is squash-merged; refresh first and preserve any newer work.
 
-| Branch | Original review-base SHA |
+| Branch | Current review-base SHA |
 | --- | --- |
 | `codex/review-toolchain` | `fe86b53ed24ddc654536ed304c2bad276c44adee` |
 | `codex/review-astro` | `963cbd01b095cb4da1bbe8b803331052276e3c35` |
 | `codex/review-build-ci` | `658e98e0847c3b6af2de7ecb2de0a7a2cde4d32e` |
 | `codex/review-formatter` | `963cbd01b095cb4da1bbe8b803331052276e3c35` |
 | `codex/review-components` | `658e98e0847c3b6af2de7ecb2de0a7a2cde4d32e` |
-| `codex/review-migration` | `b76c340bc336b6ae28c087165b3426d8eb9b1a18` |
-| `codex/review-keyboard` | `b76c340bc336b6ae28c087165b3426d8eb9b1a18` |
-| `codex/review-fonts` | `b76c340bc336b6ae28c087165b3426d8eb9b1a18` |
-| `codex/review-type-scale` | `b76c340bc336b6ae28c087165b3426d8eb9b1a18` |
-| `codex/review-relay-logo` | `b76c340bc336b6ae28c087165b3426d8eb9b1a18` |
-| `codex/review-image-tool` | `b76c340bc336b6ae28c087165b3426d8eb9b1a18` |
-| `codex/review-editor-integration` | `b76c340bc336b6ae28c087165b3426d8eb9b1a18` |
-| `codex/review-seattle-routes` | `6a256b6158dab4a59b0fe8fbdaa9b657621237de` |
-| `codex/review-content` | `729c447828d601bb97525a5fec9b7806878b5ac8` |
-| `codex/review-pages` | `70d1278c280259c5ca09e0492be2728bd53b8722` |
-| `codex/review-legacy-retirement` | `768d4a08cb4d918a292bdaf2076b0fedb9e2f5e5` |
+| `codex/review-migration` | `13c5c7eb45fd5bc994c4f9a8fca9650c7bf79fc1` |
+| `codex/review-keyboard` | `13c5c7eb45fd5bc994c4f9a8fca9650c7bf79fc1` |
+| `codex/review-fonts` | `13c5c7eb45fd5bc994c4f9a8fca9650c7bf79fc1` |
+| `codex/review-type-scale` | `13c5c7eb45fd5bc994c4f9a8fca9650c7bf79fc1` |
+| `codex/review-relay-logo` | `13c5c7eb45fd5bc994c4f9a8fca9650c7bf79fc1` |
+| `codex/review-image-tool` | `13c5c7eb45fd5bc994c4f9a8fca9650c7bf79fc1` |
+| `codex/review-editor-integration` | `13c5c7eb45fd5bc994c4f9a8fca9650c7bf79fc1` |
+| `codex/review-seattle-routes` | `a42c8150d4d0318748d79afed72abc4c45a78623` |
+| `codex/review-content` | `d12b03dd64e5820ca375cf63ff8f0ee8d25df6e6` |
+| `codex/review-pages` | `19593ef8e1d428fcd79544c0e39d691adf784f29` |
+| `codex/review-legacy-retirement` | `5fc71559c57c4bbebf68315a889a2a59ac63d303` |
