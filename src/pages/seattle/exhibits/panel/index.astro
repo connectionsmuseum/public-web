@@ -1,0 +1,114 @@
+---
+import BaseLayout from "../../../../layouts/BaseLayout.astro";
+import ActionLink from "../../../../components/content/ActionLink.astro";
+import BannerCaption from "../../../../components/content/BannerCaption.astro";
+import ContentGrid from "../../../../components/structure/ContentGrid.astro";
+import ContentSection from "../../../../components/structure/ContentSection.astro";
+import PageBody from "../../../../components/structure/PageBody.astro";
+import PageHeading from "../../../../components/structure/PageHeading.astro";
+import SiteHeader from "../../../../components/structure/SiteHeader.astro";
+import panelImage from "../../../../../images/banners/cv_sarah_panel_ogt.jpg";
+---
+
+<BaseLayout
+  title="The Panel Switch | Connections Museum Seattle"
+  description="How Seattle's 1923 Panel switch survived, reached the museum, and came back to life in volunteers' hands."
+>
+  <SiteHeader />
+  <PageBody>
+    <BannerCaption image={panelImage} alt="Sarah Autumn beside the working Panel switch and outgoing trunk test desk">
+      Chief Engineer Sarah Autumn beside the Panel switch and its outgoing trunk
+      test desk.
+    </BannerCaption>
+
+    <PageHeading level="h1">The Panel switch</PageHeading>
+    <p><ActionLink href="/seattle/exhibits.html">Back to the Seattle exhibits</ActionLink></p>
+
+    <ContentSection id="first-dial-service" title="Seattle starts dialing" headingLevel="h2">
+      <p>
+        At midnight on March 3, 1923, Seattle's Rainier exchange and two other
+        offices began the city's first dial telephone service. The Rainier
+        switch, later called Parkway, started with about 4,000 lines. For a
+        caller, dialing could now set the connection in motion. Behind the walls,
+        it took a room of motors, relays, selectors, and people who knew how to
+        keep them working.
+      </p>
+      <p>
+        The Panel served the Rainier/Parkway office into the 1970s. The museum
+        has a working portion of the original installation; the exchange it
+        came from was about eight times larger. It is the only surviving
+        working Panel switch, which makes keeping its skills alive as
+        important as keeping its parts.
+      </p>
+    </ContentSection>
+
+    <ContentSection id="watch-a-call" title="Watch it find a path" headingLevel="h2">
+      <ContentGrid columns={2}>
+        <r-cell>
+          <p>
+            Lifting the receiver closes a circuit to the central office. A line
+            finder locates your line and connects it to a sender, which supplies
+            dial tone and stores the digits you dial. A decoder helps turn those
+            digits into a route. On a final frame, motor-driven rods carry
+            brushes up banks of contacts until the switch reaches the called
+            line. It's a lot of movement for one ringing phone.
+          </p>
+        </r-cell>
+        <r-cell>
+          <p>
+            Unlike a step-by-step switch, the dial pulses don't directly move
+            each selector. The sender counts and stores them, then guides the
+            selectors and checks their progress. Once the talking path is set,
+            the sender is free for another call. A small group of senders could
+            therefore set up calls for many lines. The Panel's decoder handled
+            the routing lookup, a job later crossbar switches gave to circuits
+            called markers.
+            Listen for the motors and ask a volunteer docent which part has your
+            call now.
+          </p>
+        </r-cell>
+      </ContentGrid>
+      <p>
+        The outgoing trunk test desk beside the switch is part of that working
+        story. Technicians used test desks and routine checks to find trouble
+        before it reached callers. Volunteers still trace faults and keep the
+        circuits in order here.
+      </p>
+    </ContentSection>
+
+    <ContentSection id="the-move" title="A switch that had to leave through a window" headingLevel="h2">
+      <p>
+        When the Panel retired, it stayed in the Parkway building. Removing it
+        right away could have disturbed cables serving the No. 1 Crossbar on
+        the floor above. That delay helped save it. Volunteers selected frames
+        for the new museum in 1986. The following year, they took them out
+        through an exterior window because the doors were too small, then
+        carried them across town on several flatbed trips.
+      </p>
+      <p>
+        Emery Schaffer and Norm Christiansen, with other volunteers, assembled
+        the frames here and got calls running again. Later caretakers kept it
+        going. Since 2014, Sarah Autumn has rewired the connections between
+        frames, rebuilt the routing, and brought more parts of the switch back
+        into service. The Panel is a working machine because people still trace
+        wires, find faults, and teach each other how it works.
+      </p>
+    </ContentSection>
+
+    <ContentSection id="keep-learning" title="Keep following the circuit" headingLevel="h2">
+      <p>
+        Ask a volunteer docent what the Panel is doing today. Restoration and
+        maintenance continue, so a tour may catch a new function, a test in
+        progress, or a problem someone is chasing down.
+      </p>
+      <p>
+        For frame lists, diagrams, and the longer equipment history, read the
+        museum's <a href="https://wiki.connections.museum/w/CMS:Panel_Switch">Panel switch inventory</a>
+        or the Telecommunications History Group's
+        <a href="https://www.telcomhistory.org/seattleSwitching.html">mechanical switching exhibit</a>.
+        The <a href="https://en.wikipedia.org/wiki/Panel_switch">Panel switch article on Wikipedia</a>
+        goes deeper into senders, selectors, testing, and the system's history.
+      </p>
+    </ContentSection>
+  </PageBody>
+</BaseLayout>
