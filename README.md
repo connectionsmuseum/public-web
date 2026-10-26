@@ -1,9 +1,26 @@
 # Astro components
 
-Astro builds static output in `dist/`. Existing hand-authored pages continue to serve until migration and Pages activation are complete.
+The site uses reusable Astro layouts and content components. The development-only gallery is available at `/demo` with `npm run dev` and is excluded from production output.
 
 Use Node.js 22.23.4 or newer and run `npm ci` to install the locked dependencies.
 Run `npm run dev` for development, `npm run build` for production output, and `npm run preview` to inspect a build. No production routes have been migrated yet.
+
+## Responsive images
+
+Contributors add one source image under `images/` and import it into a page or
+component. Astro's image components generate optimized widths under
+`dist/_astro/` and reference them in the built pages' `srcset` attributes.
+Generated files are ignored by Git, so contributors maintain only the source
+image.
+
+Add page templates under `src/pages/`, shared layouts under `src/layouts/`, and
+reusable HTML components under `src/components/`. Put files referenced by
+absolute URL in `public/`.
+
+Read [the contributor guide](docs/components.md) for project-wide image and
+build rules. Semantic HTML, heading and grid composition, prop guidance, and
+usage examples live beside the component implementations in
+`src/components/structure/` and `src/components/content/`.
 
 # Acknowledgements.
 

@@ -1,0 +1,24 @@
+---
+import PageHeading from "../structure/PageHeading.astro";
+
+interface Props {
+  /** Optional short heading; use it when the note needs a discoverable label. */
+  title?: string;
+  /** Match the surrounding outline. Defaults to h3 for a note in an h2 section. */
+  headingLevel?: "h2" | "h3" | "h4";
+}
+
+const { title, headingLevel = "h3" } = Astro.props;
+---
+
+<!-- Use for supplementary, non-flow content such as announcements or visit
+     notes. A heading makes a titled callout discoverable in the page outline;
+     use ClosureAnnouncement instead when the message is a live status update.
+     Example inside an h2 section:
+     <Callout title="Before you visit" headingLevel="h3">
+       <p>Check the location's page for current hours.</p>
+     </Callout> -->
+<aside class="callout" role="note">
+  {title && <PageHeading level={headingLevel}>{title}</PageHeading>}
+  <slot />
+</aside>

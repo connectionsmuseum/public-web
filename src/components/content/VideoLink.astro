@@ -1,0 +1,20 @@
+---
+interface Props {
+  /** Video destination URL. The child content becomes the descriptive title. */
+  href: string;
+}
+
+const { href } = Astro.props;
+---
+
+<a class="video-link" href={href}>
+  <span aria-hidden="true">→</span>
+  <span><slot /></span>
+</a>
+
+<style>
+  .video-link > span:first-child {
+    margin-right: 0.35em;
+    color: var(--txt-color);
+  }
+</style>
