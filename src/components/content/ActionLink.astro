@@ -13,11 +13,14 @@ interface Props {
 }
 
 const { href, variant = "default", prominence = "body", marker } = Astro.props;
+const localHref = href.startsWith("/") && !href.startsWith("//")
+  ? `${import.meta.env.BASE_URL.replace(/\/$/, "")}${href}`
+  : href;
 ---
 
 <!-- Astro's slot is the component's children/content API. Always provide
      descriptive visible link text; do not use a generic "click here" label. -->
-<a href={href} class:list={["action-link", `action-link--${prominence}`, variant === "callout" && "callout"]}>
+<a href={localHref} class:list={["action-link", `action-link--${prominence}`, variant === "callout" && "callout"]}>
   {marker && <span class="action-marker" aria-hidden="true">{marker} </span>}
   <slot />
 </a>

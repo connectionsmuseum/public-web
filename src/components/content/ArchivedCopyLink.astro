@@ -1,16 +1,21 @@
 ---
-const siteOrigin = Astro.site?.origin ?? "https://connections.museum";
+const siteOrigin = "https://connections.museum";
+const basePath = import.meta.env.BASE_URL.replace(/\/$/, "");
 ---
 
 <!-- For missing pages, use the current path on the public site, including its
      query but excluding its fragment. Local previews must not send Wayback to
      localhost. Without JavaScript the link still opens the site's archive. -->
-<a data-archived-copy data-archive-origin={siteOrigin} href={`https://web.archive.org/web/*/${siteOrigin}/`}>Look for an archived copy</a>
+<a data-archived-copy data-archive-origin={siteOrigin} data-base-path={basePath} href={`https://web.archive.org/web/*/${siteOrigin}/`}>Look for an archived copy</a>
 
 <script>
   document.querySelectorAll<HTMLAnchorElement>("[data-archived-copy]").forEach((link) => {
     const original = new URL(link.dataset.archiveOrigin!);
-    original.pathname = window.location.pathname;
+    const basePath = link.dataset.basePath ?? "";
+    const currentPath = window.location.pathname;
+    original.pathname = basePath && currentPath.startsWith(`${basePath}/`)
+      ? currentPath.slice(basePath.length)
+      : currentPath;
     original.search = window.location.search;
     link.href = `https://web.archive.org/web/*/${original.href}`;
   });
