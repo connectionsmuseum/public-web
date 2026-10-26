@@ -3,6 +3,7 @@ import ActionLink from "../components/content/ActionLink.astro";
 import BannerCaption from "../components/content/BannerCaption.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Callout from "../components/content/Callout.astro";
+import ClosureAnnouncement from "../components/content/ClosureAnnouncement.astro";
 import ContactDetails from "../components/content/ContactDetails.astro";
 import ContentGrid from "../components/structure/ContentGrid.astro";
 import ContentSection from "../components/structure/ContentSection.astro";
@@ -13,7 +14,6 @@ import SiteHeader from "../components/structure/SiteHeader.astro";
 import VideoLink from "../components/content/VideoLink.astro";
 import bannerImage from "../../images/banners/cv_sarah_jkl.jpg";
 import { seattleVisit } from "../data/seattleVisit";
-import ClosureAnnouncement from "../components/content/ClosureAnnouncement.astro";
 ---
 
 <BaseLayout
@@ -23,7 +23,7 @@ import ClosureAnnouncement from "../components/content/ClosureAnnouncement.astro
   <SiteHeader />
   <PageBody>
     <BannerCaption image={bannerImage} alt="Sarah Autumn working on step-by-step telephone switching equipment">
-      Seattle volunteer and board member Sarah Autumn working on step-by-step
+      Chief Engineer Sarah Autumn working on step-by-step
       equipment in the switchroom of the "JKL" American Museum of Telephony in
       Santa Cruz, California. Photograph by
       <a href="https://www.ultraviolet.gay">Claire Violet.</a>
@@ -49,7 +49,7 @@ import ClosureAnnouncement from "../components/content/ClosureAnnouncement.astro
             <ActionLink href="/seattle/visiting-info.html" marker="⌘">
               We have more detailed information for visitors with disabilities,
               or those arriving with large groups, children, and animals on our
-              Seattle Museum page.
+              Seattle visiting information page.
             </ActionLink>
           </p>
           <p>Still have questions? Call us at <ActionLink href={`tel:${seattleVisit.contact.phone}`}>{seattleVisit.contact.phoneLabel}</ActionLink>.</p>
@@ -74,7 +74,7 @@ import ClosureAnnouncement from "../components/content/ClosureAnnouncement.astro
             3ESS in the world. Switches and other equipment can be heard
             clicking and humming as they work to connect phones and other devices.
           </p>
-          <ActionLink href="/seattle.html" prominence="feature" marker="⌘">
+          <ActionLink href="/seattle/visiting-info.html" prominence="feature" marker="⌘">
             Seattle Museum Hours, Directions, &amp; Tour Information
           </ActionLink>
           <p>
@@ -91,10 +91,16 @@ import ClosureAnnouncement from "../components/content/ClosureAnnouncement.astro
             show you around. We're just a short drive up the road from the Museum of Flight.
           </p>
           <hr />
-          <p><strong>More updates to come soon on the new home for the "JKL" American Museum of Telephony!</strong></p>
           <p>
-            <VideoLink href="https://youtu.be/iXMSm86jxaA?si=8gxnQViByF3fEPw-">
-              Watch our announcement YouTube video here!
+            We've acquired the collection of the
+            <a href="https://www.jklmuseum.com">"JKL" American Museum of Telephony</a>.
+            Remco Enthoven, who cared for it as JKL's curator, has joined us as
+            Connections Museum curator. The collection has moved to Seattle,
+            and we're preparing its new display gallery.
+          </p>
+          <p>
+            <VideoLink href="https://youtu.be/iXMSm86jxaA?si=5-YijQ4iJTzdz9vf">
+              Watch the JKL collection announcement
             </VideoLink>
           </p>
         </ContentSection>

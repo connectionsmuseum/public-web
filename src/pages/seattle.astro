@@ -21,33 +21,91 @@ import { seattleVisit } from "../data/seattleVisit";
   <SiteHeader />
   <PageBody>
     <BannerCaption image={bannerImage} alt="Sarah Autumn standing beside the No. 1 Crossbar master test frame">
-      Seattle volunteer and board member Sarah Autumn at the No. 1 Crossbar master test frame aisle
+      Chief Engineer Sarah Autumn at the No. 1 Crossbar master test frame aisle
       of Connections Museum Seattle. Photograph by
       <a href="https://www.ultraviolet.gay">Claire Violet.</a>
     </BannerCaption>
 
     <PageHeading level="h1">Seattle, Washington</PageHeading>
     <ClosureAnnouncement message={seattleVisit.closureNotice ?? undefined} />
-    <ContentSection id="visit-info" title="Visitor information" headingLevel="h2">
-<ActionLink href="/seattle/visiting-info.html">Visitor information</ActionLink>
-</ContentSection>
+    <ContentSection id="visit-info" title="Visiting the museum" headingLevel="h2">
+      <p>
+        Come by on {seattleVisit.hours.day}, usually from {seattleVisit.hours.opens} to {seattleVisit.hours.closes}. Volunteer docents start
+        tours on demand, and the doors close at {seattleVisit.hours.doorsClose} so visitors have time
+        to finish. Find us at {seattleVisit.location.streetAddress} in {seattleVisit.location.neighborhood}, through the {seattleVisit.location.doorColor} door under the {seattleVisit.location.awningColor} awning.
+      </p>
+      <p>
+        Need directions, access details, or a visit for a group? We've put the
+        practical details in one place.
+      </p>
+      <ActionLink href="/seattle/visiting-info.html" prominence="feature">
+        Plan your Seattle visit
+      </ActionLink>
+    </ContentSection>
 
     <ContentGrid columns={2}>
       <r-cell>
         <ContentSection id="exhibits" title="Exhibits & museum history" headingLevel="h2">
-<ActionLink href="/seattle/exhibits.html">Exhibits & museum history</ActionLink>
-</ContentSection>
+          <p>
+            Follow a call across both floors: from the motor-driven Panel and
+            crossbar switches to electronic machines that fit more work into
+            less room. Payphones and teletypes have plenty of stories, too.
+            The big switches stay put; smaller displays change as volunteers
+            repair, rearrange, and add to them.
+          </p>
+          <ActionLink href="/seattle/exhibits.html" prominence="feature">
+            Explore the Seattle exhibits
+          </ActionLink>
+        </ContentSection>
       </r-cell>
       <r-cell>
         <ContentSection id="library" title="Seattle reference library" headingLevel="h2">
-<ActionLink href="/seattle/library.html">Seattle reference library</ActionLink>
-</ContentSection>
+          <p>
+            Old machines come with manuals, diagrams, and questions. Our
+            reference library helps volunteers and researchers trace how the
+            equipment works and where it came from.
+          </p>
+          <ActionLink href="/seattle/library.html" prominence="feature">
+            Learn about the Seattle library
+          </ActionLink>
+        </ContentSection>
       </r-cell>
     </ContentGrid>
 
+    <ContentSection id="jkl-collection" title="The JKL collection" headingLevel="h2">
+      <p>
+        We've acquired the collection of the
+        <a href="https://www.jklmuseum.com">"JKL" American Museum of Telephony</a>.
+        Remco Enthoven, its former curator, has joined us as Connections Museum
+        curator. The collection is in Seattle, but its new display gallery isn't
+        open for tours yet.
+      </p>
+      <p>
+        <VideoLink href="https://youtu.be/iXMSm86jxaA?si=5-YijQ4iJTzdz9vf">
+          Watch the JKL collection announcement
+        </VideoLink>
+      </p>
+    </ContentSection>
 
-
-
+    <ContentSection id="press" title="Press" headingLevel="h2">
+      <p>
+        Want another look inside the switchroom? These <cite>Seattle Times</cite>
+        stories spend time with the machines and the volunteers who keep them
+        going.
+      </p>
+      <ul>
+        <li>
+          <a href="https://www.seattletimes.com/pacific-nw-magazine/from-old-phones-to-volunteers-everything-clicks-at-the-connections-museum/">
+            From old phones to volunteers, everything clicks at the Connections Museum
+          </a>
+        </li>
+        <li>
+          <a href="https://www.seattletimes.com/pacific-nw-magazine/this-seattle-museum-has-more-visitors-more-volunteers-and-big-plans/">
+            This Seattle museum has more visitors, more volunteers and big plans
+          </a>
+        </li>
+      </ul>
+    </ContentSection>
 
     <SisterMuseumsCallout>
       <p>
