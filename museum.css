@@ -51,6 +51,39 @@ body {
 
 /* TYPOGRAPHY */
 
+@font-face {
+  font-family: "Jost";
+  src: url("/fonts/Jost-400.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 400;
+  font-display: optional;
+}
+
+@font-face {
+  font-family: "Jost";
+  src: url("/fonts/Jost-600.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 600;
+  font-display: optional;
+}
+
+@font-face {
+  font-family: "Jost";
+  src: url("/fonts/Jost-700.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 700;
+  font-display: optional;
+}
+
+@font-face {
+  font-family: "Jost";
+  src: url("/fonts/Jost-400-Italic.woff2") format("woff2");
+  font-style: italic;
+  font-weight: 400;
+  font-display: optional;
+}
+
+
 :root {
   font-family:
     "Jost", "Futura", "Inter", "Helvetica Neue", "Helvetica", Arial, sans-serif;
