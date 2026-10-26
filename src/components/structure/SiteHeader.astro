@@ -1,37 +1,98 @@
 ---
 interface Props {
-  /** Home destination for the shared, labelled return link. */
+  /** URL used by the home/return link. */
   homeHref?: string;
 }
+
 const { homeHref = "/" } = Astro.props;
 ---
 
-<!-- Header and footer belong outside PageBody, which owns the main landmark. -->
 <header class="header">
   <a id="title" href={homeHref} aria-label="Connections Museum — return home">
-    <img id="logo" src="/cascades.svg" alt="" />
-    <span>Connections Museum</span>
+    <picture id="logo">
+      <source media="(prefers-color-scheme: dark)" srcset="/relay-logo-dark.svg" />
+      <img alt="" src="/relay-logo-light.svg" width="1080" height="1440" />
+    </picture>
+    <!-- Optical spacing belongs to this wordmark only. Keep the word gap
+         explicit and adjustments in em so they scale with the type. The link
+         above supplies the complete accessible name. -->
+    <span class="wordmark" aria-hidden="true"><span class="wordmark-word">C<span class="round-letter">o</span>n<span class="second-n">n</span>e<span class="before-t">c</span>ti<span class="round-letter">o</span>ns</span>{" "}<span class="wordmark-word"><span class="capital-m">M</span>useu<span class="terminal-m">m</span></span></span>
   </a>
 </header>
 
 <style>
-  .header { width: 100%; padding-bottom: 1rem; }
+  .header {
+    float: none;
+    width: 100%;
+    padding-bottom: 1rem;
+  }
+
   #title {
     display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
     align-items: center;
     gap: 0.2em;
+    min-width: 0;
+    white-space: nowrap;
+    /* Scale the wordmark and relay together; the SVG must never set the
+       header's intrinsic size or push the name outside the page. */
     font-size: clamp(1.5rem, 8vw, 10.5rem);
     line-height: 1;
-    letter-spacing: -0.05em;
+    font-kerning: normal;
+    letter-spacing: -0.035em;
+  }
+
+  .wordmark {
+    display: inline-flex;
+    gap: 0.22em;
+    flex: 0 0 auto;
     white-space: nowrap;
   }
+
+  .wordmark-word {
+    display: block;
+  }
+
+  .round-letter {
+    margin-inline: -0.018em;
+  }
+
+  .second-n {
+    margin-inline-start: -0.02em;
+    margin-inline-end: -0.005em;
+  }
+
+  .before-t {
+    margin-inline-end: 0.03em;
+  }
+
+  .capital-m {
+    margin-inline-end: -0.025em;
+  }
+
+  .terminal-m {
+    margin-inline-start: -0.025em;
+  }
+
   #logo {
-    flex: 0 0 1em;
-    width: 1em;
-    height: 1em;
-    object-fit: contain;
+    filter: none;
+    max-height: none;
     padding: 0;
+    display: block;
+    flex: 0 0 0.75em;
+    width: 0.75em;
+    aspect-ratio: 3 / 4;
     margin: 0;
   }
-  @media (prefers-color-scheme: dark) { #logo { filter: invert(100%); } }
+
+  #logo img {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 3 / 4;
+    object-fit: contain;
+    margin: 0;
+    padding: 0;
+  }
 </style>
