@@ -11,7 +11,7 @@ The component demo is available at `/demo` while running
 
 Use Node.js 22.23.4 or newer and run `npm ci` to install the locked dependencies.
 Run `npm run dev` to work on Astro pages, `npm run build` to generate the
-Astro output in `dist/`, or `npm run preview` to preview that build. The build
+Astro output in `dist/`, or `npm run preview -- --port 4001` to preview that build. The build
 generates the homepage, Seattle visit page, Seattle exhibits and library pages,
 Denver, support, THG, and 404 pages. In Nova,
 the `Build Astro` task serves the live component demo at
