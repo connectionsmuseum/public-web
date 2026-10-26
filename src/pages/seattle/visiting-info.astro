@@ -1,24 +1,27 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
-import BannerCaption from "../../components/content/BannerCaption.astro";
+import ActionLink from "../../components/content/ActionLink.astro";
+import ClosureAnnouncement from "../../components/content/ClosureAnnouncement.astro";
 import ContactDetails from "../../components/content/ContactDetails.astro";
 import ContentGrid from "../../components/structure/ContentGrid.astro";
 import ContentSection from "../../components/structure/ContentSection.astro";
 import PageHeading from "../../components/structure/PageHeading.astro";
 import PageBody from "../../components/structure/PageBody.astro";
 import SiteHeader from "../../components/structure/SiteHeader.astro";
-import SisterMuseumsCallout from "../../components/content/SisterMuseumsCallout.astro";
-import bannerImage from "../../../images/banners/cv_sarah_mtf.jpg";
-import ExhibitGroup from "../../components/content/ExhibitGroup.astro";
-import ExhibitItem from "../../components/content/ExhibitItem.astro";
-import panelImage from "../../../images/banners/cv_sarah_panel_ogt.jpg";
 import { seattleVisit } from "../../data/seattleVisit";
-import ClosureAnnouncement from "../../components/content/ClosureAnnouncement.astro";
 ---
-<BaseLayout title="Plan your Seattle visit | Connections Museum">
-<SiteHeader /><PageBody>
-<PageHeading level="h1">Plan your Seattle visit</PageHeading>
-<ContentSection
+
+<BaseLayout
+  title="Visit the Seattle Museum | Connections Museum"
+  description="Hours, directions, tours, access information, and group visits at Connections Museum Seattle."
+>
+  <SiteHeader />
+  <PageBody>
+    <PageHeading level="h1">Plan your Seattle visit</PageHeading>
+    <ClosureAnnouncement message={seattleVisit.closureNotice ?? undefined} />
+    <p><ActionLink href="/seattle.html">Back to the Seattle museum</ActionLink></p>
+
+    <ContentSection
       id="visit-info"
       title="Visiting the museum"
       headingLevel="h2"
@@ -30,22 +33,23 @@ import ClosureAnnouncement from "../../components/content/ClosureAnnouncement.as
               The museum is open to the public every {seattleVisit.hours.day} from {seattleVisit.hours.opens} to {seattleVisit.hours.closes},
               unless otherwise noted on this page.
             </p>
+            <!-- TODO(issue): Confirm the youth donation amount and fix the awkward “$5 youths aged” wording. -->
             <p>The suggested donation is {seattleVisit.suggestedDonation.adult} for adults and {seattleVisit.suggestedDonation.youth} youths aged {seattleVisit.suggestedDonation.youthAges}.</p>
             <p>
               While we are closed to the public for our volunteer work day, we're
-              typically around to take item donations on Tuesdays from about 11am to
-              3pm. Please email us in advance.
+              typically around to take item donations on {seattleVisit.hours.donationDropoff.day} from about {seattleVisit.hours.donationDropoff.opens} to {seattleVisit.hours.donationDropoff.closes}. Please email us in advance.
             </p>
           </ContentSection>
         </r-cell>
         <r-cell>
           <ContentSection id="tours" title="Tours" headingLevel="h3" headingScale="section">
             <p>
-              Docent guided tours start on demand, usually with little or no wait.
+              Tours with volunteer docents start on demand, usually with little
+              or no wait.
               Please note that our doors close at {seattleVisit.hours.doorsClose} to permit visitors
               enough time to conclude their tour. A quick tour can take one hour,
               but typical tours take up to two hours. For those with a keen
-              technical interest, three hours in the museum is common.
+              technical interest, three hours or more in the museum is common.
             </p>
             <p>
               Returning visitors are welcome to explore the public areas of the
@@ -56,12 +60,12 @@ import ClosureAnnouncement from "../../components/content/ClosureAnnouncement.as
         <r-cell>
           <ContentSection id="directions" title="Directions" headingLevel="h3" headingScale="section">
             <p>
-              We are located in the Georgetown neighborhood of Seattle,
+              We are located in the {seattleVisit.location.neighborhood} neighborhood of Seattle,
               Washington, at
               <a href={seattleVisit.location.mapsHref}>
-                7000 E Marginal Way S, Seattle, WA 98108
+                {seattleVisit.location.address}
               </a>. It is an active central office in a large concrete building.
-              Our entrance is around the side, a blue door under a yellow awning.
+              Our entrance is around the side, a {seattleVisit.location.doorColor} door under a {seattleVisit.location.awningColor} awning.
             </p>
             <p>
               Sadly, bike parking is limited at this time, but we are located
@@ -111,21 +115,29 @@ import ClosureAnnouncement from "../../components/content/ClosureAnnouncement.as
         <r-cell>
           <ContentSection id="accessibility" title="Accessibility" headingLevel="h3" headingScale="section">
             <p>
-              The museum is wheelchair accessible. There is an accessible parking
-              space in our parking lot, and the entrance to the museum is at ground
-              level. Restrooms are reachable by wheelchair but do not have grab
-              bars.
+              There is an accessible parking space in our lot. The museum
+              entrance is at ground level, and a ramp and elevator provide
+              access to the exhibit floors. Most public areas are wheelchair
+              accessible, though some aisles inside the switches are narrow.
+              Let a volunteer docent know what works for you. Restrooms are
+              reachable by wheelchair but do not have grab bars.
             </p>
             <p>
-              Audio tours are standard. Please notify your docent if you would like
-              audible descriptions of what is being shown. Please ask before
-              touching the exhibits as many are either fragile or dangerous.
+              A tour can involve a fair amount of standing, and seating is
+              limited. Tell your docent if you need a break; we're happy to
+              adjust the pace. You can also contact us ahead of time about
+              access needs.
             </p>
             <p>
-              We are unable to provide sign language interpreters, but many exhibits
-              have text signs describing them. We also have a
-              <a href="https://wiki.connections.museum">wiki</a> with more
-              information on many subjects including our most notable exhibits.
+              Volunteer docents describe exhibits aloud on every tour. If you'd
+              like more detail, just ask. Some equipment is fragile or dangerous,
+              so check with your docent before touching it.
+            </p>
+            <p>
+              We can't provide American Sign Language interpreters right now.
+              Many exhibits have text signs, and our
+              <a href="https://wiki.connections.museum">wiki</a> has more on the
+              equipment and its history.
             </p>
             <p>
               Please notify your docent if you need a quiet space during your stay.
@@ -147,35 +159,30 @@ import ClosureAnnouncement from "../../components/content/ClosureAnnouncement.as
               exceptions, we prefer to not put them away "under glass." So our
               simple rule is this:
               <b
-                >Please ask one of our volunteer guides before you pick up items on
-                display or interact with our machines.</b
+                >Please ask one of our volunteer docents before you pick up items
+                on display or interact with our machines.</b
               >
             </p>
+            <!-- TODO(issue): Confirm a museum-wide policy for visitor filming and audio recording, then add it here. PR #13 raised this topic but did not include approved policy text. -->
           </ContentSection>
         </r-cell>
       </ContentGrid>
 
       <ContentSection
         id="groups-and-private-tours"
-        title="Large Groups, Private Tours, & Other Special Arrangements"
+        title="Groups and special tours"
         headingLevel="h3"
       >
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit
-          in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-          Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
-          officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit
-          amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-          labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-          exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-          Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
-          dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-          proident, sunt in culpa qui officia deserunt mollit anim id est
-          laborum.
+          We'd like to make room for your school, club, workplace, or other
+          group. If you're bringing more than six people, please email or call
+          ahead so we can arrange enough volunteer docents. We can sometimes
+          schedule visits outside public hours, depending on who's available.
+          Tell us the date you have in mind and we'll talk through what works,
+          including any suggested donation for a special tour.
         </p>
+        <!-- TODO(issue): Confirm the per-guest donation for special tours before publishing Sarah's draft: "For such tours, we generally ask for a donation of $___ dollars per guest." -->
       </ContentSection>
     </ContentSection>
-</PageBody></BaseLayout>
+  </PageBody>
+</BaseLayout>
