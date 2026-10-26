@@ -28,9 +28,20 @@ import { seattleVisit } from "../data/seattleVisit";
 
     <PageHeading level="h1">Seattle, Washington</PageHeading>
     <ClosureAnnouncement message={seattleVisit.closureNotice ?? undefined} />
-    <ContentSection id="visit-info" title="Visitor information" headingLevel="h2">
-<ActionLink href="/seattle/visiting-info.html">Visitor information</ActionLink>
-</ContentSection>
+    <ContentSection id="visit-info" title="Visiting the museum" headingLevel="h2">
+      <p>
+        Come by on {seattleVisit.hours.day}, usually from {seattleVisit.hours.opens} to {seattleVisit.hours.closes}. Volunteer docents start
+        tours on demand, and the doors close at {seattleVisit.hours.doorsClose} so visitors have time
+        to finish. Find us at {seattleVisit.location.streetAddress} in {seattleVisit.location.neighborhood}, through the {seattleVisit.location.doorColor} door under the {seattleVisit.location.awningColor} awning.
+      </p>
+      <p>
+        Need directions, access details, or a visit for a group? We've put the
+        practical details in one place.
+      </p>
+      <ActionLink href="/seattle/visiting-info.html" prominence="feature">
+        Plan your Seattle visit
+      </ActionLink>
+    </ContentSection>
 
     <ContentGrid columns={2}>
       <r-cell>
