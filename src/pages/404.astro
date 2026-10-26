@@ -1,0 +1,54 @@
+---
+import ActionLink from "../components/content/ActionLink.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import ContentGrid from "../components/structure/ContentGrid.astro";
+import ContentSection from "../components/structure/ContentSection.astro";
+import MediaFigure from "../components/content/MediaFigure.astro";
+import ArchivedCopyLink from "../components/content/ArchivedCopyLink.astro";
+import PageHeading from "../components/structure/PageHeading.astro";
+import PageBody from "../components/structure/PageBody.astro";
+import SiteHeader from "../components/structure/SiteHeader.astro";
+import bannerImage from "../../images/banners/cv_sarah_pencil.jpg";
+---
+
+<BaseLayout
+  title="Page not found | Connections Museum"
+  description="The page you requested could not be found."
+>
+  <SiteHeader />
+  <PageBody>
+    <MediaFigure
+      image={bannerImage}
+      alt=""
+      aspectRatio="banner"
+      loading="eager"
+      sizes="(max-width: 799px) calc(100vw - 36px), (max-width: 1672px) calc(100vw - 72px), 1600px"
+    />
+    <PageHeading level="h1">404 — Page not found</PageHeading>
+    <ContentGrid columns={3}>
+      <r-cell span="row">
+        <ContentSection id="not-found" title="Sorry, we couldn't find that page" headingLevel="h2">
+          <p><ActionLink href="/">Return to the Connections Museum homepage.</ActionLink></p>
+          <p>
+            <i>Fun fact!</i> In the 1960s, long before the internet, the Bell
+            System created
+            <ActionLink href="/images/exhibits/404/aperture-card-red.tiff">this red card</ActionLink>
+            to indicate this very thing, a dead link, in their "aperture card"
+            blueprint microfiche documentation system. When one of these was
+            encountered, you would have to have your supervisor request the card
+            from the appropriate division, be that a regional Bell operating
+            company, Bell Labs, AT&amp;T, or Western Electric. A typical card would
+            appear
+            <ActionLink href="/images/exhibits/404/aperture-card-green.tiff">like this</ActionLink>
+            instead.
+          </p>
+        </ContentSection>
+      </r-cell>
+      <r-cell span="row">
+        <ContentSection id="archived-copies" title="Look for an archived copy" headingLevel="h2">
+          <ArchivedCopyLink />
+        </ContentSection>
+      </r-cell>
+    </ContentGrid>
+  </PageBody>
+</BaseLayout>
