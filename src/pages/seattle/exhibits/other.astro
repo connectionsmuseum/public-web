@@ -1,0 +1,102 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import ActionLink from "../../../components/content/ActionLink.astro";
+import ContentSection from "../../../components/structure/ContentSection.astro";
+import PageBody from "../../../components/structure/PageBody.astro";
+import PageHeading from "../../../components/structure/PageHeading.astro";
+import SiteHeader from "../../../components/structure/SiteHeader.astro";
+---
+
+<BaseLayout
+  title="Phones and Teletypes | Connections Museum Seattle"
+  description="Explore Seattle's payphones, teletypes, and supporting exhibits, with stories of the people who keep them working."
+>
+  <SiteHeader />
+  <PageBody>
+    <PageHeading level="h1">Phones, teletypes, and more</PageHeading>
+    <p><ActionLink href="/seattle/exhibits.html">Back to the Seattle exhibits</ActionLink></p>
+    <p>
+      The big switches anchor the rooms. Around them, you'll find the phones,
+      teletypes, and tools that helped people use and maintain the network.
+      Smaller displays may move as volunteers work on them.
+    </p>
+
+    <ContentSection
+      id="telephones-and-station-equipment"
+      title="Payphones and other telephones"
+      headingLevel="h2"
+    >
+      <!-- TODO(issue): Review Claire's museum-signage payphone copy for details to add here. PR #13 left this draft placeholder: "[[ use Claire's payphone copy from the museum signage here.]]" -->
+      <p>
+        Before a phone lived in nearly every pocket, a public phone could be
+        how you called home, found a ride, or reported trouble. Our second-floor
+        payphone collection brings together machines from several decades.
+        Look at the coin slots, keypads, and housings, and ask a volunteer
+        docent how a payphone call was handled by a central-office switch.
+        You'll also find switchboards and telephones from many eras.
+      </p>
+      <p>
+        The coin is part of the engineering story, too. Chief Engineer Sarah
+        Autumn and Steve Flocke brought coin-call functions back to the No. 5
+        Crossbar. Flocke designed a new circuit that supervises what happens
+        to the coins.
+      </p>
+      <p>
+        Ask about the cast-iron British K-6 call box. A Seattle volunteer and
+        fellow radio amateurs helped bring it from Norwich, England. It rode
+        to Boeing Field on a cargo flight carrying jet engines, then went up
+        to the museum's second floor on a boom truck. It's a good story about
+        the people and practical work behind a collection.
+      </p>
+      <p>
+        <ActionLink href="https://wiki.connections.museum/w/CMS:Payphone_Collection">
+          See the payphone collection notes
+        </ActionLink>
+      </p>
+      <p>
+        <a href="https://www.telcomhistory.org/seattleTelephones.html">Read the K-6 call box story</a>
+      </p>
+      <p>
+        Other phones tell different stories. The Space Age Cordless Telephone
+        made calls by radio from the Space Needle during the 1962 World's
+        Fair; our collection also includes original Picturephones. Ask which
+        sets are available to try when you visit.
+        <a href="https://wiki.connections.museum/w/CMS:Space_Age_Cordless_Telephone">Read about the Space Needle phone</a>.
+      </p>
+    </ContentSection>
+
+    <ContentSection
+      id="other-exhibit-categories"
+      title="Telegraphs and teletypes"
+      headingLevel="h2"
+    >
+      <p>
+        Long before a text appeared on a screen, teletypes sent typed messages
+        over a line and printed them on paper. Our collection spans machines
+        from the 1920s through the 1980s, including a Model 15 that once
+        worked for the Associated Press. News services used machines like
+        these to get stories to newspapers and broadcasters. At the museum,
+        volunteers can patch some of the teletypes together at a testboard
+        or feed them news and weather. One of our machines has also gone out
+        to film productions, including <cite>Argo</cite>. Look for the
+        telegraph keys and sounders nearby, too.
+      </p>
+      <p>
+        <ActionLink href="https://wiki.connections.museum/w/CMS:Teletype_Collection">
+          Explore the teletype collection
+        </ActionLink>
+      </p>
+      <p>
+        <a href="https://www.telcomhistory.org/seattleTelegraphs.html">Read the older telegraph and teletype exhibit</a>
+      </p>
+    </ContentSection>
+
+    <ContentSection id="outside-plant" title="Beyond the switchroom" headingLevel="h2">
+      <p>
+        Cable splicers and line crews built and repaired the network that
+        carried calls in and out. Our outside-plant display has examples of
+        their tools, wires, and splices. Its arrangement may change as
+        volunteers work on the collection.
+      </p>
+    </ContentSection>  </PageBody>
+</BaseLayout>
