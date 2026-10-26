@@ -1,0 +1,15 @@
+{
+  "actions": {
+    "build": {
+      "enabled": true,
+      "script": "npm run build",
+      "shell": "/bin/zsh"
+    },
+    "run": {
+      "enabled": true,
+      "script": "npm run preview -- --host 127.0.0.1 --port 4001",
+      "shell": "/bin/zsh"
+    }
+  },
+  "openLogOnRun": "fail"
+}

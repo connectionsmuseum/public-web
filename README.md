@@ -22,6 +22,10 @@ build rules. Semantic HTML, heading and grid composition, prop guidance, and
 usage examples live beside the component implementations in
 `src/components/structure/` and `src/components/content/`.
 
+## Nova tasks
+
+Use Build Astro for the development gallery and Preview Built Astro for generated output on port 4001.
+
 # Acknowledgements.
 
 This project uses the grid-system and lightweight framework [Raster](https://rsms.me/raster/), which is open-source and [on Github here](https://github.com/rsms/raster).
