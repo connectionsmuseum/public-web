@@ -105,9 +105,8 @@ import SiteHeader from "../components/structure/SiteHeader.astro";
     >
       <p>
         The Telecommunications History Group, Inc., is lucky to have an amazing
-        and dedicated group of staff and board members. Board members serve as
-        volunteers, working with staff and other volunteers to set strategy and
-        goals and ensure those goals are implemented.
+        and dedicated group of staff and board members. Our board works with
+        staff and volunteers to set strategy and put those plans into practice.
       </p>
       <p>
         While several THG Board members are directly related to the
@@ -117,6 +116,7 @@ import SiteHeader from "../components/structure/SiteHeader.astro";
         from Denver and Seattle, as well as other locations across the United
         States.
       </p>
+      <!-- TODO(issue): Verify the rest of this staff and board roster and confirm whether Sarah remains THG Secretary after joining the museum staff. -->
       <ContentGrid columns={3}>
         <r-cell>
           <PeopleGroup
@@ -125,6 +125,8 @@ import SiteHeader from "../components/structure/SiteHeader.astro";
             headingLevel="h3"
             people={[
               { name: "Renee Lang", title: "Managing Director" },
+              { name: "Sarah Autumn", title: "Chief Engineer" },
+              { name: "Remco Enthoven", title: "Curator" },
             ]}
           />
         </r-cell>
@@ -137,7 +139,7 @@ import SiteHeader from "../components/structure/SiteHeader.astro";
               { name: "Peter Amstein", title: "THG President", description: "Software Industry Executive (Ret.)" },
               { name: "Michael W. Nearing", title: "THG Vice President", description: "Network Engineer (Ret.)" },
               { name: "R. William (Bill) Johnston", title: "THG Treasurer", description: "SVP & Controller, Qwest Communications (Ret.)" },
-              { name: "Sarah Autumn", title: "THG Secretary", description: "Instructor, F5 Networks" },
+              { name: "Sarah Autumn", title: "THG Secretary", description: "Connections Museum Chief Engineer" },
             ]}
           />
         </r-cell>
@@ -169,6 +171,7 @@ import SiteHeader from "../components/structure/SiteHeader.astro";
     </ContentSection>
 
     <ContentSection id="partners-and-sponsors" title="Partners & Sponsors" headingLevel="h2">
+      <!-- TODO(issue): Confirm current sponsor names and clarify the CenturyLink space-donation sentence. -->
       <p>
         Thank you to our corporate sponsors Lumen, CenturyLink, CBM Network
         Services, and the Pioneers Volunteer Network.
