@@ -1,0 +1,70 @@
+---
+interface Props {
+  /** Semantic heading level; choose based on document hierarchy, not size. */
+  level: "h1" | "h2" | "h3" | "h4";
+  /** Visual emphasis, independent of level. E.g. a nested h3 may use section
+   *  scale when it starts a full grid column. Defaults follow the level. */
+  scale?: "display" | "section" | "subsection" | "label";
+  /** Optional fragment identifier used by aria-labelledby. */
+  id?: string;
+  /** Optional existing CSS class to add to the heading. */
+  class?: string;
+}
+
+const { level, id, scale = { h1: "display", h2: "section", h3: "subsection", h4: "label" }[level], class: className } = Astro.props;
+const HeadingTag = level;
+const headingClass = [
+  "page-heading",
+  `page-heading--${scale}`,
+  className,
+].filter(Boolean).join(" ");
+---
+
+<!-- Choose level from document hierarchy and scale for visual emphasis. Keep
+     one h1 per page; use h2 sections and h3/h4 within them. For example:
+     <PageHeading level="h3" scale="section">Hours</PageHeading>
+     preserves a nested outline with the original site's large column title. -->
+<HeadingTag id={id} class={headingClass}><slot /></HeadingTag>
+
+<style>
+  .page-heading {
+    font-weight: 700;
+    margin-bottom: var(--lineHeight);
+  }
+
+  .page-heading--display {
+    font-size: 5.5rem;
+    line-height: calc(var(--lineHeight) * 4);
+    letter-spacing: -0.05em;
+    margin-top: calc(var(--lineHeight) * 2);
+    margin-left: -0.25rem;
+  }
+
+  .page-heading--section {
+    font-size: var(--h2-size);
+    line-height: calc(var(--lineHeight) * 2);
+    letter-spacing: -0.03em;
+    padding: 0;
+  }
+
+  .page-heading--subsection {
+    font-size: var(--h3-size);
+    line-height: var(--lineHeight);
+  }
+
+  .page-heading--label {
+    font-size: var(--h4-size);
+    line-height: var(--lineHeight);
+  }
+
+  .page-heading:first-child {
+    margin-top: 0;
+  }
+
+  @media (max-width: 799px) {
+    .page-heading--display {
+      font-size: clamp(2.8rem, 10vw, 5.5rem);
+      line-height: 1.1;
+    }
+  }
+</style>
