@@ -1,6 +1,6 @@
 # Seattle content and exhibit source audit
 
-Reviewed 2026-10-25. This is a guide to what our draft covers and what deserves another pass, not a fixed inventory of everything visitors will see. The large switches stay in place; smaller displays move, and volunteers keep adding working functions. Confirm current display and operating status with the museum before making specific promises.
+Reviewed 2026-10-25; route map updated 2026-10-26. This is a guide to what our draft covers and what deserves another pass, not a fixed inventory of everything visitors will see. The large switches stay in place; smaller displays move, and volunteers keep adding working functions. Confirm current display and operating status with the museum before making specific promises.
 
 ## Sources read
 
@@ -12,11 +12,14 @@ Reviewed 2026-10-25. This is a guide to what our draft covers and what deserves 
 
 ## Represented in this branch
 
-- `/seattle.html` keeps visit logistics and links to the detailed exhibit and library routes. Its old `#exhibits` and `#library` anchors remain useful for incoming links. The visit guidance combines the earlier ground-level entrance and spoken-tour details with Sarah's narrow-switch-aisle and break information, plus advance contact for groups larger than six and possible tours outside public hours. A Press section links to the two Seattle Times articles supplied by the museum volunteer; their article bodies remain inaccessible to the web reader.
-- `/seattle/exhibits.html` follows a call as a way to compare the third-floor mechanical machines with the second-floor electronic ones, and gives payphones and teletypes more space. It distinguishes the No. 1 and No. 5 Crossbars, names the workers who built and restored them, and includes the No. 5's Adams office origin and renewed coin-call functions. The introduction retains the invitation to explore and ask volunteer docents questions alongside Sarah's founding timeline and hands-on restoration details. It also covers Panel, step-by-step, PBXs, 3ESS, DMS-10, power, ringing, the K-6 call box, the teletypes' news-wire and testboard roles, and the Space Needle cordless phone. Outside plant remains a short supporting note.
+- `/seattle.html` is a short overview with routes into the visit guide, exhibits, and library. Its `#visit-info`, `#exhibits`, and `#library` anchors remain useful for incoming links. The JKL collection update and Press links remain here; the two Seattle Times article bodies remain inaccessible to the web reader.
+- `/seattle/visiting-info.html` holds hours, directions, tours, access, safety, and group guidance. It combines the earlier ground-level entrance and spoken-tour details with Sarah's narrow-switch-aisle and break information, plus advance contact for groups larger than six and possible tours outside public hours.
+- `/seattle/exhibits.html` is the exhibit overview. It keeps the invitation to explore and ask volunteer docents questions alongside Sarah's founding timeline and hands-on restoration details, then points readers to the switch, Panel, and other exhibit stories.
+- `/seattle/exhibits/switches.html` follows a call to compare the third-floor mechanical machines with the second-floor electronic ones. It distinguishes the No. 1 and No. 5 Crossbars, names the workers who built and restored them, and includes the No. 5's Adams office origin and renewed coin-call functions. It also covers Panel, step-by-step, PBXs, 3ESS, DMS-10, power, and ringing.
+- `/seattle/exhibits/other.html` gives payphones and teletypes more space. It covers the K-6 call box, the teletypes' news-wire and testboard roles, and the Space Needle cordless phone. Outside plant remains a short supporting note.
 - `/seattle/exhibits/panel.html` expands the Panel's 1923 dial-service debut, its sender-based call setup and test desk, the move through Parkway's window, and the volunteers who rebuilt it. The route uses the existing generic page and section components.
 - `/seattle/library.html` holds the reference library's purpose, research contact, and contribution guidance. The Seattle library is described as cataloged on THG's overview page; confirm any access procedure before adding hours or a public catalog link.
-- The exhibit introduction now names the Telephone Pioneers' work moving and reconnecting the switch frames. Copy also explains that smaller displays and functions change, so it does not read like a permanent catalog.
+- The exhibit introduction names the Telephone Pioneers' work moving and reconnecting the switch frames. Copy also explains that smaller displays and functions change, so it does not read like a permanent catalog.
 
 ## Strong next stories
 

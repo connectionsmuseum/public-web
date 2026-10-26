@@ -3,22 +3,19 @@ import BaseLayout from "../../../layouts/BaseLayout.astro";
 import ActionLink from "../../../components/content/ActionLink.astro";
 import ContentGrid from "../../../components/structure/ContentGrid.astro";
 import ContentSection from "../../../components/structure/ContentSection.astro";
-import ExhibitGroup from "../../../components/content/ExhibitGroup.astro";
-import ExhibitItem from "../../../components/content/ExhibitItem.astro";
 import PageBody from "../../../components/structure/PageBody.astro";
 import PageHeading from "../../../components/structure/PageHeading.astro";
 import SiteHeader from "../../../components/structure/SiteHeader.astro";
-import panelImage from "../../../../images/banners/cv_sarah_panel_ogt.jpg";
 ---
 
 <BaseLayout
   title="Seattle Exhibits | Connections Museum"
-  description="Follow a call across two floors of working switches, payphones, and teletypes at Connections Museum Seattle."
+  description="Follow a call through two floors of working switches, payphones, and teletypes at Connections Museum Seattle."
 >
   <SiteHeader />
   <PageBody>
     <PageHeading level="h1">Seattle exhibits</PageHeading>
-    <p><ActionLink href="/seattle.html">Plan your visit to the Seattle museum</ActionLink></p>
+    <p><ActionLink href="/seattle/visiting-info.html">Plan your visit to the Seattle museum</ActionLink></p>
 
     <ContentSection id="exhibits" title="A working museum" headingLevel="h2">
       <ContentGrid columns={2}>
@@ -54,288 +51,47 @@ import panelImage from "../../../../images/banners/cv_sarah_panel_ogt.jpg";
         docents are glad to talk through what you're seeing and what's changed
         since your last visit.
       </p>
+    </ContentSection>
 
-      <ContentSection id="follow-a-call" title="Follow a call across both floors" headingLevel="h3">
-        <p>
-          Lift a receiver and dial. Someone or something has to find your line,
-          understand the number, choose a route, and ring the other phone. A
-          switchboard operator once made connections by hand. Ask a volunteer
-          docent to trace that work through a machine on the third floor, then
-          take the same question downstairs: how did engineers fit more of it
-          into less room?
-        </p>
-        <ContentGrid columns={2}>
-          <r-cell>
-            <p>
-              Upstairs, step-by-step switches climb and turn with dial pulses.
-              The 1923 Panel stores dialed digits in a sender, then drives its
-              selectors with motors. Crossbar switches connect at intersections
-              of metal bars. You can hear and see much of the logic at work in
-              the aisles.
-            </p>
-          </r-cell>
-          <r-cell>
-            <p>
-              Downstairs, compare the 3ESS and DMS-10. Transistors and later
-              integrated circuits packed more control into circuit cards and
-              processors. Across the two floors, you can trace the move from
-              room-filling mechanisms to smaller machines with more functions.
-            </p>
-          </r-cell>
-        </ContentGrid>
-        <p>
-          The big switches stay put, but available call paths and demonstrations
-          can change as volunteers repair, wire, and test them.
-        </p>
-      </ContentSection>
-
-      <ExhibitGroup
-        id="central-office-switches"
-        title="Working switches"
-        headingLevel="h3"
-        columns={2}
-      >
-        <r-cell>
-          <ExhibitItem
-            title="Panel switch"
-            headingLevel="h4"
-            image={panelImage}
-            alt="Chief Engineer Sarah Autumn beside the museum's panel switching equipment"
-            imageCaption="Chief Engineer Sarah Autumn at the Panel switch."
-            imageSizes="(max-width: 600px) 100vw, 33vw"
-            href="/seattle/exhibits/panel.html"
-            linkLabel="Read the Panel's story"
-          >
-            <p>
-              Seattle's 1923 Panel switch still connects calls. A sender takes
-              in the number you dial; motor-driven rods move brushes across
-              banks of contacts to find a path to the other phone. This working
-              piece of the old Parkway office survived a heavy move and years of
-              volunteer rewiring.
-            </p>
-          </ExhibitItem>
-        </r-cell>
-        <r-cell>
-          <ExhibitItem
-            title="No. 1 Crossbar"
-            headingLevel="h4"
-            href="https://wiki.connections.museum/w/CMS:Number_One_Crossbar_Switch"
-            linkLabel="Read the No. 1 Crossbar's history"
-          >
-            <p>
-              In a crossbar switch, relays choose a route and horizontal and
-              vertical bars close the contacts that connect it. More than 100
-              Western Electric workers built this switch for northeast Seattle's
-              Vermont office, where it began carrying calls in 1942. Museum
-              founder Herb Warrick worked there as a switchman. After the
-              switch came here, volunteers rebuilt its wiring and brought more
-              of its call paths to life. In 2017, they got a call through to it
-              from the Panel again. It's the only No. 1 Crossbar still known to
-              be operating.
-            </p>
-            <p>
-              Ask a volunteer docent about blue boxing: early phone phreaks
-              used tones to signal switches. Which demonstrations you can try
-              depends on what's running that day.
-            </p>
-          </ExhibitItem>
-        </r-cell>
-        <r-cell>
-          <ExhibitItem
-            title="No. 5 Crossbar"
-            headingLevel="h4"
-            href="https://wiki.connections.museum/w/CMS:Number_Five_Crossbar_Switch_(5XB)"
-            linkLabel="See how the No. 5 Crossbar keeps growing"
-          >
-            <p>
-              Our No. 5 entered service at Mercer Island's Adams office in
-              1958. Switchman Don Fagerholm helped choose and install the
-              frames that came here. Volunteers have since added functions,
-              from renewed links to the Panel to working coin-call circuits.
-            </p>
-          </ExhibitItem>
-        </r-cell>
-        <r-cell>
-          <ExhibitItem title="Step-by-step and PBXs" headingLevel="h4">
-            <p>
-              Step-by-step switches respond to each pulse from a rotary dial.
-              The museum's community dial office combines equipment from
-              Crystal Mountain, Sumner, and Belfair. Smaller private branch
-              exchanges, or PBXs, connect phones within a building and out to
-              the wider network.
-            </p>
-          </ExhibitItem>
-        </r-cell>
-      </ExhibitGroup>
-
-      <ExhibitGroup
-        id="power-and-ringing"
-        title="Keeping the switches running"
-        headingLevel="h3"
-        columns={2}
-      >
-        <r-cell>
-          <ExhibitItem
-            title="Power board"
-            headingLevel="h4"
-            href="https://wiki.connections.museum/w/CMS:Power_Board"
-            linkLabel="Read the power board's equipment notes"
-          >
-            <p>
-              The switches need a steady supply of electricity. The power board
-              distributes 48-volt office battery power to the museum's equipment,
-              with meters and fuses that let volunteers watch what the machinery
-              is drawing. This board came from Seattle's Parkway central office;
-              volunteers have adapted it for the museum.
-            </p>
-          </ExhibitItem>
-        </r-cell>
-        <r-cell>
-          <ExhibitItem
-            title="Ringing and tone plant"
-            headingLevel="h4"
-            href="https://wiki.connections.museum/w/CMS:803C_Ringing_and_Tone_Plant"
-            linkLabel="See how the ringing and tone plant was rebuilt"
-          >
-            <p>
-              This equipment makes the ringing current and tones used by the panel
-              and No. 1 Crossbar. Volunteers brought together a motor generator
-              from Seattle's West office and a control board from Hartford,
-              Connecticut, then wired them into a working exhibit. A speaker lets
-              visitors hear the tones for themselves.
-            </p>
-          </ExhibitItem>
-        </r-cell>
-      </ExhibitGroup>
-
-      <ExhibitGroup
-        id="electronic-switching"
-        title="Electronic switching"
-        headingLevel="h3"
-        columns={2}
-      >
-        <r-cell>
-          <ExhibitItem
-            title="Western Electric 3ESS"
-            headingLevel="h4"
-            href="https://wiki.connections.museum/w/CMS:3ESS"
-            linkLabel="Read how volunteers brought the 3ESS back up"
-          >
-            <p>
-              This electronic switch served Crosby, Washington, from 1980 to
-              1994. Its boot tapes failed at the museum; volunteers recovered
-              the data and built an emulator so it could start again. It
-              returned to service in 2021. Keeping an electronic machine alive
-              takes more than a power cord.
-            </p>
-          </ExhibitItem>
-        </r-cell>
-        <r-cell>
-          <ExhibitItem
-            title="DMS-10"
-            headingLevel="h4"
-            href="https://wiki.connections.museum/w/CMS:DMS-10"
-            linkLabel="Follow the DMS-10's trip to Seattle"
-          >
-            <p>
-              Built around 2001, this digital switch uses PowerPC processors,
-              hard drives, and memory. Volunteers brought it from an Alabama
-              lab in 2023, then craned it into the museum and wired it up. Beside
-              the 3ESS, it shows how much switching could fit in a smaller
-              cabinet.
-            </p>
-          </ExhibitItem>
-        </r-cell>
-      </ExhibitGroup>
-
-      <ContentSection
-        id="telephones-and-station-equipment"
-        title="Payphones and other telephones"
-        headingLevel="h3"
-      >
-        <!-- TODO(issue): Review Claire's museum-signage payphone copy for details to add here. PR #13 left this draft placeholder: "[[ use Claire's payphone copy from the museum signage here.]]" -->
-        <p>
-          Before a phone lived in nearly every pocket, a public phone could be
-          how you called home, found a ride, or reported trouble. Our second-floor
-          payphone collection brings together machines from several decades.
-          Look at the coin slots, keypads, and housings, and ask a volunteer
-          docent how a payphone call was handled by a central-office switch.
-          You'll also find switchboards and telephones from many eras.
-        </p>
-        <p>
-          The coin is part of the engineering story, too. Chief Engineer Sarah
-          Autumn and Steve Flocke brought coin-call functions back to the No. 5
-          Crossbar. Flocke designed a new circuit that supervises what happens
-          to the coins.
-        </p>
-        <p>
-          Ask about the cast-iron British K-6 call box. A Seattle volunteer and
-          fellow radio amateurs helped bring it from Norwich, England. It rode
-          to Boeing Field on a cargo flight carrying jet engines, then went up
-          to the museum's second floor on a boom truck. It's a good story about
-          the people and practical work behind a collection.
-        </p>
-        <p>
-          <ActionLink href="https://wiki.connections.museum/w/CMS:Payphone_Collection">
-            See the payphone collection notes
+    <ContentGrid columns={2}>
+      <r-cell>
+        <ContentSection id="follow-a-call" title="Follow a call across both floors" headingLevel="h2">
+          <p>
+            Lift a receiver and dial. On the third floor, listen to selectors,
+            motors, and relays find a path. Downstairs, see transistors and
+            later integrated circuits fit more switching work into less room.
+            Ask a volunteer docent to trace what each machine does with your call.
+          </p>
+          <ActionLink href="/seattle/exhibits/switches.html" prominence="feature">
+            Explore the working switches
           </ActionLink>
-        </p>
-        <p>
-          <a href="https://www.telcomhistory.org/seattleTelephones.html">Read the K-6 call box story</a>
-        </p>
-        <p>
-          Other phones tell different stories. The Space Age Cordless Telephone
-          made calls by radio from the Space Needle during the 1962 World's
-          Fair; our collection also includes original Picturephones. Ask which
-          sets are available to try when you visit.
-          <a href="https://wiki.connections.museum/w/CMS:Space_Age_Cordless_Telephone">Read about the Space Needle phone</a>.
-        </p>
-      </ContentSection>
-
-      <ContentSection
-        id="other-exhibit-categories"
-        title="Telegraphs and teletypes"
-        headingLevel="h3"
-      >
-        <p>
-          Long before a text appeared on a screen, teletypes sent typed messages
-          over a line and printed them on paper. Our collection spans machines
-          from the 1920s through the 1980s, including a Model 15 that once
-          worked for the Associated Press. News services used machines like
-          these to get stories to newspapers and broadcasters. At the museum,
-          volunteers can patch some of the teletypes together at a testboard
-          or feed them news and weather. One of our machines has also gone out
-          to film productions, including <cite>Argo</cite>. Look for the
-          telegraph keys and sounders nearby, too.
-        </p>
-        <p>
-          <ActionLink href="https://wiki.connections.museum/w/CMS:Teletype_Collection">
-            Explore the teletype collection
+        </ContentSection>
+      </r-cell>
+      <r-cell>
+        <ContentSection id="panel" title="The Panel switch" headingLevel="h2">
+          <p>
+            The 1923 Panel came from Seattle's old Rainier/Parkway office. Its
+            sender remembers the number you dial; motor-driven selectors find
+            a path. Volunteers moved and rewired this enormous machine, and
+            it still connects calls here.
+          </p>
+          <ActionLink href="/seattle/exhibits/panel.html" prominence="feature">
+            Read the Panel's story
           </ActionLink>
-        </p>
-        <p>
-          <a href="https://www.telcomhistory.org/seattleTelegraphs.html">Read the older telegraph and teletype exhibit</a>
-        </p>
-      </ContentSection>
+        </ContentSection>
+      </r-cell>
+    </ContentGrid>
 
-      <ContentSection id="outside-plant" title="Beyond the switchroom" headingLevel="h3">
-        <p>
-          Cable splicers and line crews built and repaired the network that
-          carried calls in and out. Our outside-plant display has examples of
-          their tools, wires, and splices. Its arrangement may change as
-          volunteers work on the collection.
-        </p>
-      </ContentSection>
-
-      <ContentSection id="learn-more" title="Want to go deeper?" headingLevel="h3">
-        <p>
-          If you'd like the nuts and bolts behind the tour, read more about
-          <a href="https://en.wikipedia.org/wiki/Telephone_exchange">telephone exchanges</a>,
-          <a href="https://en.wikipedia.org/wiki/Crossbar_switch">crossbar switches</a>,
-          and the <a href="https://en.wikipedia.org/wiki/Panel_switch">Panel switch</a>.
-          Museum volunteers have helped write and expand these articles.
-        </p>
-      </ContentSection>
+    <ContentSection id="other-exhibit-categories" title="Payphones, teletypes, and more" headingLevel="h2">
+      <p>
+        There is more to a phone network than the switches. Public phones,
+        teletypes, test gear, and the tools of line crews show how people used
+        and cared for it. These smaller displays can change as volunteers add
+        working functions or make room for something else.
+      </p>
+      <ActionLink href="/seattle/exhibits/other.html" prominence="feature">
+        Explore phones, teletypes, and other exhibits
+      </ActionLink>
     </ContentSection>
   </PageBody>
 </BaseLayout>
