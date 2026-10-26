@@ -1,0 +1,181 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import BannerCaption from "../../components/content/BannerCaption.astro";
+import ContactDetails from "../../components/content/ContactDetails.astro";
+import ContentGrid from "../../components/structure/ContentGrid.astro";
+import ContentSection from "../../components/structure/ContentSection.astro";
+import PageHeading from "../../components/structure/PageHeading.astro";
+import PageBody from "../../components/structure/PageBody.astro";
+import SiteHeader from "../../components/structure/SiteHeader.astro";
+import SisterMuseumsCallout from "../../components/content/SisterMuseumsCallout.astro";
+import bannerImage from "../../../images/banners/cv_sarah_mtf.jpg";
+import ExhibitGroup from "../../components/content/ExhibitGroup.astro";
+import ExhibitItem from "../../components/content/ExhibitItem.astro";
+import panelImage from "../../../images/banners/cv_sarah_panel_ogt.jpg";
+import { seattleVisit } from "../../data/seattleVisit";
+import ClosureAnnouncement from "../../components/content/ClosureAnnouncement.astro";
+---
+<BaseLayout title="Plan your Seattle visit | Connections Museum">
+<SiteHeader /><PageBody>
+<PageHeading level="h1">Plan your Seattle visit</PageHeading>
+<ContentSection
+      id="visit-info"
+      title="Visiting the museum"
+      headingLevel="h2"
+    >
+      <ContentGrid columns={4}>
+        <r-cell>
+          <ContentSection id="hours" title="Hours" headingLevel="h3" headingScale="section">
+            <p>
+              The museum is open to the public every {seattleVisit.hours.day} from {seattleVisit.hours.opens} to {seattleVisit.hours.closes},
+              unless otherwise noted on this page.
+            </p>
+            <p>The suggested donation is {seattleVisit.suggestedDonation.adult} for adults and {seattleVisit.suggestedDonation.youth} youths aged {seattleVisit.suggestedDonation.youthAges}.</p>
+            <p>
+              While we are closed to the public for our volunteer work day, we're
+              typically around to take item donations on Tuesdays from about 11am to
+              3pm. Please email us in advance.
+            </p>
+          </ContentSection>
+        </r-cell>
+        <r-cell>
+          <ContentSection id="tours" title="Tours" headingLevel="h3" headingScale="section">
+            <p>
+              Docent guided tours start on demand, usually with little or no wait.
+              Please note that our doors close at {seattleVisit.hours.doorsClose} to permit visitors
+              enough time to conclude their tour. A quick tour can take one hour,
+              but typical tours take up to two hours. For those with a keen
+              technical interest, three hours in the museum is common.
+            </p>
+            <p>
+              Returning visitors are welcome to explore the public areas of the
+              museum at their own pace.
+            </p>
+          </ContentSection>
+        </r-cell>
+        <r-cell>
+          <ContentSection id="directions" title="Directions" headingLevel="h3" headingScale="section">
+            <p>
+              We are located in the Georgetown neighborhood of Seattle,
+              Washington, at
+              <a href={seattleVisit.location.mapsHref}>
+                7000 E Marginal Way S, Seattle, WA 98108
+              </a>. It is an active central office in a large concrete building.
+              Our entrance is around the side, a blue door under a yellow awning.
+            </p>
+            <p>
+              Sadly, bike parking is limited at this time, but we are located
+              conveniently on King County Metro Route 60 and 124, just a short
+              walk from Stop ID #40871 and #46025.
+            </p>
+            <p>
+              Our parking lot entrance is on Corson Avenue. Space is often
+              limited, but can usually be found nearby at South Seattle Community
+              College.
+            </p>
+          </ContentSection>
+        </r-cell>
+        <r-cell>
+          <ContentSection id="other-information" title="Other Information" headingLevel="h3" headingScale="section">
+            <PageHeading level="h4">Children</PageHeading>
+            <p>
+              We ask that parents with children under twelve visit the museum
+              first, before bringing their children, to determine the suitability
+              of museum exhibits for younger visitors.
+            </p>
+            <PageHeading level="h4">Pets</PageHeading>
+            <p>We only allow trained service animals inside the museum.</p>
+            <PageHeading level="h4">COVID</PageHeading>
+            <p>Masks are welcomed, but not required.</p>
+          </ContentSection>
+        </r-cell>
+      </ContentGrid>
+
+      <ContentSection
+        id="contact-before-visiting"
+        title="Questions before your visit"
+        headingLevel="h3"
+      >
+        <p>
+          If you have any other questions before you stop by, please email us.
+          For same-day inquiries, give us a call during our open hours.
+        </p>
+        <ContactDetails
+          email={seattleVisit.contact.email}
+          phone={seattleVisit.contact.phone}
+          phoneLabel={seattleVisit.contact.phoneLabel}
+        />
+      </ContentSection>
+
+      <ContentGrid columns={2}>
+        <r-cell>
+          <ContentSection id="accessibility" title="Accessibility" headingLevel="h3" headingScale="section">
+            <p>
+              The museum is wheelchair accessible. There is an accessible parking
+              space in our parking lot, and the entrance to the museum is at ground
+              level. Restrooms are reachable by wheelchair but do not have grab
+              bars.
+            </p>
+            <p>
+              Audio tours are standard. Please notify your docent if you would like
+              audible descriptions of what is being shown. Please ask before
+              touching the exhibits as many are either fragile or dangerous.
+            </p>
+            <p>
+              We are unable to provide sign language interpreters, but many exhibits
+              have text signs describing them. We also have a
+              <a href="https://wiki.connections.museum">wiki</a> with more
+              information on many subjects including our most notable exhibits.
+            </p>
+            <p>
+              Please notify your docent if you need a quiet space during your stay.
+              The second floor is usually quieter than the third floor.
+            </p>
+          </ContentSection>
+        </r-cell>
+        <r-cell>
+          <ContentSection id="safety" title="Safety" headingLevel="h3" headingScale="section">
+            <p>
+              Live electricity is exposed in many non-obvious places, and rotating
+              machinery can catch on clothing. Such is the nature of running
+              equipment as old as ours-some is over 100 years old! We do our best to
+              ensure a safe environment despite this, and all tours should begin
+              with a quick safety briefing.
+            </p>
+            <p>
+              Many of our artifacts are old and irreplaceable, but with just a few
+              exceptions, we prefer to not put them away "under glass." So our
+              simple rule is this:
+              <b
+                >Please ask one of our volunteer guides before you pick up items on
+                display or interact with our machines.</b
+              >
+            </p>
+          </ContentSection>
+        </r-cell>
+      </ContentGrid>
+
+      <ContentSection
+        id="groups-and-private-tours"
+        title="Large Groups, Private Tours, & Other Special Arrangements"
+        headingLevel="h3"
+      >
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+          aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit
+          in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+          Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
+          officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit
+          amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+          labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+          exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+          Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
+          dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+          proident, sunt in culpa qui officia deserunt mollit anim id est
+          laborum.
+        </p>
+      </ContentSection>
+    </ContentSection>
+</PageBody></BaseLayout>
