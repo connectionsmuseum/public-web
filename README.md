@@ -13,7 +13,10 @@ Use Node.js 22.23.4 or newer and run `npm ci` to install the locked dependencies
 Run `npm run dev` to work on Astro pages, `npm run build` to generate the
 Astro output in `dist/`, or `npm run preview -- --port 4001` to preview that build. The build
 generates the homepage, Seattle visit page, Seattle exhibits and library pages,
-Denver, support, THG, and 404 pages. The
+Denver, support, THG, and 404 pages. In Nova,
+the `Build Astro` task serves the live component demo at
+`http://localhost:4000/demo`. Select the `Preview Built Astro` task and run its
+Build action followed by Run to serve the generated site on port 4001. The
 migrated pages are available at `http://localhost:4001/`,
 `http://localhost:4001/seattle.html`,
 `http://localhost:4001/seattle/exhibits.html`,
