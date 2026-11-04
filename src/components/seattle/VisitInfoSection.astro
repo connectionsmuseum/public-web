@@ -1,27 +1,12 @@
 ---
-import BaseLayout from "../../layouts/BaseLayout.astro";
-import ActionLink from "../../components/content/ActionLink.astro";
-import ClosureAnnouncement from "../../components/content/ClosureAnnouncement.astro";
-import ContactDetails from "../../components/content/ContactDetails.astro";
-import ContentGrid from "../../components/structure/ContentGrid.astro";
-import ContentSection from "../../components/structure/ContentSection.astro";
-import PageHeading from "../../components/structure/PageHeading.astro";
-import PageBody from "../../components/structure/PageBody.astro";
-import SiteHeader from "../../components/structure/SiteHeader.astro";
+import ContactDetails from "../content/ContactDetails.astro";
+import ContentGrid from "../structure/ContentGrid.astro";
+import ContentSection from "../structure/ContentSection.astro";
+import PageHeading from "../structure/PageHeading.astro";
 import { seattleVisit } from "../../data/seattleVisit";
 ---
 
-<BaseLayout
-  title="Visit the Seattle Museum | Connections Museum"
-  description="Hours, directions, tours, access information, and group visits at Connections Museum Seattle."
->
-  <SiteHeader />
-  <PageBody>
-    <PageHeading level="h1">Plan your Seattle visit</PageHeading>
-    <ClosureAnnouncement message={seattleVisit.closureNotice ?? undefined} />
-    <p><ActionLink href="/seattle.html">Back to the Seattle museum</ActionLink></p>
-
-    <ContentSection
+<ContentSection
       id="visit-info"
       title="Visiting the museum"
       headingLevel="h2"
@@ -184,5 +169,3 @@ import { seattleVisit } from "../../data/seattleVisit";
         <!-- TODO(issue): Confirm the per-guest donation for special tours before publishing Sarah's draft: "For such tours, we generally ask for a donation of $___ dollars per guest." -->
       </ContentSection>
     </ContentSection>
-  </PageBody>
-</BaseLayout>
