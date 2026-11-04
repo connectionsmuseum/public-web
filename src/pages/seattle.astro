@@ -1,15 +1,15 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import ActionLink from "../components/content/ActionLink.astro";
 import BannerCaption from "../components/content/BannerCaption.astro";
 import ClosureAnnouncement from "../components/content/ClosureAnnouncement.astro";
-import ContentGrid from "../components/structure/ContentGrid.astro";
-import ContentSection from "../components/structure/ContentSection.astro";
 import PageHeading from "../components/structure/PageHeading.astro";
 import PageBody from "../components/structure/PageBody.astro";
 import SiteHeader from "../components/structure/SiteHeader.astro";
 import SisterMuseumsCallout from "../components/content/SisterMuseumsCallout.astro";
-import VideoLink from "../components/content/VideoLink.astro";
+import VisitInfoSection from "../components/seattle/VisitInfoSection.astro";
+import ExhibitsSection from "../components/seattle/ExhibitsSection.astro";
+import LibrarySection from "../components/seattle/LibrarySection.astro";
+import SeattleUpdatesSection from "../components/seattle/SeattleUpdatesSection.astro";
 import bannerImage from "../../images/banners/cv_sarah_mtf.jpg";
 import { seattleVisit } from "../data/seattleVisit";
 ---
@@ -21,33 +21,17 @@ import { seattleVisit } from "../data/seattleVisit";
   <SiteHeader />
   <PageBody>
     <BannerCaption image={bannerImage} alt="Sarah Autumn standing beside the No. 1 Crossbar master test frame">
-      Seattle volunteer and board member Sarah Autumn at the No. 1 Crossbar master test frame aisle
+      Chief Engineer Sarah Autumn at the No. 1 Crossbar master test frame aisle
       of Connections Museum Seattle. Photograph by
       <a href="https://www.ultraviolet.gay">Claire Violet.</a>
     </BannerCaption>
 
     <PageHeading level="h1">Seattle, Washington</PageHeading>
     <ClosureAnnouncement message={seattleVisit.closureNotice ?? undefined} />
-    <ContentSection id="visit-info" title="Visitor information" headingLevel="h2">
-<ActionLink href="/seattle/visiting-info.html">Visitor information</ActionLink>
-</ContentSection>
-
-    <ContentGrid columns={2}>
-      <r-cell>
-        <ContentSection id="exhibits" title="Exhibits & museum history" headingLevel="h2">
-<ActionLink href="/seattle/exhibits.html">Exhibits & museum history</ActionLink>
-</ContentSection>
-      </r-cell>
-      <r-cell>
-        <ContentSection id="library" title="Seattle reference library" headingLevel="h2">
-<ActionLink href="/seattle/library.html">Seattle reference library</ActionLink>
-</ContentSection>
-      </r-cell>
-    </ContentGrid>
-
-
-
-
+    <VisitInfoSection />
+    <ExhibitsSection />
+    <LibrarySection />
+    <SeattleUpdatesSection />
 
     <SisterMuseumsCallout>
       <p>
